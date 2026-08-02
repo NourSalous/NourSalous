@@ -1,210 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 620" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 250" width="100%">
   <defs>
-    <linearGradient id="gf" x1="0" y1="0" x2="0.4" y2="1">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.055"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.015"/>
+    <!-- Card Gradients -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121220" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#08080f" stop-opacity="0.9" />
     </linearGradient>
-    <linearGradient id="ts" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.09"/>
-      <stop offset="14%" stop-color="#ffffff" stop-opacity="0"/>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFF9" />
+      <stop offset="50%" stop-color="#B829F7" />
+      <stop offset="100%" stop-color="#FF00E5" />
     </linearGradient>
-    <linearGradient id="bs" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#00fff9" stop-opacity="0.12"/>
-      <stop offset="50%" stop-color="#b829f7" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#ff00e5" stop-opacity="0.12"/>
-    </linearGradient>
-    <filter id="bk" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="22"/>
-    </filter>
-    <filter id="tg" x="-120%" y="-120%" width="340%" height="340%">
-      <feGaussianBlur stdDeviation="14"/>
-    </filter>
 
-    <path id="b5" d="M33,10 Q15,10 15,28 L15,182 Q15,200 33,200 L457,200 Q475,200 475,182 L475,28 Q475,10 457,10 Z"/>
-    <path id="b6" d="M533,10 Q515,10 515,28 L515,182 Q515,200 533,200 L957,200 Q975,200 975,182 L975,28 Q975,10 957,10 Z"/>
-    <path id="b7" d="M33,215 Q15,215 15,233 L15,387 Q15,405 33,405 L457,405 Q475,405 475,387 L475,233 Q475,215 457,215 Z"/>
-    <path id="b8" d="M533,215 Q515,215 515,233 L515,387 Q515,405 533,405 L957,405 Q975,405 975,387 L975,233 Q975,215 957,215 Z"/>
-    <path id="b9" d="M283,420 Q265,420 265,438 L265,592 Q265,610 283,610 L707,610 Q725,610 725,592 L725,438 Q725,420 707,420 Z"/>
-
-    <clipPath id="c5"><rect x="15" y="10" width="460" height="190" rx="18"/></clipPath>
-    <clipPath id="c6"><rect x="515" y="10" width="460" height="190" rx="18"/></clipPath>
-    <clipPath id="c7"><rect x="15" y="215" width="460" height="190" rx="18"/></clipPath>
-    <clipPath id="c8"><rect x="515" y="215" width="460" height="190" rx="18"/></clipPath>
-    <clipPath id="c9"><rect x="265" y="420" width="460" height="190" rx="18"/></clipPath>
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
 
-  <!-- ==================== CARD 5 — MENTARA ==================== -->
-  <rect x="15" y="10" width="460" height="190" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
-  <rect x="15" y="10" width="460" height="190" rx="18" fill="url(#gf)"/>
-  <rect x="15" y="10" width="460" height="190" rx="18" fill="url(#ts)" clip-path="url(#c5)"/>
-  <use href="#b5" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
-  <circle r="18" filter="url(#tg)">
-    <animate attributeName="fill" values="#00fff9;#b829f7;#ff00e5;#00fff9" dur="5s" repeatCount="indefinite"/>
-    <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#b5"/></animateMotion>
-  </circle>
-  <circle r="3" fill="#ffffff" opacity="0.9">
-    <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#b5"/></animateMotion>
-  </circle>
+  <!-- Base Grid (Optional Subtle Backdrop) -->
+  <pattern id="hexGrid" width="30" height="51.96" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
+    <path d="M15,0 L30,8.66 L30,25.98 L15,34.64 L0,25.98 L0,8.66 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" />
+    <path d="M15,51.96 L30,43.3 L30,25.98" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" />
+    <path d="M0,43.3 L15,51.96" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#hexGrid)" />
 
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-    <text x="37" y="38" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">AI STUDY PLATFORM</text>
-    <text x="37" y="75" fill="#ffffff" font-size="24" font-weight="700">Mentara</text>
-    <text x="37" y="100" fill="#ffffff" opacity="0.42" font-size="12.5">RAG study assistant: lectures to flashcards,</text>
-    <text x="37" y="117" fill="#ffffff" opacity="0.42" font-size="12.5">quizzes, and AI-powered answers.</text>
-  </g>
-  <circle cx="450" cy="38" r="24" fill="#00fff9" fill-opacity="0.07" stroke="#00fff9" stroke-opacity="0.25" stroke-width="1"/>
-  <g transform="translate(450,38)" stroke="#00fff9" stroke-width="1.2" fill="none" stroke-linecap="round">
-    <circle cx="0" cy="0" r="7"/>
-    <path d="M-3,-3 Q0,0 3,-3"/><path d="M-4,1 Q0,4 4,1"/>
-    <circle cx="0" cy="0" r="2" fill="#00fff9" opacity="0.3"/>
-  </g>
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="10" font-weight="500">
-    <rect x="37" y="170" width="59" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="66" y="184" text-anchor="middle" fill="#00fff9" opacity="0.75">Angular</text>
-    <rect x="102" y="170" width="54" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="129" y="184" text-anchor="middle" fill="#00fff9" opacity="0.75">NestJS</text>
-    <rect x="162" y="170" width="76" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="200" y="184" text-anchor="middle" fill="#b829f7" opacity="0.75">PostgreSQL</text>
-    <rect x="244" y="170" width="59" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="273" y="184" text-anchor="middle" fill="#b829f7" opacity="0.75">pgvector</text>
-    <rect x="309" y="170" width="36" height="20" rx="10" fill="#ff00e5" fill-opacity="0.08" stroke="#ff00e5" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="327" y="184" text-anchor="middle" fill="#ff00e5" opacity="0.75">RAG</text>
+  <!-- Left Card: Production Architecture -->
+  <rect x="25" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#2A2A3E" stroke-width="2" />
+  <!-- Hover / Glowing animated overlay on the border -->
+  <rect x="25" y="25" width="385" height="200" rx="12" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.6" filter="url(#glow)">
+     <animate attributeName="stroke-dashoffset" values="900; 0" dur="12s" repeatCount="indefinite" />
+  </rect>
+
+  <g transform="translate(55, 60)">
+    <path d="M 0 10 L 15 0 L 30 10 L 30 25 L 15 35 L 0 25 Z" fill="none" stroke="#00FFF9" stroke-width="2" filter="url(#glow)" />
+    <circle cx="15" cy="17.5" r="4" fill="#00FFF9" filter="url(#glow)">
+       <animate attributeName="opacity" values="0.2; 1; 0.2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <text x="50" y="24" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#E8E8F0">System Architectures</text>
+    
+    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#A0A0C0">
+      <tspan x="0" dy="0">➔ Designing Scalable Microservices</tspan>
+      <tspan x="0" dy="22">➔ Implementing Vector Databases</tspan>
+      <tspan x="0" dy="22">➔ Deploying Production ML Models</tspan>
+      <tspan x="0" dy="22">➔ Managing Distributed Pipelines</tspan>
+    </text>
   </g>
 
-  <!-- ==================== CARD 6 — EEG ADHD ==================== -->
-  <rect x="515" y="10" width="460" height="190" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
-  <rect x="515" y="10" width="460" height="190" rx="18" fill="url(#gf)"/>
-  <rect x="515" y="10" width="460" height="190" rx="18" fill="url(#ts)" clip-path="url(#c6)"/>
-  <use href="#b6" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
-  <circle r="18" filter="url(#tg)">
-    <animate attributeName="fill" values="#b829f7;#ff00e5;#00fff9;#b829f7" dur="5.5s" repeatCount="indefinite"/>
-    <animateMotion dur="4.3s" repeatCount="indefinite" begin="0.3s"><mpath href="#b6"/></animateMotion>
-  </circle>
-  <circle r="3" fill="#ffffff" opacity="0.9">
-    <animateMotion dur="4.3s" repeatCount="indefinite" begin="0.3s"><mpath href="#b6"/></animateMotion>
-  </circle>
+  <!-- Right Card: Applied Intelligence -->
+  <rect x="440" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#2A2A3E" stroke-width="2" />
+  <rect x="440" y="25" width="385" height="200" rx="12" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.6" filter="url(#glow)">
+     <animate attributeName="stroke-dashoffset" values="0; 900" dur="12s" repeatCount="indefinite" />
+  </rect>
 
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-    <text x="537" y="38" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">ML RESEARCH</text>
-    <text x="537" y="75" fill="#ffffff" font-size="24" font-weight="700">EEG-Based ADHD Detection</text>
-    <text x="537" y="100" fill="#ffffff" opacity="0.42" font-size="12.5">ML paper detecting ADHD via EEG signals.</text>
-    <text x="537" y="117" fill="#ffffff" opacity="0.42" font-size="12.5">SVM, XGBoost, SHAP analysis. <tspan fill="#00fff9" opacity="0.7">84.4%</tspan> sensitivity.</text>
-  </g>
-  <circle cx="950" cy="38" r="24" fill="#b829f7" fill-opacity="0.07" stroke="#b829f7" stroke-opacity="0.25" stroke-width="1"/>
-  <g transform="translate(950,38)" stroke="#b829f7" stroke-width="1.2" fill="none" stroke-linecap="round">
-    <path d="M-7,3 Q-4,-6 0,-2 Q4,-7 7,3"/>
-    <line x1="-9" y1="3" x2="9" y2="3"/>
-    <circle cx="-4" cy="-1" r="1" fill="#b829f7" opacity="0.4"/>
-    <circle cx="4" cy="0" r="1" fill="#b829f7" opacity="0.4"/>
-  </g>
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="10" font-weight="500">
-    <rect x="537" y="170" width="54" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="564" y="184" text-anchor="middle" fill="#b829f7" opacity="0.75">Python</text>
-    <rect x="597" y="170" width="76" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="635" y="184" text-anchor="middle" fill="#b829f7" opacity="0.75">scikit-learn</text>
-    <rect x="679" y="170" width="44" height="20" rx="10" fill="#ff00e5" fill-opacity="0.08" stroke="#ff00e5" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="701" y="184" text-anchor="middle" fill="#ff00e5" opacity="0.75">SHAP</text>
-    <rect x="729" y="170" width="29" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="743" y="184" text-anchor="middle" fill="#00fff9" opacity="0.75">ML</text>
+  <g transform="translate(470, 60)">
+    <rect x="0" y="0" width="28" height="28" rx="6" fill="none" stroke="#FF00E5" stroke-width="2" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="rotate" values="0 14 14; 90 14 14; 180 14 14; 270 14 14; 360 14 14" calcMode="discrete" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <circle cx="14" cy="14" r="3" fill="#FF00E5" filter="url(#glow)" />
+    
+    <text x="50" y="21" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#E8E8F0">Applied Intelligence</text>
+    
+    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#A0A0C0">
+      <tspan x="0" dy="0">➔ Advanced RAG System Integration</tspan>
+      <tspan x="0" dy="22">➔ Complex Prompt Engineering</tspan>
+      <tspan x="0" dy="22">➔ Real-time Spatial 3D (WebXR)</tspan>
+      <tspan x="0" dy="22">➔ High-performance Client Apps</tspan>
+    </text>
   </g>
 
-  <!-- ==================== CARD 7 — METATIP ==================== -->
-  <rect x="15" y="215" width="460" height="190" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
-  <rect x="15" y="215" width="460" height="190" rx="18" fill="url(#gf)"/>
-  <rect x="15" y="215" width="460" height="190" rx="18" fill="url(#ts)" clip-path="url(#c7)"/>
-  <use href="#b7" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
-  <circle r="18" filter="url(#tg)">
-    <animate attributeName="fill" values="#ff00e5;#00fff9;#b829f7;#ff00e5" dur="5.2s" repeatCount="indefinite"/>
-    <animateMotion dur="4.1s" repeatCount="indefinite" begin="0.7s"><mpath href="#b7"/></animateMotion>
-  </circle>
-  <circle r="3" fill="#ffffff" opacity="0.9">
-    <animateMotion dur="4.1s" repeatCount="indefinite" begin="0.7s"><mpath href="#b7"/></animateMotion>
-  </circle>
-
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-    <text x="37" y="243" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">AR-WEB PLATFORM</text>
-    <text x="37" y="280" fill="#ffffff" font-size="24" font-weight="700">MetaT&#305;p</text>
-    <text x="37" y="305" fill="#ffffff" opacity="0.42" font-size="12.5">3D anatomy explorer with AR / WebXR interfaces</text>
-    <text x="37" y="322" fill="#ffffff" opacity="0.42" font-size="12.5">and multi-stage JWT auth portal.</text>
-  </g>
-  <circle cx="450" cy="243" r="24" fill="#ff00e5" fill-opacity="0.07" stroke="#ff00e5" stroke-opacity="0.25" stroke-width="1"/>
-  <g transform="translate(450,243)" stroke="#ff00e5" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <ellipse cx="0" cy="-2" rx="5" ry="8"/>
-    <line x1="0" y1="6" x2="0" y2="10"/>
-    <line x1="-3" y1="10" x2="3" y2="10"/>
-  </g>
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="10" font-weight="500">
-    <rect x="37" y="375" width="59" height="20" rx="10" fill="#ff00e5" fill-opacity="0.08" stroke="#ff00e5" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="66" y="389" text-anchor="middle" fill="#ff00e5" opacity="0.75">Three.js</text>
-    <rect x="102" y="375" width="52" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="128" y="389" text-anchor="middle" fill="#00fff9" opacity="0.75">React</text>
-    <rect x="160" y="375" width="54" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="187" y="389" text-anchor="middle" fill="#b829f7" opacity="0.75">WebXR</text>
-    <rect x="220" y="375" width="36" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="238" y="389" text-anchor="middle" fill="#00fff9" opacity="0.75">JWT</text>
-  </g>
-
-  <!-- ==================== CARD 8 — CAMPUS GAME ==================== -->
-  <rect x="515" y="215" width="460" height="190" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
-  <rect x="515" y="215" width="460" height="190" rx="18" fill="url(#gf)"/>
-  <rect x="515" y="215" width="460" height="190" rx="18" fill="url(#ts)" clip-path="url(#c8)"/>
-  <use href="#b8" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
-  <circle r="18" filter="url(#tg)">
-    <animate attributeName="fill" values="#00fff9;#ff00e5;#b829f7;#00fff9" dur="4.8s" repeatCount="indefinite"/>
-    <animateMotion dur="3.9s" repeatCount="indefinite" begin="1.1s"><mpath href="#b8"/></animateMotion>
-  </circle>
-  <circle r="3" fill="#ffffff" opacity="0.9">
-    <animateMotion dur="3.9s" repeatCount="indefinite" begin="1.1s"><mpath href="#b8"/></animateMotion>
-  </circle>
-
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-    <text x="537" y="243" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">3D GAME</text>
-    <text x="537" y="280" fill="#ffffff" font-size="24" font-weight="700">Uskudar Extreme</text>
-    <text x="537" y="305" fill="#ffffff" opacity="0.42" font-size="12.5">University campus exploration game</text>
-    <text x="537" y="322" fill="#ffffff" opacity="0.42" font-size="12.5">built in Unity with full 3D environments.</text>
-  </g>
-  <circle cx="950" cy="243" r="24" fill="#00fff9" fill-opacity="0.07" stroke="#00fff9" stroke-opacity="0.25" stroke-width="1"/>
-  <g transform="translate(950,243)" stroke="#00fff9" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="-7" y="-4" width="14" height="9" rx="2"/>
-    <circle cx="-3" cy="0" r="2"/><circle cx="4" cy="0" r="2"/>
-    <line x1="-1" y1="-6" x2="-3" y2="-4"/><line x1="3" y1="-6" x2="1" y2="-4"/>
-    <circle cx="-1" cy="-7" r="1"/><circle cx="3" cy="-7" r="1"/>
-  </g>
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="10" font-weight="500">
-    <rect x="537" y="375" width="52" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="563" y="389" text-anchor="middle" fill="#00fff9" opacity="0.75">Unity</text>
-    <rect x="595" y="375" width="29" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="609" y="389" text-anchor="middle" fill="#b829f7" opacity="0.75">C#</text>
-  </g>
-
-  <!-- ==================== CARD 9 — APEXGIFT ==================== -->
-  <rect x="265" y="420" width="460" height="190" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
-  <rect x="265" y="420" width="460" height="190" rx="18" fill="url(#gf)"/>
-  <rect x="265" y="420" width="460" height="190" rx="18" fill="url(#ts)" clip-path="url(#c9)"/>
-  <use href="#b9" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
-  <circle r="18" filter="url(#tg)">
-    <animate attributeName="fill" values="#b829f7;#00fff9;#ff00e5;#b829f7" dur="5.3s" repeatCount="indefinite"/>
-    <animateMotion dur="4.2s" repeatCount="indefinite" begin="1.5s"><mpath href="#b9"/></animateMotion>
-  </circle>
-  <circle r="3" fill="#ffffff" opacity="0.9">
-    <animateMotion dur="4.2s" repeatCount="indefinite" begin="1.5s"><mpath href="#b9"/></animateMotion>
-  </circle>
-
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
-    <text x="287" y="448" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">AI RECOMMENDATION ENGINE</text>
-    <text x="287" y="485" fill="#ffffff" font-size="24" font-weight="700">ApexGift</text>
-    <text x="287" y="510" fill="#ffffff" opacity="0.42" font-size="12.5">OpenAI-powered gift recommendation engine</text>
-    <text x="287" y="527" fill="#ffffff" opacity="0.42" font-size="12.5">that takes the anxiety out of gift-giving.</text>
-  </g>
-  <circle cx="700" cy="448" r="24" fill="#b829f7" fill-opacity="0.07" stroke="#b829f7" stroke-opacity="0.25" stroke-width="1"/>
-  <g transform="translate(700,448)" stroke="#b829f7" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M0,8 L-8,-2 L-4,-2 L-4,-8 L4,-8 L4,-2 L8,-2 Z"/>
-    <line x1="-4" y1="-4" x2="4" y2="-4"/>
-  </g>
-  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="10" font-weight="500">
-    <rect x="287" y="580" width="76" height="20" rx="10" fill="#b829f7" fill-opacity="0.08" stroke="#b829f7" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="325" y="594" text-anchor="middle" fill="#b829f7" opacity="0.75">OpenAI API</text>
-    <rect x="369" y="580" width="98" height="20" rx="10" fill="#00fff9" fill-opacity="0.08" stroke="#00fff9" stroke-opacity="0.2" stroke-width="0.8"/>
-    <text x="418" y="594" text-anchor="middle" fill="#00fff9" opacity="0.75">Prompt Eng.</text>
-  </g>
 </svg>
