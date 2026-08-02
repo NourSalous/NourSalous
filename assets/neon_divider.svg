@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 30" width="100%">
+  <defs>
+    <!-- Cyan to Magenta Gradient -->
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0" />
+      <stop offset="25%" stop-color="#00f3ff" />
+      <stop offset="75%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Glowing Effect -->
+    <filter id="neonGlow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Glowing Animated Line -->
+  <rect x="0" y="14" width="900" height="2" fill="url(#neonGrad)" filter="url(#neonGlow)" opacity="0.8">
+    <animate attributeName="opacity" values="0.4; 1; 0.4" dur="3s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Moving Orb -->
+  <circle cx="0" cy="15" r="4" fill="#ffffff" filter="url(#neonGlow)">
+    <animate attributeName="cx" values="-10; 910; -10" dur="8s" repeatCount="indefinite" />
+    <animate attributeName="fill" values="#00f3ff; #ff007f; #00f3ff" dur="8s" repeatCount="indefinite" />
+  </circle>
+</svg>
