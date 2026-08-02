@@ -2,7 +2,6 @@
   <table border="0" width="100%" cellpadding="15">
     <tr>
       <td width="70%" align="center">
-        <img src="assets/signature.svg" width="160" alt="NS Monogram" />
         <br/>
         <img src="https://readme-typing-svg.demolab.com?font=Dancing+Script&weight=700&size=46&pause=1000&color=00f3ff&center=true&vCenter=true&width=400&lines=Nour+Salous" alt="Nour Salous" />
         <sub><i>"Code quality is measured with WTFs per min during code review"</i></sub>
