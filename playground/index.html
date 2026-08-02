@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOURSOUND · Interactive Profile Playground</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0b0e14;--panel:#12161f;--panel2:#0d1117;--border:#2a3140;--text:#e6edf3;--muted:#8b949e;--acc:#58a6ff;--purp:#a371f7;--pink:#f778ba;--good:#3fb950;--warn:#d29922;--bad:#f85149}
+html,body{height:100%}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:radial-gradient(1200px 800px at 20% -10%,#17213b 0%,var(--bg) 55%);color:var(--text);min-height:100vh;overflow-x:hidden}
+a{color:var(--acc);text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.hidden{display:none!important}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px 60px}
+header{display:flex;align-items:center;gap:14px;padding:18px 20px;border-bottom:1px solid var(--border);background:rgba(13,17,23,.7);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50}
+.brand{font-weight:800;letter-spacing:.5px;font-size:17px}
+.brand b{color:var(--purp)}
+nav{margin-left:auto;display:flex;gap:8px}
+.tab{padding:8px 14px;border-radius:10px;border:1px solid transparent;font-weight:600;font-size:14px;color:var(--muted);transition:.18s}
+.tab:hover{color:var(--text);background:rgba(88,166,255,.08)}
+.tab.on{color:var(--acc);background:rgba(88,166,255,.12);border-color:rgba(88,166,255,.35)}
+.chip-pill{font-size:11px;color:var(--muted);border:1px solid var(--border);padding:3px 9px;border-radius:99px}
+section.panel{display:none;padding-top:26px}
+section.panel.on{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.section-title{font-size:22px;font-weight:800;margin-bottom:4px}
+.section-sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.hint{font-size:13px;color:var(--muted)}
+
+/* ============ VINYL ============ */
+.deck{background:linear-gradient(180deg,#1b212c,#141923);border:1px solid var(--border);border-radius:22px;padding:18px 18px 20px;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);max-width:760px;margin:0 auto}
+.deck-head{display:flex;align-items:center;gap:10px;padding:0 6px 14px}
+.deck-head .t{font-weight:800;letter-spacing:1px}
+.deck-head .sub{font-size:12px;color:var(--muted)}
+#status-msg{margin-left:auto;font-size:13px;color:var(--muted);text-align:right;max-width:260px;line-height:1.4}
+#status-msg b{color:var(--good)}
+#turntable{width:100%;height:auto;display:block;touch-action:none;user-select:none;cursor:grab}
+#arm{transform-origin:575px 300px;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+#arm.dragging{transition:none;cursor:grabbing}
+.platter{animation:none}
+.platter.spin{animation:spin 1.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.led-main{transition:fill .3s}
+.deck-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px}
+.deck-controls .btn{display:inline-flex;align-items:center;gap:8px;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.35);color:var(--acc);font-weight:700;font-size:14px;padding:10px 16px;border-radius:12px;transition:.18s}
+.deck-controls .btn:hover{background:rgba(88,166,255,.2)}
+.deck-controls .btn:active{transform:scale(.97)}
+.deck-controls .btn.go{background:linear-gradient(135deg,var(--purp),var(--pink));color:#fff;border-color:transparent}
+.deck-controls .btn.go:hover{filter:brightness(1.1)}
+.tracklist{display:flex;gap:8px;flex-wrap:wrap}
+.trackchip{font-size:12px;padding:7px 12px;border-radius:99px;border:1px solid var(--border);color:var(--muted);transition:.18s}
+.trackchip:hover{color:var(--text);border-color:var(--acc)}
+.trackchip.on{background:rgba(163,113,247,.15);border-color:var(--purp);color:var(--purp);font-weight:700}
+.vol{display:flex;align-items:center;gap:8px;margin-left:auto;color:var(--muted);font-size:13px}
+.vol input{width:120px;accent-color:var(--acc)}
+#analyser{width:100%;max-width:300px;height:48px;display:block;margin-top:16px}
+.play-hint{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
+.play-hint kbd{background:#1c2230;border:1px solid var(--border);border-bottom-width:2px;border-radius:6px;padding:2px 7px;font-family:inherit;font-size:12px}
+
+/* ============ ARCADE ============ */
+.arcade-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.game-card{background:linear-gradient(180deg,#161c28,#11151f);border:1px solid var(--border);border-radius:16px;padding:18px;text-align:left;transition:.2s;position:relative;overflow:hidden}
+.game-card:hover{transform:translateY(-3px);border-color:var(--acc);box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.game-card .emoji{font-size:34px;display:block;margin-bottom:10px}
+.game-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.game-card p{font-size:12.5px;color:var(--muted);line-height:1.45}
+.game-card .play-tag{position:absolute;top:14px;right:14px;font-size:11px;color:var(--good);border:1px solid rgba(63,185,80,.4);padding:2px 8px;border-radius:99px}
+.game-panel{max-width:760px;margin:0 auto}
+.game-panel .topbar{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.game-panel .back{font-weight:700;color:var(--muted);padding:8px 12px;border-radius:10px;border:1px solid var(--border)}
+.game-panel .back:hover{color:var(--text);border-color:var(--acc)}
+.game-panel h2{font-size:20px;font-weight:800}
+.score-row{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0;color:var(--muted);font-size:14px}
+.score-row b{color:var(--text)}
+.board{display:grid;gap:6px;margin:12px 0;justify-content:center}
+.cell{display:flex;align-items:center;justify-content:center;font-size:20px;background:#1a2130;border:1px solid var(--border);border-radius:8px;transition:.12s}
+.cell.clickable:hover{background:#232c40;border-color:var(--acc)}
+.pill{display:inline-block;padding:9px 16px;border-radius:10px;border:1px solid var(--border);font-weight:700;font-size:14px;background:#1a2130;transition:.15s}
+.pill:hover{border-color:var(--acc);background:#222b3d}
+.pill.go{background:linear-gradient(135deg,var(--purp),var(--pink));color:#fff;border-color:transparent}
+.pill.go:hover{filter:brightness(1.1)}
+.result{font-size:15px;font-weight:700;min-height:24px;margin:10px 0}
+.result.good{color:var(--good)}.result.bad{color:var(--bad)}.result.warn{color:var(--warn)}
+.battle{font-size:44px;display:flex;align-items:center;gap:16px;justify-content:center;margin:14px 0;min-height:60px}
+.battle .vs{font-size:16px;color:var(--muted);font-weight:700}
+.shake{animation:shake .4s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:280px;margin:0 auto}
+.hole{aspect-ratio:1;background:radial-gradient(circle at 50% 30%,#10141d,#05070c);border:1px solid var(--border);border-radius:50%;position:relative;overflow:hidden}
+.hole::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 35%,#1d2432,#0b0e14)}
+.mole{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:38px;transform:translateY(110%);transition:transform .12s ease;cursor:pointer}
+.mole.up{transform:translateY(0)}
+.snake-pad{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.snake-pad button{width:52px;height:44px;font-size:18px;border:1px solid var(--border);border-radius:10px;background:#1a2130}
+.snake-pad button:hover{border-color:var(--acc)}
+input[type=number],input[type=text]{background:#0d1117;border:1px solid var(--border);border-radius:10px;color:var(--text);padding:10px 12px;font-size:15px;font-family:inherit;width:130px}
+input:focus{outline:none;border-color:var(--acc)}
+.overlay{position:fixed;inset:0;background:rgba(5,8,14,.85);display:flex;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(4px)}
+.overlay-card{background:#12161f;border:1px solid var(--border);border-radius:18px;padding:30px 34px;text-align:center;max-width:340px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.overlay-card h2{font-size:26px;margin-bottom:8px}
+.overlay-card p{color:var(--muted);margin-bottom:18px;font-size:14px}
+footer{color:var(--muted);font-size:13px;text-align:center;margin-top:40px;line-height:1.8}
+@media(max-width:640px){.vol{margin-left:0;width:100%;justify-content:space-between}.vol input{flex:1}.deck-head .sub{display:none}.brand{font-size:15px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">🎛 NOUR<b>SOUND</b></div>
+  <nav>
+    <button class="tab on" data-panel="vinyl">🎵 Vinyl</button>
+    <button class="tab" data-panel="arcade">🎮 Arcade</button>
+    <a class="tab" href="https://github.com/NourSalous" target="_blank" rel="noopener">GitHub ↗</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="panel on" id="panel-vinyl">
+    <h1 class="section-title">🎵 Nour's Record Player</h1>
+    <p class="section-sub">Grab the tonearm and drop it on the record — it plays. Lift it to pause.</p>
+
+    <div class="deck">
+      <div class="deck-head">
+        <div class="t">SOUND SYSTEM 1976</div>
+        <span class="chip-pill">33⅓ RPM</span>
+        <span class="chip-pill">STEREO</span>
+        <div id="status-msg">Standby — drop the needle 🎤</div>
+      </div>
+
+      <svg id="turntable" viewBox="0 0 640 420" role="img" aria-label="Interactive vinyl record player">
+        <defs>
+          <linearGradient id="plinth" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#232b3a"/><stop offset="1" stop-color="#141922"/>
+          </linearGradient>
+          <radialGradient id="platter" cx="0.35" cy="0.3" r="1">
+            <stop offset="0" stop-color="#2e3646"/><stop offset="1" stop-color="#1b212e"/>
+          </radialGradient>
+          <radialGradient id="vinyl" cx="0.4" cy="0.35" r="1">
+            <stop offset="0" stop-color="#232326"/><stop offset="0.55" stop-color="#101012"/><stop offset="1" stop-color="#050506"/>
+          </radialGradient>
+          <linearGradient id="label" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a371f7"/><stop offset="0.5" stop-color="#7c3aed"/><stop offset="1" stop-color="#f778ba"/>
+          </linearGradient>
+          <linearGradient id="armrod" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#6a7280"/><stop offset="0.5" stop-color="#cbd5e1"/><stop offset="1" stop-color="#94a3b8"/>
+          </linearGradient>
+          <radialGradient id="ledGlow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#ff5555" stop-opacity="0.9"/><stop offset="1" stop-color="#ff5555" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect x="16" y="20" width="608" height="384" rx="26" fill="url(#plinth)" stroke="#3a4356" stroke-width="1.5"/>
+
+        <g id="platter">
+          <circle cx="300" cy="225" r="164" fill="url(#platter)" stroke="#3a4356" stroke-width="2"/>
+          <circle cx="300" cy="225" r="152" fill="url(#vinyl)"/>
+          <g id="grooves" fill="none" stroke="#191a1c" stroke-width="1"></g>
+          <circle cx="300" cy="225" r="58" fill="#0c0c0e" stroke="#1d1e21"/>
+          <circle cx="300" cy="225" r="48" fill="url(#label)"/>
+          <text x="300" y="214" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="15" fill="#fff" letter-spacing="2">NOUR</text>
+          <text x="300" y="232" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="#ffe9f6" letter-spacing="1">HIGH FIDELITY</text>
+          <text x="300" y="244" text-anchor="middle" font-family="Georgia,serif" font-size="7" fill="#ffe9f6" letter-spacing="0.5">33⅓ RPM</text>
+          <circle cx="300" cy="225" r="4.5" fill="#0a0a0a" stroke="#3a4356"/>
+        </g>
+
+        <g id="arm">
+          <circle cx="575" cy="300" r="16" fill="url(#platter)" stroke="#4b5563"/>
+          <circle cx="575" cy="300" r="9" fill="#0d1117" stroke="#94a3b8"/>
+          <circle cx="575" cy="300" r="3" fill="#cbd5e1"/>
+          <polygon points="0,0 -420,-6 -420,6 0,10" fill="url(#armrod)"/>
+          <rect x="-434" y="-13" width="24" height="22" rx="5" fill="#374151" stroke="#6b7280"/>
+          <polygon points="-434,0 -446,10 -446,-10" fill="#9aa4b2"/>
+          <circle cx="-446" cy="0" r="9" fill="#0d1117" stroke="#cbd5e1" stroke-width="3" style="cursor:grab"/>
+        </g>
+
+        <circle cx="470" cy="52" r="14" fill="url(#ledGlow)" opacity="0"/>
+        <circle id="led" cx="470" cy="52" r="5" fill="#5a3a3a" stroke="#3a4356"/>
+        <text x="300" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8b949e" letter-spacing="3">NOURSOUND · TURNTABLE</text>
+      </svg>
+
+      <div class="deck-controls">
+        <button id="btn-play" class="btn go">▶ Play</button>
+        <button id="btn-prev" class="btn" title="Previous track">⏮</button>
+        <button id="btn-next" class="btn" title="Next track">⏭</button>
+        <div class="tracklist" id="tracklist"></div>
+        <label class="vol">🔊 <input id="volume" type="range" min="0" max="1" step="0.01" value="0.65"></label>
+      </div>
+      <canvas id="analyser" width="300" height="48"></canvas>
+      <div class="play-hint">Drag the <b>tonearm</b> onto the record, or just click the platter · <kbd>Space</kbd> toggles</div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-arcade">
+    <h1 class="section-title">🎮 The Arcade</h1>
+    <p class="section-sub">Small games to play while you procrastinate. Beat the AI, then get back to work.</p>
+    <div class="arcade-grid" id="arcade-grid"></div>
+  </section>
+
+  <footer>
+    Crafted by <a href="https://github.com/NourSalous">Nour Salous</a> · Engineering · AI · 3D<br>
+    Built with zero dependencies · all sounds are synthesized live in your browser 🎧
+  </footer>
+
+</main>
+
+<div class="overlay hidden" id="overlay">
+  <div class="overlay-card">
+    <h2 id="ov-title"></h2>
+    <p id="ov-msg"></p>
+    <button class="pill go" id="ov-btn">Play again</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var tabBtns = document.querySelectorAll('.tab[data-panel]');
+  var panels = {
+    vinyl: document.getElementById('panel-vinyl'),
+    arcade: document.getElementById('panel-arcade')
+  };
+  function show(name) {
+    for (var k in panels) panels[k].classList.toggle('on', k === name);
+    tabBtns.forEach(function (b) { b.classList.toggle('on', b.dataset.panel === name); });
+    try { history.replaceState(null, '', '#' + (name === 'vinyl' ? 'vinyl' : 'arcade')); } catch (err) {}
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tabBtns.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.panel); });
+  });
+  var initHash = location.hash;
+  if (initHash === '#arcade' || initHash === '#games') show('arcade');
+  window.addEventListener('hashchange', function () {
+    var h = location.hash;
+    if (h === '#arcade' || h === '#games') show('arcade');
+    else if (h === '#vinyl' || h === '' || h === '#') show('vinyl');
+  });
+
+  var arcadeGrid = document.getElementById('arcade-grid');
+  var games = [
+    { id: 'snake', e: '🐍', t: 'Snake', d: 'Classic grid snake. Eat, grow, don\u2019t bite yourself.' },
+    { id: 'memory', e: '🧠', t: 'Memory Match', d: 'Flip the cards and match the dev-tool emojis.' },
+    { id: 'rps', e: '✊', t: 'RPS vs Mentara AI', d: 'Rock, paper, scissors against my study AI.' },
+    { id: 'whack', e: '🐭', t: 'Whack-a-Mole', d: '30 seconds. Smash as many moles as you can.' },
+    { id: 'ttt', e: '⭕', t: 'Tic-Tac-Toe', d: 'You vs an unbeatable minimax AI. Good luck.' },
+    { id: 'guess', e: '🎯', t: 'Guess the Number', d: 'I pick 1\u2013100. You have 10 guesses.' }
+  ];
+  var gamePanels = {};
+  games.forEach(function (g) {
+    var card = document.createElement('button');
+    card.className = 'game-card';
+    card.innerHTML = '<span class="play-tag">PLAY</span><span class="emoji">' + g.e + '</span><h3>' + g.t + '</h3><p>' + g.d + '</p>';
+    card.addEventListener('click', function () { openGame(g.id); });
+    arcadeGrid.appendChild(card);
+  });
+
+  function openGame(id) {
+    var sec = gamePanels[id];
+    if (!sec) return;
+    document.querySelectorAll('.game-panel').forEach(function (p) { p.classList.add('hidden'); });
+    sec.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function gameBack() {
+    document.querySelectorAll('.game-panel').forEach(function (p) { p.classList.add('hidden'); });
+  }
+  window.openGame = openGame;
+  window.gameBack = gameBack;
+
+  var overlay = document.getElementById('overlay');
+  function showOverlay(title, msg, restartFn) {
+    document.getElementById('ov-title').textContent = title;
+    document.getElementById('ov-msg').textContent = msg;
+    overlay.classList.remove('hidden');
+    overlay.querySelector('#ov-btn').onclick = function () { overlay.classList.add('hidden'); if (restartFn) restartFn(); };
+  }
+  window.showOverlay = showOverlay;
+  window.overlayHide = function () { overlay.classList.add('hidden'); };
+})();
+</script>
+
+<script>
+(function () {
+  var svg = document.getElementById('turntable');
+  var grooves = document.getElementById('grooves');
+  for (var r = 146; r >= 40; r -= 6) {
+    var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', 300); c.setAttribute('cy', 225); c.setAttribute('r', r);
+    grooves.appendChild(c);
+  }
+  var platter = document.getElementById('platter');
+  var arm = document.getElementById('arm');
+  var led = document.getElementById('led');
+  var glow = led.previousElementSibling;
+  var statusMsg = document.getElementById('status-msg');
+  var btnPlay = document.getElementById('btn-play');
+  var btnPrev = document.getElementById('btn-prev');
+  var btnNext = document.getElementById('btn-next');
+  var volume = document.getElementById('volume');
+  var analyserCanvas = document.getElementById('analyser');
+  var ctx2d = analyserCanvas.getContext('2d');
+  var tracklist = document.getElementById('tracklist');
+
+  var tracks = [
+    { name: 'Lo-Fi Study Beat', bpm: 84 },
+    { name: 'Synthwave Drive', bpm: 100 },
+    { name: 'Night Garden', bpm: 66 }
+  ];
+
+  var AC = null, master = null, analyser = null, dataArr = null, noiseBuf = null;
+  var playing = false, currentTrack = 0, stepPos = 0, nextT = 0, timer = null;
+  var armAngle = 38, dragging = false;
+
+  function midi(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+  function makeNoise() {
+    var len = AC.sampleRate * 1;
+    var buf = AC.createBuffer(1, len, AC.sampleRate);
+    var d = buf.getChannelData(0);
+    for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    return buf;
+  }
+  function ensureAudio() {
+    if (AC) return;
+    AC = new (window.AudioContext || window.webkitAudioContext)();
+    master = AC.createGain();
+    master.gain.value = parseFloat(volume.value);
+    var comp = AC.createDynamicsCompressor();
+    analyser = AC.createAnalyser();
+    analyser.fftSize = 128;
+    dataArr = new Uint8Array(analyser.frequencyBinCount);
+    master.connect(comp);
+    comp.connect(analyser);
+    analyser.connect(AC.destination);
+    noiseBuf = makeNoise();
+    drawLoop();
+  }
+
+  function kick(t) {
+    var o = AC.createOscillator(), g = AC.createGain();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(160, t);
+    o.frequency.exponentialRampToValueAtTime(45, t + 0.12);
+    g.gain.setValueAtTime(0.9, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.32);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + 0.34);
+  }
+  function snare(t) {
+    var n = AC.createBufferSource(), g = AC.createGain(), f = AC.createBiquadFilter();
+    n.buffer = noiseBuf; n.loop = true;
+    n.start(t); n.stop(t + 0.2);
+    f.type = 'bandpass'; f.frequency.value = 1900; f.Q.value = 0.7;
+    g.gain.setValueAtTime(0.55, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+    n.connect(f); f.connect(g); g.connect(master);
+  }
+  function hat(t, open) {
+    var n = AC.createBufferSource(), g = AC.createGain(), f = AC.createBiquadFilter();
+    n.buffer = noiseBuf; n.loop = true;
+    var d = open ? 0.3 : 0.05;
+    n.start(t); n.stop(t + d + 0.02);
+    f.type = 'highpass'; f.frequency.value = 8200;
+    g.gain.setValueAtTime(open ? 0.22 : 0.16, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + d);
+    n.connect(f); f.connect(g); g.connect(master);
+  }
+  function bass(t, f, dur) {
+    var o = AC.createOscillator(), g = AC.createGain(), fl = AC.createBiquadFilter();
+    o.type = 'triangle'; o.frequency.value = f;
+    fl.type = 'lowpass'; fl.frequency.value = 750;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.45, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    o.connect(fl); fl.connect(g); g.connect(master);
+    o.start(t); o.stop(t + dur + 0.05);
+  }
+  function pad(t, notes, dur, vol) {
+    notes.forEach(function (n) {
+      var o = AC.createOscillator(), g = AC.createGain(), fl = AC.createBiquadFilter();
+      o.type = 'sawtooth'; o.frequency.value = midi(n);
+      fl.type = 'lowpass';
+      fl.frequency.setValueAtTime(1100, t);
+      fl.frequency.linearRampToValueAtTime(380, t + dur);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol || 0.11, t + 0.5);
+      g.gain.setValueAtTime(vol || 0.11, t + dur - 0.35);
+      g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+      o.connect(fl); fl.connect(g); g.connect(master);
+      o.start(t); o.stop(t + dur + 0.1);
+    });
+  }
+  function pluck(t, f, vol, dur) {
+    var o = AC.createOscillator(), g = AC.createGain();
+    o.type = 'triangle'; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol || 0.26, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.001, t + (dur || 0.5));
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + (dur || 0.5) + 0.05);
+  }
+  function noiseLayer(t, dur, vol) {
+    var n = AC.createBufferSource(), g = AC.createGain(), f = AC.createBiquadFilter();
+    n.buffer = noiseBuf; n.loop = true;
+    n.start(t); n.stop(t + dur);
+    f.type = 'lowpass'; f.frequency.value = 1200;
+    g.gain.setValueAtTime(vol || 0.05, t);
+    g.gain.linearRampToValueAtTime(vol || 0.05, t + dur - 0.1);
+    g.gain.linearRampToValueAtTime(0.001, t + dur);
+    n.connect(f); f.connect(g); g.connect(master);
+  }
+
+  var LOFI = {
+    chords: [[57, 60, 64], [53, 57, 60], [48, 55, 60], [55, 59, 62]],
+    bassRoots: [33, 29, 36, 31],
+    pent: [72, 74, 76, 79, 81, 84, 86],
+    melody: { 0: [0, 4, 6], 1: [4, 3, 4], 2: [3, 5, 0], 3: [5, 4, 2] }
+  };
+  var SW = {
+    chords: [[57, 60, 64, 69], [53, 57, 60, 65], [48, 55, 60, 64], [55, 59, 62, 67]],
+    bass: [33, 41, 29, 36]
+  };
+  var NB = {
+    chords: [[60, 64, 67, 72], [57, 60, 64, 69], [53, 57, 60, 65], [59, 62, 67, 71]],
+    plucks: [[72, 76, 79], [77, 72, 69], [72, 65, 69], [71, 74, 67]]
+  };
+
+  function scheduleStep(step, t) {
+    var bar = Math.floor(step / 16), s = step % 16;
+    var stepDur = 60 / tracks[currentTrack].bpm / 4;
+    if (currentTrack === 0) {
+      var c = LOFI.chords[bar], root = LOFI.bassRoots[bar];
+      if (s === 0) { kick(t); pad(t, c, stepDur * 16, 0.1); }
+      if (s === 8) kick(t);
+      if (s === 4 || s === 12) snare(t);
+      if (s % 2 === 0) hat(t, s === 14);
+      if (s === 0 || s === 7) bass(t, midi(root), stepDur * 2);
+      if (s === 10) bass(t, midi(root + 12), stepDur * 3);
+      var m = LOFI.melody[bar];
+      if (m.indexOf(s) !== -1) {
+        var n = LOFI.pent[(step * 5 + bar * 3) % LOFI.pent.length];
+        pluck(t, midi(n), 0.16, 0.6);
+      }
+      if (s === 0) noiseLayer(t, stepDur * 16, 0.02);
+    } else if (currentTrack === 1) {
+      var c2 = SW.chords[bar], b = SW.bass[bar];
+      if (s % 4 === 0) kick(t);
+      if (s % 8 === 4) snare(t);
+      hat(t, false);
+      var arp = c2[s % 4];
+      if (s % 2 === 0) pluck(t, midi(arp + 12), 0.15, 0.35);
+      bass(t, midi(b), stepDur * 4);
+      if (s === 0) pad(t, c2, stepDur * 16, 0.06);
+    } else {
+      var c3 = NB.chords[bar];
+      if (s === 0) { pad(t, c3, stepDur * 16, 0.1); noiseLayer(t, stepDur * 16, 0.025); }
+      if (s === 0 || s === 8) kick(t);
+      if (s === 4 || s === 12) snare(t);
+      var pk = NB.plucks[bar];
+      if (s % 4 === 0 && (bar === 1 || bar === 3)) pluck(t, midi(pk[(s / 4 | 0) % 3] + 12), 0.2, 1.2);
+      if (s === 8) bass(t, midi(24 + bar * 2), stepDur * 4);
+    }
+  }
+
+  function startEngine() {
+    ensureAudio();
+    if (AC.state === 'suspended') AC.resume();
+    stepPos = 0;
+    nextT = AC.currentTime + 0.08;
+    timer = setInterval(scheduler, 30);
+    playing = true;
+    syncUI();
+  }
+  function stopEngine() {
+    if (timer) { clearInterval(timer); timer = null; }
+    playing = false;
+    syncUI();
+  }
+  function scheduler() {
+    var stepDur = 60 / tracks[currentTrack].bpm / 4;
+    while (nextT < AC.currentTime + 0.16) {
+      scheduleStep(stepPos, nextT);
+      stepPos = (stepPos + 1) % 64;
+      nextT += stepDur;
+    }
+  }
+
+  function setArm(a, animate) {
+    armAngle = a;
+    arm.classList.toggle('dragging', !animate);
+    arm.style.transform = 'rotate(' + a + 'deg)';
+  }
+  function armPlay() { setArm(0, true); }
+  function armRest() { setArm(38, true); }
+
+  function syncUI() {
+    btnPlay.textContent = playing ? '⏸ Pause' : '▶ Play';
+    platter.classList.toggle('spin', playing);
+    led.setAttribute('fill', playing ? '#ff5555' : '#5a3a3a');
+    glow.setAttribute('opacity', playing ? '1' : '0');
+    statusMsg.innerHTML = playing
+      ? 'Now spinning: <b>' + tracks[currentTrack].name + '</b> · ♪'
+      : 'Standby — drop the needle 🎤';
+  }
+
+  function switchTrack(i) {
+    if (i === currentTrack) return;
+    currentTrack = (i + tracks.length) % tracks.length;
+    document.querySelectorAll('.trackchip').forEach(function (c, idx) {
+      c.classList.toggle('on', idx === currentTrack);
+    });
+    if (playing) { stepPos = 0; nextT = AC.currentTime + 0.08; }
+    syncUI();
+  }
+
+  btnPlay.addEventListener('click', function () {
+    if (!playing) { ensureAudio(); armPlay(); startEngine(); }
+    else { stopEngine(); armRest(); }
+  });
+  btnPrev.addEventListener('click', function () { switchTrack(currentTrack - 1); });
+  btnNext.addEventListener('click', function () { switchTrack(currentTrack + 1); });
+  volume.addEventListener('input', function () {
+    if (master) master.gain.value = parseFloat(volume.value);
+  });
+
+  tracks.forEach(function (t, i) {
+    var chip = document.createElement('button');
+    chip.className = 'trackchip' + (i === 0 ? ' on' : '');
+    chip.textContent = t.name;
+    chip.addEventListener('click', function () { switchTrack(i); });
+    tracklist.appendChild(chip);
+  });
+
+  var dragHeld = null;
+  function toSvg(clientX, clientY) {
+    var m = svg.getScreenCTM();
+    var p = new DOMPoint(clientX, clientY);
+    var q = p.matrixTransform(m.inverse());
+    return { x: q.x, y: q.y };
+  }
+  var grip = arm.querySelector('circle');
+  grip.addEventListener('pointerdown', function (e) {
+    dragHeld = e.pointerId;
+    dragging = true;
+    try { grip.setPointerCapture(e.pointerId); } catch (err) {}
+    setArm(armAngle, false);
+    e.preventDefault();
+  });
+  window.addEventListener('pointermove', function (e) {
+    if (!dragging || dragHeld !== e.pointerId) return;
+    var p = toSvg(e.clientX, e.clientY);
+    var dx = p.x - 575, dy = p.y - 300;
+    var ang = Math.atan2(dy, dx) * 180 / Math.PI;
+    var rot = Math.min(52, Math.max(0, 180 - ang));
+    setArm(rot, false);
+  });
+  function releaseArm() {
+    if (!dragging) return;
+    dragging = false;
+    if (armAngle <= 22) {
+      setArm(0, true);
+      if (!playing) { ensureAudio(); startEngine(); }
+    } else {
+      setArm(38, true);
+      if (playing) stopEngine();
+    }
+  }
+  window.addEventListener('pointerup', releaseArm);
+  window.addEventListener('pointercancel', releaseArm);
+
+  platter.addEventListener('click', function () {
+    if (!playing) { ensureAudio(); armPlay(); startEngine(); }
+    else { stopEngine(); armRest(); }
+  });
+  window.addEventListener('keydown', function (e) {
+    if (e.code === 'Space' && !/input|textarea/i.test(document.activeElement.tagName)) {
+      e.preventDefault();
+      btnPlay.click();
+    }
+  });
+
+  function drawLoop() {
+    requestAnimationFrame(drawLoop);
+    var w = analyserCanvas.width, h = analyserCanvas.height;
+    ctx2d.clearRect(0, 0, w, h);
+    var bins = 24, bw = w / bins;
+    if (playing && analyser) analyser.getByteFrequencyData(dataArr);
+    for (var i = 0; i < bins; i++) {
+      var v = 0;
+      if (playing && analyser) {
+        var idx = Math.floor(i * dataArr.length / bins);
+        v = dataArr[idx] / 255;
+      } else {
+        v = 0.03 + 0.02 * Math.sin(i * 0.7 + Date.now() / 900);
+      }
+      var bh = Math.max(2, v * h);
+      ctx2d.fillStyle = 'rgba(163,113,247,' + (0.5 + v * 0.5) + ')';
+      ctx2d.fillRect(i * bw + 2, h - bh, bw - 4, bh);
+    }
+  }
+
+  setArm(38, false);
+  syncUI();
+})();
+</script>
+
+<script>
+(function () {
+  var arcadeSection = document.getElementById('panel-arcade');
+  var current = null;
+  var snakeKeyHandler = null;
+
+  function mount(html) {
+    var holder = document.createElement('div');
+    holder.className = 'game-panel';
+    holder.id = 'gp';
+    arcadeSection.appendChild(holder);
+    holder.innerHTML = html;
+    bind(holder);
+  }
+  function unmount() {
+    var h = document.getElementById('gp');
+    if (h) h.remove();
+    current = null;
+  }
+  function topbar(title, emoji) {
+    return '<div class="topbar"><button class="back" onclick="gameBack()">← Back</button><h2>' + emoji + ' ' + title + '</h2></div>';
+  }
+
+  window.bind = function (root) {
+    if (current === 'snake') bindSnake(root);
+    if (current === 'memory') bindMemory(root);
+    if (current === 'rps') bindRps(root);
+    if (current === 'whack') bindWhack(root);
+    if (current === 'ttt') bindTtt(root);
+    if (current === 'guess') bindGuess(root);
+  };
+
+  var realOpen = window.openGame;
+  window.openGame = function (id) {
+    if (snakeKeyHandler) {
+      window.removeEventListener('keydown', snakeKeyHandler);
+      snakeKeyHandler = null;
+    }
+    current = id;
+    if (realOpen) realOpen(id);
+    var built = {
+      snake: snakeHTML(),
+      memory: memoryHTML(),
+      rps: rpsHTML(),
+      whack: whackHTML(),
+      ttt: tttHTML(),
+      guess: guessHTML()
+    }[id];
+    unmount();
+    mount(built);
+  };
+
+  window.gameBack = function () {
+    if (snakeKeyHandler) {
+      window.removeEventListener('keydown', snakeKeyHandler);
+      snakeKeyHandler = null;
+    }
+    unmount();
+  };
+
+  /* ================= SNAKE ================= */
+  function snakeHTML() {
+    return topbar('Snake', '🐍') +
+      '<p class="hint">Arrows / WASD / on-screen pad. Eat 🍎, grow, don\u2019t crash.</p>' +
+      '<div class="score-row"><span>Score: <b id="sk-score">0</b></span><span>Best: <b id="sk-best">0</b></span></div>' +
+      '<div id="sk-board" class="board" style="grid-template-columns:repeat(20,20px)"></div>' +
+      '<div class="snake-pad">' +
+      '<button data-d="up">▲</button></div>' +
+      '<div class="snake-pad"><button data-d="left">◀</button><button data-d="down">▼</button><button data-d="right">▶</button></div>';
+  }
+  function bindSnake(root) {
+    var COLS = 20, ROWS = 13;
+    var board = root.querySelector('#sk-board');
+    for (var i = 0; i < ROWS * COLS; i++) {
+      var d = document.createElement('div');
+      d.className = 'cell';
+      d.style.width = '20px'; d.style.height = '20px';
+      d.style.fontSize = '14px'; d.style.borderRadius = '4px';
+      board.appendChild(d);
+    }
+    var cells = board.children;
+    var scoreEl = root.querySelector('#sk-score'), bestEl = root.querySelector('#sk-best');
+    var best = 0, snake = null, dir = null, queue = null, food = null, interval = null, dead = false;
+    function reset() {
+      snake = [{ x: 9, y: 6 }, { x: 8, y: 6 }, { x: 7, y: 6 }];
+      dir = { x: 1, y: 0 }; queue = [];
+      placeFood();
+      scoreEl.textContent = '0';
+      if (interval) clearInterval(interval);
+      interval = setInterval(tick, 110);
+      dead = false;
+      render();
+    }
+    function placeFood() {
+      do {
+        food = { x: Math.floor(Math.random() * COLS), y: Math.floor(Math.random() * ROWS) };
+      } while (snake.some(function (s) { return s.x === food.x && s.y === food.y; }));
+    }
+    function render() {
+      for (var i = 0; i < cells.length; i++) {
+        cells[i].textContent = '';
+        cells[i].style.background = '';
+      }
+      cells[food.y * COLS + food.x].textContent = '🍎';
+      snake.forEach(function (s, idx) {
+        var c = cells[s.y * COLS + s.x];
+        c.style.background = idx === 0 ? '#3fb950' : '#2ea043';
+        c.style.boxShadow = idx === 0 ? '0 0 10px rgba(63,185,80,.7)' : 'none';
+      });
+    }
+    function tick() {
+      if (dead) return;
+      var nd = queue.length ? queue.shift() : dir;
+      if (!((nd.x === -dir.x && nd.y === -dir.y) || (nd.x === dir.x && nd.y === dir.y))) dir = nd;
+      var head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+      if (head.x < 0 || head.y < 0 || head.x >= COLS || head.y >= ROWS || snake.some(function (s) { return s.x === head.x && s.y === head.y; })) {
+        dead = true;
+        clearInterval(interval);
+        var sc = scoreEl.textContent;
+        showOverlay('Game Over 💀', 'You scored ' + sc + '.', reset);
+        return;
+      }
+      snake.unshift(head);
+      if (head.x === food.x && head.y === food.y) {
+        scoreEl.textContent = parseInt(scoreEl.textContent) + 1;
+        best = Math.max(best, parseInt(scoreEl.textContent));
+        bestEl.textContent = best;
+        placeFood();
+      } else {
+        snake.pop();
+      }
+      render();
+    }
+    function steer(d) {
+      var m = { up: { x: 0, y: -1 }, down: { x: 0, y: 1 }, left: { x: -1, y: 0 }, right: { x: 1, y: 0 } };
+      var v = m[d];
+      var last = queue.length ? queue[queue.length - 1] : dir;
+      if (!(v.x === -last.x && v.y === -last.y)) queue.push(v);
+    }
+    root.querySelectorAll('.snake-pad button').forEach(function (b) {
+      b.addEventListener('click', function () { steer(b.dataset.d); });
+    });
+    snakeKeyHandler = function (e) {
+      var k = e.key.toLowerCase();
+      if (['arrowup', 'w'].indexOf(k) !== -1) { steer('up'); e.preventDefault(); }
+      else if (['arrowdown', 's'].indexOf(k) !== -1) { steer('down'); e.preventDefault(); }
+      else if (['arrowleft', 'a'].indexOf(k) !== -1) { steer('left'); e.preventDefault(); }
+      else if (['arrowright', 'd'].indexOf(k) !== -1) { steer('right'); e.preventDefault(); }
+    };
+    window.addEventListener('keydown', snakeKeyHandler);
+    reset();
+  }
+
+  /* ================= MEMORY ================= */
+  function memoryHTML() {
+    return topbar('Memory Match', '🧠') +
+      '<p class="hint">Match all 8 pairs. Fewer moves = better.</p>' +
+      '<div class="score-row"><span>Moves: <b id="mm-moves">0</b></span><span>Pairs: <b id="mm-pairs">0</b>/8</span></div>' +
+      '<div id="mm-board" class="board" style="grid-template-columns:repeat(4,64px)"></div>';
+  }
+  function bindMemory(root) {
+    var emojis = ['🚀', '⚛️', '🐍', '🧠', '🎧', '🎮', '☕', '🔥'];
+    var deck = [];
+    emojis.forEach(function (e, i) { deck.push(e, e); });
+    for (var i = deck.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = deck[i]; deck[i] = deck[j]; deck[j] = tmp;
+    }
+    var board = root.querySelector('#mm-board');
+    var movesEl = root.querySelector('#mm-moves'), pairsEl = root.querySelector('#mm-pairs');
+    var flipped = [], moves = 0, pairs = 0, lock = false;
+    deck.forEach(function (e, idx) {
+      var c = document.createElement('button');
+      c.className = 'cell clickable';
+      c.style.width = '64px'; c.style.height = '64px'; c.style.fontSize = '26px';
+      c.dataset.emoji = e;
+      c.addEventListener('click', function () { flip(c, idx); });
+      board.appendChild(c);
+    });
+    function flip(c, idx) {
+      if (lock || c.classList.contains('matched') || c.dataset.flipped === '1') return;
+      c.dataset.flipped = '1';
+      c.textContent = c.dataset.emoji;
+      flipped.push({ el: c, i: idx });
+      if (flipped.length === 2) {
+        moves++;
+        movesEl.textContent = moves;
+        lock = true;
+        var a = flipped[0], b = flipped[1];
+        if (deck[a.i] === deck[b.i]) {
+          a.el.classList.add('matched'); b.el.classList.add('matched');
+          a.el.style.background = 'rgba(63,185,80,.15)';
+          b.el.style.background = 'rgba(63,185,80,.15)';
+          pairs++;
+          pairsEl.textContent = pairs;
+          flipped = [];
+          lock = false;
+          if (pairs === 8) showOverlay('You Win! 🎉', 'Cleared in ' + moves + ' moves.', function () { window.openGame('memory'); });
+        } else {
+          setTimeout(function () {
+            a.el.textContent = ''; a.el.dataset.flipped = '0';
+            b.el.textContent = ''; b.el.dataset.flipped = '0';
+            flipped = [];
+            lock = false;
+          }, 700);
+        }
+      }
+    }
+  }
+
+  /* ================= RPS ================= */
+  function rpsHTML() {
+    return topbar('Rock · Paper · Scissors', '✊') +
+      '<p class="hint">Beat the <b>Mentara AI</b>. First to 5 wins.</p>' +
+      '<div class="battle"><span id="rp-you">✊</span><span class="vs">VS</span><span id="rp-ai">✊</span></div>' +
+      '<div class="result" id="rp-result">Pick your move 👇</div>' +
+      '<div class="score-row"><span>You: <b id="rp-y">0</b></span><span>AI: <b id="rp-a">0</b></span><span>Rounds: <b id="rp-r">0</b></span></div>' +
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">' +
+      '<button class="pill" data-m="rock">🪨 Rock</button>' +
+      '<button class="pill" data-m="paper">📄 Paper</button>' +
+      '<button class="pill" data-m="scissors">✂️ Scissors</button></div>';
+  }
+  function bindRps(root) {
+    var youEl = root.querySelector('#rp-you'), aiEl = root.querySelector('#rp-ai');
+    var resEl = root.querySelector('#rp-result'), yEl = root.querySelector('#rp-y'), aEl = root.querySelector('#rp-a'), rEl = root.querySelector('#rp-r');
+    var emo = { rock: '🪨', paper: '📄', scissors: '✂️' };
+    var y = 0, a = 0, r = 0, youHand = null;
+    root.querySelectorAll('.pill[data-m]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (y >= 5 || a >= 5) return;
+        var you = b.dataset.m;
+        var ai = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
+        youHand = you;
+        youEl.textContent = emo[you];
+        aiEl.textContent = emo[ai];
+        youEl.classList.add('shake'); aiEl.classList.add('shake');
+        setTimeout(function () { youEl.classList.remove('shake'); aiEl.classList.remove('shake'); }, 450);
+        r++;
+        rEl.textContent = r;
+        if (you === ai) {
+          resEl.textContent = 'Draw 🤝 — round ' + r;
+          resEl.className = 'result warn';
+        } else if ((you === 'rock' && ai === 'scissors') || (you === 'paper' && ai === 'rock') || (you === 'scissors' && ai === 'paper')) {
+          y++; yEl.textContent = y;
+          resEl.textContent = 'You win this round 🎉';
+          resEl.className = 'result good';
+        } else {
+          a++; aEl.textContent = a;
+          resEl.textContent = 'Mentara AI takes it 🤖';
+          resEl.className = 'result bad';
+        }
+        if (y === 5) showOverlay('You Beat the AI! 🏆', 'Final score 5\u2013' + a + '. Impressive.', restart);
+        else if (a === 5) showOverlay('AI Wins 🤖', 'Final score ' + y + '\u20135. Try again?', restart);
+      });
+    });
+    function restart() {
+      y = 0; a = 0; r = 0;
+      yEl.textContent = '0'; aEl.textContent = '0'; rEl.textContent = '0';
+      resEl.textContent = 'Pick your move 👇';
+      resEl.className = 'result';
+      youEl.textContent = '✊'; aiEl.textContent = '✊';
+    }
+  }
+
+  /* ================= WHACK-A-MOLE ================= */
+  function whackHTML() {
+    return topbar('Whack-a-Mole', '🐭') +
+      '<p class="hint">30 seconds. Smash the moles before they hide.</p>' +
+      '<div class="score-row"><span>Score: <b id="wh-score">0</b></span><span>Time: <b id="wh-time">30</b></span></div>' +
+      '<div class="mini-grid" id="wh-grid"></div>';
+  }
+  function bindWhack(root) {
+    var grid = root.querySelector('#wh-grid');
+    var scoreEl = root.querySelector('#wh-score'), timeEl = root.querySelector('#wh-time');
+    var cells = [], score = 0, time = 30, spawner = null, timer = null, running = false;
+    for (var i = 0; i < 9; i++) {
+      (function (idx) {
+        var hole = document.createElement('div');
+        hole.className = 'hole';
+        var mole = document.createElement('div');
+        mole.className = 'mole';
+        mole.textContent = '🐭';
+        mole.addEventListener('click', function () {
+          if (!running || !mole.classList.contains('up')) return;
+          mole.classList.remove('up');
+          score++;
+          scoreEl.textContent = score;
+          mole.textContent = '💥';
+          setTimeout(function () { mole.textContent = '🐭'; }, 200);
+        });
+        hole.appendChild(mole);
+        grid.appendChild(hole);
+        cells.push({ hole: hole, mole: mole });
+      })(i);
+    }
+    function spawn() {
+      if (!running) return;
+      cells.forEach(function (c) { c.mole.classList.remove('up'); });
+      var c = cells[Math.floor(Math.random() * cells.length)];
+      c.mole.classList.add('up');
+      setTimeout(function () {
+        if (c.mole.classList.contains('up')) c.mole.classList.remove('up');
+      }, 750);
+    }
+    function start() {
+      score = 0; time = 30;
+      scoreEl.textContent = '0'; timeEl.textContent = '30';
+      running = true;
+      spawner = setInterval(spawn, 650);
+      timer = setInterval(function () {
+        time--;
+        timeEl.textContent = time;
+        if (time <= 0) {
+          clearInterval(spawner); clearInterval(timer);
+          running = false;
+          cells.forEach(function (c) { c.mole.classList.remove('up'); });
+          showOverlay('Time\u2019s Up! ⏰', 'You smashed ' + score + ' moles.', start);
+        }
+      }, 1000);
+      spawn();
+    }
+    start();
+  }
+
+  /* ================= TIC-TAC-TOE ================= */
+  function tttHTML() {
+    return topbar('Tic-Tac-Toe', '⭕') +
+      '<p class="hint">You are <b>X</b>. The minimax AI is <b>O</b>. It never loses.</p>' +
+      '<div class="result" id="tt-result">Your move 👇</div>' +
+      '<div id="tt-board" class="board" style="grid-template-columns:repeat(3,92px)"></div>' +
+      '<div style="text-align:center;margin-top:10px"><button class="pill" id="tt-reset">↻ New game</button></div>';
+  }
+  function bindTtt(root) {
+    var boardEl = root.querySelector('#tt-board');
+    var resEl = root.querySelector('#tt-result');
+    var board = Array(9).fill(null);
+    var over = false, turn = 'X';
+    for (var i = 0; i < 9; i++) {
+      (function (idx) {
+        var c = document.createElement('button');
+        c.className = 'cell clickable';
+        c.style.width = '92px'; c.style.height = '92px'; c.style.fontSize = '40px';
+        c.addEventListener('click', function () { human(idx); });
+        boardEl.appendChild(c);
+      })(i);
+    }
+    var cells = boardEl.children;
+    var lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    function winner(b) {
+      for (var i = 0; i < lines.length; i++) {
+        var l = lines[i];
+        if (b[l[0]] && b[l[0]] === b[l[1]] && b[l[1]] === b[l[2]]) return b[l[0]];
+      }
+      return null;
+    }
+    function full(b) { return b.every(function (v) { return v !== null; }); }
+    function minimax(b, isMax) {
+      var w = winner(b);
+      if (w === 'O') return 10;
+      if (w === 'X') return -10;
+      if (full(b)) return 0;
+      var best = isMax ? -Infinity : Infinity;
+      for (var i = 0; i < 9; i++) {
+        if (b[i] !== null) continue;
+        b[i] = isMax ? 'O' : 'X';
+        var s = minimax(b, !isMax);
+        b[i] = null;
+        best = isMax ? Math.max(best, s) : Math.min(best, s);
+      }
+      return best;
+    }
+    function aiMove() {
+      var best = -Infinity, move = -1;
+      for (var i = 0; i < 9; i++) {
+        if (board[i] !== null) continue;
+        board[i] = 'O';
+        var s = minimax(board, false);
+        board[i] = null;
+        if (s > best) { best = s; move = i; }
+      }
+      if (move >= 0) place(move, 'O');
+    }
+    function place(idx, p) {
+      if (board[idx] || over) return;
+      board[idx] = p;
+      cells[idx].textContent = p;
+      cells[idx].style.color = p === 'X' ? '#58a6ff' : '#f778ba';
+      checkEnd(p);
+    }
+    function human(idx) {
+      if (turn !== 'X') return;
+      place(idx, 'X');
+      if (!over) { turn = 'O'; setTimeout(aiMove, 350); }
+    }
+    function checkEnd(p) {
+      var w = winner(board);
+      if (w) {
+        over = true;
+        resEl.textContent = w === 'X' ? 'You win! (Impossible??) 🎉' : 'AI wins 🤖 (as always)';
+        resEl.className = 'result ' + (w === 'X' ? 'good' : 'bad');
+        return;
+      }
+      if (full(board)) {
+        over = true;
+        resEl.textContent = 'Draw 🤝';
+        resEl.className = 'result warn';
+        return;
+      }
+      resEl.textContent = turn === 'X' ? 'Your move 👇' : 'AI is thinking…';
+      resEl.className = 'result';
+    }
+    root.querySelector('#tt-reset').addEventListener('click', reset);
+    function reset() {
+      for (var i = 0; i < 9; i++) { board[i] = null; cells[i].textContent = ''; cells[i].style.color = ''; }
+      over = false; turn = 'X';
+      resEl.textContent = 'Your move 👇';
+      resEl.className = 'result';
+    }
+  }
+
+  /* ================= GUESS ================= */
+  function guessHTML() {
+    return topbar('Guess the Number', '🎯') +
+      '<p class="hint">I\u2019m thinking of a number from <b>1\u2013100</b>. You have 10 tries.</p>' +
+      '<div class="score-row"><span>Attempts: <b id="gu-att">0</b>/10</span></div>' +
+      '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">' +
+      '<input id="gu-in" type="number" min="1" max="100" placeholder="Your guess">' +
+      '<button class="pill go" id="gu-go">Guess</button>' +
+      '<button class="pill" id="gu-reset">↻ Reset</button></div>' +
+      '<div class="result" id="gu-out">Pick a number, any number…</div>';
+  }
+  function bindGuess(root) {
+    var input = root.querySelector('#gu-in'), out = root.querySelector('#gu-out');
+    var attEl = root.querySelector('#gu-att');
+    var target = 0, att = 0, won = false;
+    function reset() {
+      target = 1 + Math.floor(Math.random() * 100);
+      att = 0; won = false;
+      attEl.textContent = '0';
+      out.textContent = 'Pick a number, any number…';
+      out.className = 'result';
+      input.value = '';
+    }
+    function go() {
+      if (won) return;
+      var v = parseInt(input.value, 10);
+      if (isNaN(v)) { out.textContent = 'Type a number first 😅'; return; }
+      att++;
+      attEl.textContent = att;
+      if (v === target) {
+        won = true;
+        out.textContent = '🎉 Got it in ' + att + '! The number was ' + target + '.';
+        out.className = 'result good';
+        showOverlay('You Got It! 🎯', 'The number was ' + target + ' (' + att + ' attempts).', reset);
+      } else if (att >= 10) {
+        out.textContent = 'Out of tries 😢 It was ' + target + '.';
+        out.className = 'result bad';
+        showOverlay('Out of Tries 💀', 'The number was ' + target + '.', reset);
+      } else {
+        out.textContent = v < target ? 'Higher! 📈' : 'Lower! 📉';
+        out.className = 'result warn';
+      }
+      input.select();
+    }
+    root.querySelector('#gu-go').addEventListener('click', go);
+    root.querySelector('#gu-reset').addEventListener('click', reset);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+    reset();
+  }
+})();
+</script>
+</body>
+</html>
