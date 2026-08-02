@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 80" width="100%" height="40" role="img" aria-label="Neon divider">
+  <defs>
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#7b3bff;#35ff9e;#00f0ff" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="70%" stop-color="#35ff9e">
+        <animate attributeName="stop-color" values="#35ff9e;#00f0ff;#7b3bff;#35ff9e" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#7b3bff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="divGlow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00f0ff" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <path d="M0,60 C180,10 320,110 500,60 C680,10 820,90 1000,45 L1000,80 L0,80 Z"
+        fill="url(#divGrad)" filter="url(#divGlow)" opacity="0.9">
+    <animate attributeName="d"
+      values="M0,60 C180,10 320,110 500,60 C680,10 820,90 1000,45 L1000,80 L0,80 Z;
+              M0,50 C180,90 320,10 500,55 C680,100 820,20 1000,50 L1000,80 L0,80 Z;
+              M0,60 C180,10 320,110 500,60 C680,10 820,90 1000,45 L1000,80 L0,80 Z"
+      dur="8s" repeatCount="indefinite"/>
+  </path>
+</svg>
