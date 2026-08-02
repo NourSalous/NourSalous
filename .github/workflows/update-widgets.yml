@@ -1,4 +1,4 @@
-name: Generate Profile Widgets
+name: Generate Snake Animation
 
 on:
   schedule:
@@ -14,20 +14,12 @@ jobs:
     permissions: 
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 1. Generates the YouTube Music Widget
-      - name: Generate YouTube Music Widget
-        uses: daeun503/profile-music-widget@v1
-        with:
-          playlist_id: YOUR_PLAYLIST_ID_HERE
-          theme: default.svg
-
-      # 2. Generates the Snake Animation
       - name: Generate GitHub Contribution Snake
         uses: Platane/snk/svg-only@v3
         with:
@@ -36,7 +28,6 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 3. Pushes both SVG files to the "output" branch
       - name: Deploy to Output Branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
