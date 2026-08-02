@@ -13,10 +13,10 @@
   <style>
     .cat { font-family: 'Courier New', monospace; font-weight: bold; font-size: 16px; fill: #ffffff; }
     .pill { fill: #161b22; stroke-width: 1.5; }
-    .pill-cyan { stroke: #7000FF; }
-    .pill-mag { stroke: #CCFF00; }
-    .pill-text-cyan { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #7000FF; text-anchor: middle; }
-    .pill-text-mag { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #CCFF00; text-anchor: middle; }
+    .pill-cyan { stroke: #00f3ff; }
+    .pill-mag { stroke: #ff007f; }
+    .pill-text-cyan { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #00f3ff; text-anchor: middle; }
+    .pill-text-mag { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #ff007f; text-anchor: middle; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
     .anim-pulse { animation: pulse 3s infinite; }
   </style>

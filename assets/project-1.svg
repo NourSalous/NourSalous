@@ -9,13 +9,13 @@
     </filter>
   </defs>
   
-  <rect x="2" y="2" width="256" height="156" rx="12" fill="#0d1117" stroke="#7000FF" stroke-width="1.5" filter="url(#neon)">
+  <rect x="2" y="2" width="256" height="156" rx="12" fill="#0a0e14" stroke="#00f3ff" stroke-width="1.5" filter="url(#neon)">
     <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
   </rect>
   
   <!-- Cyber Cutouts -->
-  <path d="M 2 20 L 10 12 L 20 12" fill="none" stroke="#CCFF00" stroke-width="2" />
-  <path d="M 258 140 L 250 148 L 240 148" fill="none" stroke="#7000FF" stroke-width="2" />
+  <path d="M 2 20 L 10 12 L 20 12" fill="none" stroke="#ff007f" stroke-width="2" />
+  <path d="M 258 140 L 250 148 L 240 148" fill="none" stroke="#00f3ff" stroke-width="2" />
   
   <text x="20" y="35" font-family="Courier New, monospace" font-weight="bold" font-size="18" fill="#ffffff">Mentara</text>
   
@@ -27,13 +27,13 @@
   
   <!-- Tech Pills -->
   <g transform="translate(20, 115)">
-    <rect x="0" y="0" width="55" height="20" rx="4" fill="#161b22" stroke="#7000FF" stroke-width="1"/>
-    <text x="27.5" y="14" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">React</text>
+    <rect x="0" y="0" width="55" height="20" rx="4" fill="#161b22" stroke="#00f3ff" stroke-width="1"/>
+    <text x="27.5" y="14" font-family="sans-serif" font-size="10" font-weight="bold" fill="#00f3ff" text-anchor="middle">React</text>
     
-    <rect x="65" y="0" width="60" height="20" rx="4" fill="#161b22" stroke="#CCFF00" stroke-width="1"/>
-    <text x="95" y="14" font-family="sans-serif" font-size="10" font-weight="bold" fill="#CCFF00" text-anchor="middle">Node.js</text>
+    <rect x="65" y="0" width="60" height="20" rx="4" fill="#161b22" stroke="#ff007f" stroke-width="1"/>
+    <text x="95" y="14" font-family="sans-serif" font-size="10" font-weight="bold" fill="#ff007f" text-anchor="middle">Node.js</text>
     
-    <rect x="135" y="0" width="50" height="20" rx="4" fill="#161b22" stroke="#7000FF" stroke-width="1"/>
-    <text x="160" y="14" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7000FF" text-anchor="middle">RAG</text>
+    <rect x="135" y="0" width="50" height="20" rx="4" fill="#161b22" stroke="#00f3ff" stroke-width="1"/>
+    <text x="160" y="14" font-family="sans-serif" font-size="10" font-weight="bold" fill="#00f3ff" text-anchor="middle">RAG</text>
   </g>
 </svg>
