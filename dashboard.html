@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour Salous — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg0:#05060f;--bg1:#0a0c1c;
+  --cyan:#00f0ff;--mag:#ff2bd6;--purp:#7b3bff;--accent-orange:#ff7d2b;
+  --text:#eae8ff;--muted:#8a87a8;--border:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Rajdhani',system-ui,sans-serif;color:var(--text);min-height:100vh;
+  background:radial-gradient(1200px 700px at 80% -10%,rgba(123,59,255,.18),transparent 60%),
+             radial-gradient(1000px 600px at 10% 0%,rgba(0,240,255,.10),transparent 55%),
+             radial-gradient(1200px 800px at 50% 115%,rgba(255,43,214,.10),transparent 60%),
+             linear-gradient(180deg,var(--bg1),var(--bg0) 60%,var(--bg1));
+  background-color:var(--bg0);
+}
+.glass{
+  background:linear-gradient(140deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
+  border:1px solid var(--border);
+  border-radius:22px;
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  box-shadow:0 24px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12);
+}
+.wrap{max-width:960px;margin:0 auto;padding:30px 18px}
+.center{text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:3px;color:var(--cyan);padding:8px 18px;border-radius:99px;border:1px solid rgba(0,240,255,.35);box-shadow:0 0 18px rgba(0,240,255,.25)}
+h1{font-family:'Orbitron',sans-serif;font-size:44px;letter-spacing:2px;margin:18px 0 8px;background:linear-gradient(90deg,var(--cyan),var(--purp),var(--mag));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-family:'Orbitron',sans-serif;font-size:15px;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.pill-cyan{background:rgba(0,240,255,.08);border:1px solid rgba(0,240,255,.4);color:var(--cyan);padding:8px 16px;border-radius:99px;font-weight:600;letter-spacing:.5px}
+.pill-mag{background:rgba(255,43,214,.08);border:1px solid rgba(255,43,214,.4);color:var(--mag);padding:8px 16px;border-radius:99px;font-weight:600;letter-spacing:.5px}
+section{margin-top:40px}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.sec-head h2{font-family:'Orbitron',sans-serif;font-size:16px;letter-spacing:2px}
+.sec-head .rule{flex:1;height:1px;background:linear-gradient(90deg,rgba(0,240,255,.4),transparent);margin-left:8px}
+.lead{font-size:17px;line-height:1.6;font-weight:500}
+.lead b{color:var(--cyan)}
+p.body{color:var(--muted);font-size:15px;line-height:1.7;margin-top:8px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+.card{padding:22px 22px;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card .ico{font-size:34px;display:block;margin-bottom:12px;filter:drop-shadow(0 0 10px rgba(0,240,255,.4))}
+.card h3{font-family:'Orbitron',sans-serif;font-size:15px;letter-spacing:1px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14px;line-height:1.6}
+.card .stack{margin-top:12px;font-size:12.5px;color:var(--cyan);opacity:.85}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.stack-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tile{text-align:center;padding:14px 10px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--text)}
+.tile .t-ico{font-size:22px;display:block;margin-bottom:8px}
+.metrics{display:flex;flex-direction:column;gap:16px;align-items:center}
+.metrics-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;width:100%}
+.footer-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:12px;font-weight:700;font-size:14px;letter-spacing:.5px;text-decoration:none;color:#0a0a12}
+.btn.cyan{background:linear-gradient(135deg,var(--cyan),var(--mag));box-shadow:0 0 18px rgba(255,43,214,.35)}
+.btn.ghost{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--border)}
+footer{margin-top:60px;text-align:center;color:var(--muted);font-size:13px;line-height:2}
+@media(max-width:640px){h1{font-size:30px;letter-spacing:1px}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER BANNER -->
+  <section class="glass center" style="padding:44px 20px">
+    <span class="badge">STAY FOCUSED / BUILD IMPACT • VOL. 01</span>
+    <h1>NOUR SALOUS</h1>
+    <div class="subtitle">Full-Stack Engineer &amp; Honors Graduate</div>
+    <div class="pills">
+      <span class="pill-cyan">Full-Stack Web Development</span>
+      <span class="pill-mag">3D &amp; WebAR Interfaces</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="sec-head"><h2>ABOUT</h2><div class="rule"></div></div>
+    <p class="lead">Building performant web applications at the intersection of <b>modern frontend architectures</b> and <b>scalable backend systems</b>.</p>
+    <p class="body">I specialize in React, Angular, Node.js, and PHP, with a focus on 3D graphics optimization using Three.js and Blender — and relational database design. I bridge product vision and technical execution across full-stack and AR-enabled web environments.</p>
+  </section>
+
+  <!-- TECH STACK -->
+  <section>
+    <div class="sec-head"><h2>TECH STACK</h2><div class="rule"></div></div>
+    <div class="stack-grid">
+      <div class="glass card">
+        <span class="t-ico">⚛️</span><h3>FRONTEND</h3>
+        <div class="stack-tiles">
+          <div class="tile"><span class="t-ico">⚛️</span>React</div>
+          <div class="tile"><span class="t-ico">🅰️</span>Angular</div>
+          <div class="tile"><span class="t-ico">🧊</span>Three.js</div>
+          <div class="tile"><span class="t-ico">📦</span>&lt;model-viewer&gt;</div>
+          <div class="tile"><span class="t-ico">🎨</span>Tailwind</div>
+          <div class="tile"><span class="t-ico">📜</span>JavaScript</div>
+        </div>
+      </div>
+      <div class="glass card">
+        <span class="ico">🗄️</span><h3>BACKEND &amp; DB</h3>
+        <div class="stack-tiles">
+          <div class="tile"><span class="t-ico">🟩</span>Node.js</div>
+          <div class="tile"><span class="t-ico">🐘</span>PHP</div>
+          <div class="tile"><span class="t-ico">🗓️</span>SQL</div>
+        </div>
+      </div>
+      <div class="glass card">
+        <span class="ico">🧊</span><h3>3D &amp; ASSET PIPELINE</h3>
+        <div class="stack-tiles">
+          <div class="tile"><span class="t-ico">🧊</span>Blender</div>
+          <div class="tile"><span class="t-ico">📦</span>GLB / USDZ</div>
+        </div>
+      </div>
+      <div class="glass card">
+        <span class="ico">🛠️</span><h3>TOOLS &amp; WORKFLOW</h3>
+        <div class="stack-tiles">
+          <div class="tile"><span class="t-ico">🛠️</span>Git / GitHub</div>
+          <div class="tile"><span class="t-ico">🎮</span>Unity / C#</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="sec-head"><h2>FEATURED PROJECTS</h2><div class="rule"></div></div>
+    <div class="grid2">
+      <div class="glass card">
+        <span class="ico">🧠</span>
+        <h3>MENTARA</h3>
+        <p>Web-based AI learning platform featuring automated lecture-to-study pipelines — transcription, AI flashcards, and a RAG assistant.</p>
+        <div class="stack">Angular · NestJS · PostgreSQL (pgvector) · n8n</div>
+      </div>
+      <div class="glass card">
+        <span class="ico">🎁</span>
+        <h3>APEXGIFT</h3>
+        <p>Smart recommendation tool integrating external AI model API endpoints to beat gift-giving anxiety.</p>
+        <div class="stack">OpenAI API · Prompt Engineering</div>
+      </div>
+      <div class="glass card">
+        <span class="ico">🦴</span>
+        <h3>3D / WEBAR EXPLORATION</h3>
+        <p>Interactive 3D anatomy explorer and AR-web platform with multi-stage JWT security.</p>
+        <div class="stack">Three.js · React · WebXR</div>
+      </div>
+      <div class="glass card">
+        <span class="ico">🌤️</span>
+        <h3>WEATHER PREDICTION</h3>
+        <p>Predictive modeling over time-series meteorological data.</p>
+        <div class="stack">Python · scikit-learn</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section>
+    <div class="sec-head"><h2>METRICS</h2><div class="rule"></div></div>
+    <div class="glass card metrics">
+      <div class="metrics-row">
+        <img src="https://github-readme-stats.vercel.app/api?username=NourSalous&show_icons=true&theme=transparent&hide_border=true&bg_color=0A0A12&title_color=00F0FF&text_color=EAE8FF&icon_color=FF2BD6&border_color=2A2A45" height="180" alt="GitHub Stats"/>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=NourSalous&theme=dark&hide_border=true&background=0A0A12&ring=00F0FF&fire=FF2BD6&currStreakNum=EAE8FF&sideNums=9B97B8" height="180" alt="GitHub Streak"/>
+      </div>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NourSalous&layout=compact&theme=transparent&hide_border=true&bg_color=0A0A12&title_color=00F0FF&text_color=EAE8FF&border_color=2A2A45" height="150" alt="Top Languages"/>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="pills">
+      <span class="pill-cyan">Frontend Architecture</span>
+      <span class="pill-mag">Backend Systems</span>
+      <span class="pill-cyan">3D Graphics</span>
+      <span class="pill-mag">Relational DB Design</span>
+      <span class="pill-cyan">WebAR / WebXR</span>
+      <span class="pill-mag">Asset Optimization</span>
+    </div>
+    <div class="footer-links" style="margin-top:22px">
+      <a class="btn cyan" href="https://github.com/NourSalous">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/nour-salous/">LinkedIn</a>
+      <a class="btn ghost" href="https://noursalous.github.io/">Portfolio</a>
+      <a class="btn ghost" href="mailto:noorsalous2000@gmail.com">Email</a>
+    </div>
+    <p style="margin-top:30px">Built for the view ✨ · Profile by Nour Salous</p>
+  </footer>
+
+</div>
+</body>
+</html>
