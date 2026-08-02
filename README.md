@@ -23,7 +23,7 @@
 
 ## ✦ About Me
 
-Full-stack engineer & **honors graduate** (GPA 3.94/4.00) combining the strongest JS ecosystems with **applied AI/ML**. I architect products end-to-end — from **React / Angular** frontends to **Node / NestJS** backends and **vectorized** databases — and I turn ML research into shipping software.
+Full-stack engineer specializing in the intersection of **modern web architecture** and **applied AI/ML**. I build end-to-end — from **React / Angular** frontends to **Node / NestJS** backends with **vectorized** databases — and I turn ML research into shipping software.
 
 Currently building **React/Node** solutions, heading an **AI-powered study platform** (RAG + pgvector), and co-authoring **EEG-based ML research**. I care about clean architecture, measurable impact, and interfaces that feel alive.
 
@@ -37,8 +37,8 @@ Currently building **React/Node** solutions, heading an **AI-powered study platf
     <td align="center"><b>💼 Software Engineer</b><br/>Part-time at <b>MetaTıp</b><br/><i>AR-web platform</i><br/><a href="https://metatip3d.com.tr">metatip3d.com.tr</a></td>
   </tr>
   <tr>
-    <td align="center"><b>🔬 Research Assistant</b><br/><b>MIRAI Lab</b><br/><i>Medical Innovation Research in AI Lab</i><br/>Üsküdar University</td>
-    <td align="center"><b>🎓 B.Sc. Software Engineering</b><br/>Üsküdar University · Honors<br/><i>Class of Jul 2026 · GPA 3.94/4.00</i></td>
+    <td align="center"><b>🔬 Research Assistant</b><br/><b>MIRAI Lab</b><br/><i>Medical Innovation Research in AI</i></td>
+    <td align="center"><b>🎓 B.Sc. Software Engineering</b><br/><i>Class of Jul 2026</i></td>
   </tr>
 </table>
 
@@ -130,8 +130,6 @@ Currently building **React/Node** solutions, heading an **AI-powered study platf
     <img src="https://img.shields.io/badge/Email-noorsalous2000%40gmail.com-0A0A12?style=for-the-badge&logo=gmail&logoColor=00F0FF"/></a>
   <a href="https://github.com/NourSalous">
     <img src="https://img.shields.io/badge/GitHub-NourSalous-0A0A12?style=for-the-badge&logo=github&logoColor=EAEAFf"/></a>
-  <a href="https://www.linkedin.com/in/nour-salous/">
-    <img src="https://img.shields.io/badge/LinkedIn-Nour%20Salous-0A0A12?style=for-the-badge&logo=linkedin&logoColor=35FF9E"/></a>
   <a href="https://noursalous.github.io/">
     <img src="https://img.shields.io/badge/Portfolio-noursalous%2Egithub%2Eio-0A0A12?style=for-the-badge&logo=reactrouter&logoColor=7B3BFF"/></a>
 </div>
