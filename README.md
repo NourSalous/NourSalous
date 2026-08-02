@@ -4,13 +4,13 @@
       <td width="70%" align="center">
         <img src="assets/signature.svg" width="160" alt="NS Monogram" />
         <br/>
-        <h1>Nour Salous</h1>
+        <img src="https://readme-typing-svg.demolab.com?font=Dancing+Script&weight=700&size=46&pause=1000&color=00f3ff&center=true&vCenter=true&width=400&lines=Nour+Salous" alt="Nour Salous" />
         <sub><i>"Code quality is measured with WTFs per min during code review"</i></sub>
       </td>
       <td width="30%" align="center">
-        <!-- Live Last.fm Scrobbler Widget (Using RJ as placeholder user for rendering, replace with your Last.fm username) -->
-        <a href="https://last.fm">
-          <img src="https://lastfm-recently-played.vercel.app/api?user=rj&theme=dark" width="280" alt="Music to unwind" />
+        <!-- Animated Vinyl Player linking to the live playground -->
+        <a href="https://noursalous.github.io/NourSalous/playground/" title="Click to play my interactive vinyl!">
+          <img src="assets/vinyl-animated.svg" width="300" alt="Interactive Vinyl Player" />
         </a>
       </td>
     </tr>
@@ -22,7 +22,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=1000&color=00f3ff&center=true&vCenter=true&width=400&lines=About+Me" alt="About Me" />
+  <h2>About Me</h2>
 </div>
 
 <div align="center">
@@ -42,7 +42,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=1000&color=ff007f&center=true&vCenter=true&width=600&lines=Professional+Experience;High-Impact+Projects" alt="Professional Experience" />
+  <h2>Professional Experience & High-Impact Projects</h2>
 </div>
 <br/>
 
@@ -77,7 +77,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=1000&color=00f3ff&center=true&vCenter=true&width=400&lines=Tech+Stack" alt="Tech Stack" />
+  <h2>Tech Stack</h2>
 </div>
 <br/>
 
@@ -136,7 +136,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=1000&color=ff007f&center=true&vCenter=true&width=400&lines=Activity+%26+Metrics" alt="Activity & Metrics" />
+  <h2>Activity & Metrics</h2>
 </div>
 <br/>
 
@@ -163,7 +163,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Brush+Script+MT&weight=700&size=30&pause=1000&color=00f3ff&center=true&vCenter=true&width=400&lines=Let's+Connect" alt="Let's Connect" />
+  <h2>Let's Connect</h2>
   <br/><br/>
   <a href="https://github.com/NourSalous">
     <img src="https://img.shields.io/badge/GitHub-NourSalous-0d1117?style=for-the-badge&logo=github&logoColor=00f3ff&color=0d1117" alt="GitHub Badge" />
