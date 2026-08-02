@@ -175,31 +175,6 @@ section{max-width:1100px;margin:0 auto;padding:80px 20px}
 .soft-card h4{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;color:var(--rose);margin-bottom:6px;letter-spacing:.5px}
 .soft-card p{font-size:13px;color:var(--muted);line-height:1.55}
 
-/* EDUCATION */
-.edu-card{background:linear-gradient(135deg,rgba(130,87,255,.06),rgba(0,229,255,.04));
-  border:1px solid rgba(130,87,255,.15);border-radius:18px;padding:32px;max-width:600px;position:relative;overflow:hidden}
-.edu-card::after{content:'';position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;
-  background:radial-gradient(circle,rgba(130,87,255,.12),transparent 70%);pointer-events:none}
-.edu-card h3{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:800;margin-bottom:6px}
-.edu-meta{font-size:14px;color:var(--muted);margin-bottom:16px}
-.edu-gpa{display:inline-flex;align-items:center;gap:8px;font-family:'Orbitron',sans-serif;font-size:28px;font-weight:900;
-  background:linear-gradient(135deg,var(--cyan),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.edu-gpa small{font-size:13px;color:var(--muted);font-weight:400;font-family:'Inter',sans-serif;-webkit-text-fill-color:var(--muted)}
-.edu-courses{margin-top:18px}
-.edu-courses h4{font-size:13px;font-weight:700;color:var(--purp);margin-bottom:8px;letter-spacing:.5px}
-.edu-courses ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.edu-courses li{font-size:13px;color:var(--muted);padding:4px 12px;background:var(--glass);border:1px solid var(--border);border-radius:6px}
-
-/* LANGUAGES */
-.lang-row{display:flex;flex-wrap:wrap;gap:20px}
-.lang-item{text-align:center;padding:20px 28px;background:var(--glass);border:1px solid var(--border);
-  border-radius:14px;min-width:140px;transition:transform .25s,border-color .25s}
-.lang-item:hover{transform:translateY(-2px);border-color:rgba(0,229,255,.2)}
-.lang-item .lang-name{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
-.lang-item .lang-level{font-size:13px;color:var(--green);font-weight:600}
-.lang-bar{width:100%;height:4px;background:var(--bg2);border-radius:2px;margin-top:8px;overflow:hidden}
-.lang-bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--green));transition:width 1s ease;width:0}
-
 /* METRICS */
 .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;justify-items:center}
 .metrics-grid img{border-radius:12px;max-width:100%}
@@ -232,10 +207,6 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
   .tl-entry{padding-left:22px}
   .hero-contacts{gap:8px}.contact-pill{font-size:12px;padding:6px 12px}
 }
-@media(max-width:480px){
-  .lang-row{flex-direction:column;gap:12px}
-  .lang-item{min-width:auto}
-}
 </style>
 </head>
 <body>
@@ -251,7 +222,6 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
       <a class="nav-link" href="#experience">Experience</a>
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#skills">Skills</a>
-      <a class="nav-link" href="#education">Education</a>
       <a class="nav-link" href="#contact">Contact</a>
     </div>
   </div>
@@ -293,7 +263,7 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
   </div>
   <div class="reveal reveal-delay-1">
     <p class="about-text">
-      High-achieving <b>Software Engineer</b> and <b>Honors graduate</b> (GPA 3.94/4.00) specializing in
+      <b>Software Engineer</b> specializing in
       <em>Full-Stack Architecture</em>, <em>Applied AI</em>, and <em>ML Systems</em>. Currently building
       scalable <b>React/Node.js</b> solutions, with a track record of driving complex projects end-to-end
       — from architecting an AI study platform (<b>RAG, NestJS, pgvector</b>) to co-authoring
@@ -330,10 +300,9 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
       <div class="tl-dot" style="border-color:var(--purp)"></div>
       <div class="tl-role">Research Assistant</div>
       <div class="tl-company">MIRAI Lab — Medical Innovation Research in AI</div>
-      <div class="tl-location">Üsküdar University, Faculty of Engineering &amp; Natural Sciences</div>
+      <div class="tl-location">Istanbul, Turkey</div>
       <ul class="tl-bullets">
         <li>Research Assistant in a multidisciplinary lab applying <b>AI to medical and clinical problems</b>, alongside faculty, PhD/M.Sc. students, and international researchers.</li>
-        <li>Won <b>3rd Place</b> at Üsküdar University's Engineering &amp; Natural Sciences Student Congress as a researcher on the lab's Medical AI Research Project.</li>
       </ul>
       <div><span class="tl-tag">Medical AI</span><span class="tl-tag">Research</span><span class="tl-tag">ML</span></div>
     </div>
@@ -379,10 +348,9 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
           <span class="card-icon">🧠</span>
           <a href="https://mentara.online" target="_blank" rel="noopener" class="card-badge live">LIVE — mentara.online</a>
         </div>
-        <span class="card-badge">B.Sc. Graduation Thesis</span>
       </div>
       <h3>MENTARA — AI-Powered All-in-One Study Platform</h3>
-      <div class="card-role">Full-Stack Developer &amp; Co-Founder · Feb – Jun 2026 · 3-person team</div>
+      <div class="card-role">Full-Stack Developer &amp; Co-Founder</div>
       <p>Co-founded and built Mentara, a live AI-powered study platform, across UI/UX, full-stack development, and deployment. Consolidated lecture transcription, AI flashcards/quizzes, mind-mapping, spaced repetition, and a RAG-based AI assistant into a single platform. Integrated DeepSeek, OpenAI, Whisper, and Chandra via an n8n pipeline, and built an extensible plugin system with encrypted secrets and role-based access.</p>
       <div class="card-tech">
         <span>Angular</span><span>NestJS</span><span>PostgreSQL</span><span>pgvector</span><span>DeepSeek</span><span>OpenAI</span><span>Whisper</span><span>n8n</span><span>RAG</span>
@@ -584,51 +552,6 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
 
 <div class="divider"><hr></div>
 
-<!-- ====== EDUCATION ====== -->
-<section id="education">
-  <div class="reveal">
-    <div class="section-label">// EDUCATION</div>
-    <h2 class="section-title">Academic <span>Foundation</span></h2>
-  </div>
-
-  <div class="edu-card reveal">
-    <h3>Uskudar University</h3>
-    <div class="edu-meta">Bachelor of Science in Software Engineering · Istanbul, Turkey · Jul 2026</div>
-    <div class="edu-gpa">3.94 <small>/ 4.00 — Honor Student</small></div>
-    <div class="edu-courses">
-      <h4>Relevant Coursework</h4>
-      <ul>
-        <li>Software Project Management</li>
-        <li>Agile Methods</li>
-        <li>Web Programming</li>
-        <li>Data Science &amp; Analytics</li>
-        <li>Prompt Engineering</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3 class="section-title" style="font-size:clamp(18px,3vw,24px);margin-top:48px;margin-bottom:24px">Languages</h3>
-  <div class="lang-row">
-    <div class="lang-item reveal">
-      <div class="lang-name">English</div>
-      <div class="lang-level">Distinguished</div>
-      <div class="lang-bar"><div class="lang-bar-fill" data-width="98%"></div></div>
-    </div>
-    <div class="lang-item reveal">
-      <div class="lang-name">Arabic</div>
-      <div class="lang-level">Distinguished</div>
-      <div class="lang-bar"><div class="lang-bar-fill" data-width="98%"></div></div>
-    </div>
-    <div class="lang-item reveal">
-      <div class="lang-name">Turkish</div>
-      <div class="lang-level">Advanced</div>
-      <div class="lang-bar"><div class="lang-bar-fill" data-width="85%"></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><hr></div>
-
 <!-- ====== METRICS ====== -->
 <section id="metrics" style="padding-bottom:40px">
   <div class="reveal">
@@ -652,14 +575,6 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
     <a class="footer-btn ghost" href="https://github.com/NourSalous" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
       GitHub
-    </a>
-    <a class="footer-btn ghost" href="https://www.linkedin.com/in/nour-salous/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      LinkedIn
-    </a>
-    <a class="footer-btn ghost" href="https://noursalous.github.io/NourSalous/playground/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-      Playground
     </a>
   </div>
   <p class="footer-copy">Built by Nour Salous · Istanbul, 2026</p>
@@ -737,14 +652,6 @@ footer{text-align:center;padding:60px 20px;border-top:1px solid var(--border);ma
     });
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   reveals.forEach(function(el){io.observe(el)});
-
-  var langBars=document.querySelectorAll('.lang-bar-fill');
-  var lio=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.style.width=e.target.dataset.width}
-    });
-  },{threshold:.5});
-  langBars.forEach(function(el){lio.observe(el)});
 
   var sections=document.querySelectorAll('section[id]');
   var navLinks=document.querySelectorAll('.nav-link');

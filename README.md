@@ -11,11 +11,7 @@
   &nbsp;
   <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/GitHub-NourSalous-0d1117?style=flat-square&logo=github&logoColor=00f3ff&labelColor=161b22&color=161b22" /></a>
   &nbsp;
-  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/LinkedIn-Nour_Salous-0d1117?style=flat-square&logo=linkedin&logoColor=00f3ff&labelColor=161b22&color=161b22" /></a>
-  &nbsp;
   <img src="https://img.shields.io/badge/📍-Istanbul,_Turkey-0d1117?style=flat-square&logo=googlemaps&logoColor=B829F7&labelColor=161b22&color=161b22" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/GPA-3.94/4.00-0d1117?style=flat-square&logo=academiccap&logoColor=00f3ff&labelColor=161b22&color=161b22" />
 </div>
 
 <br/>
@@ -36,7 +32,7 @@
   <tr>
     <td align="center">
       <p dir="auto">
-        High-achieving <strong>Software Engineer</strong> and <strong>Honors graduate</strong> (GPA 3.94/4.00) specializing in <strong>Full-Stack Architecture</strong>, <strong>Applied AI</strong>, and <strong>ML Systems</strong>. Building scalable React/Node.js solutions with a track record of driving complex projects end-to-end — from architecting an AI study platform (<strong>RAG, NestJS, pgvector</strong>) to co-authoring <strong>EEG-based ML research</strong>. Adept at bridging product vision with technical execution across full-stack and 3D web environments.
+        Software Engineer specializing in <strong>Full-Stack Architecture</strong>, <strong>Applied AI</strong>, and <strong>ML Systems</strong>. Building scalable React/Node.js solutions with a track record of driving complex projects end-to-end — from architecting an AI study platform (<strong>RAG, NestJS, pgvector</strong>) to co-authoring <strong>EEG-based ML research</strong>. Adept at bridging product vision with technical execution across full-stack and 3D web environments.
       </p>
     </td>
   </tr>
@@ -61,7 +57,7 @@
       <img src="https://img.shields.io/badge/MIRAI_Lab-Research_Assistant-0d1117?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0I4MjlGNyIgZD0iTTEyIDJhMTAgMTAgMCAwMCAxMCAxMCAxMCAxMCAwIDAwLTEwLTEwem0wIDE4YTggOCAwIDAxLTgtOFY3LjVhNS41IDUuNSAwIDAxMTEgMFYxMmE4IDggMCAwMS04IDh6Ii8+PC9zdmc+&logoColor=B829F7&labelColor=161b22&color=161b22" alt="MIRAI Lab"/>
       <br/><br/>
       <p dir="auto">
-        <sub>AI research in multidisciplinary medical lab. <strong>Won 3rd Place</strong> at Engineering Student Congress.</sub>
+        <sub>AI research in multidisciplinary medical lab applying AI to clinical problems alongside faculty and international researchers.</sub>
       </p>
     </td>
     <td width="33%" valign="top" align="center">
@@ -86,7 +82,7 @@
       <a href="https://mentara.online">
         <img src="https://img.shields.io/badge/🧠 Mentara-LIVE-0d1117?style=for-the-badge&logo=angular&logoColor=ff007f&labelColor=161b22&color=161b22" alt="Mentara"/>
       </a>
-      <p><sub>AI study platform — transcription, flashcards, mind-maps, spaced repetition, RAG assistant. B.Sc. Thesis (3-person team).</sub></p>
+      <p><sub>AI study platform — transcription, flashcards, mind-maps, spaced repetition, RAG assistant. Full-stack co-founder.</sub></p>
       <br/>
       <img src="https://img.shields.io/badge/Angular-0d1117?style=flat-square&logo=angular&logoColor=ff007f" />
       <img src="https://img.shields.io/badge/NestJS-0d1117?style=flat-square&logo=nestjs&logoColor=ff007f" />
@@ -228,28 +224,11 @@
 <br/>
 
 <div align="center">
-  <h2>🎵 Interactive Playground</h2>
-  <p><sub>My vinyl record player &amp; arcade — zero dependencies, runs in your browser.</sub></p>
-  <br/>
-  <a href="https://noursalous.github.io/NourSalous/playground/" title="Click to play my interactive vinyl!">
-    <img src="assets/vinyl-animated.svg" width="280" alt="Interactive Vinyl Player"/>
-  </a>
-</div>
-
-<br/>
-<img src="assets/divider.svg" width="100%" alt="divider"/>
-<br/>
-
-<div align="center">
   <h2>Let's Connect</h2>
   <br/>
   <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/GitHub-NourSalous-0d1117?style=for-the-badge&logo=github&logoColor=00f3ff&color=161b22" alt="GitHub"/></a>
   &nbsp;&nbsp;
   <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Email-Get_in_touch-0d1117?style=for-the-badge&logo=minutemailer&logoColor=ff007f&color=161b22" alt="Email"/></a>
-  &nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0d1117?style=for-the-badge&logo=linkedin&logoColor=00f3ff&color=161b22" alt="LinkedIn"/></a>
-  &nbsp;&nbsp;
-  <a href="https://noursalous.github.io/NourSalous/playground/"><img src="https://img.shields.io/badge/Playground-Vinyl_%26_Arcade-0d1117?style=for-the-badge&logo=googlegemini&logoColor=B829F7&color=161b22" alt="Playground"/></a>
   <br/><br/>
   <img src="assets/signature.svg" width="80" alt="NS Signature"/>
 </div>
