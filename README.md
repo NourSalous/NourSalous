@@ -1,143 +1,95 @@
 <div align="center">
 
-<!-- ============================================================
-     NOUR SALOUS — PROFILE README
-     Optimized for dark-mode viewing (neon accents on #0a0a12).
-     ============================================================ -->
-
-<!-- Header banner -->
-<img src="assets/header-banner.svg" alt="Nour Salous — Full-Stack & Applied AI Engineer"/>
-
+<img src="assets/banner.svg" width="100%"/>
 <br/>
-
-<!-- Animated typing subtitle -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=26&pause=1000&color=35FF9E&center=true&vCenter=true&width=820&lines=Full-Stack+Engineer;AI%2FML+Systems;RAG+%26+Applied+AI;AR%2F3D+Web" alt="Animated role — Full-Stack Engineer / AI-ML Systems / RAG & Applied AI / AR-3D Web"/>
-</a>
-<br/>
+<img src="https://readme-typing-svg.demolab.com?font=system-ui&weight=600&size=18&pause=1000&color=00fff9&center=true&vCenter=true&width=820&lines=Full-Stack+Engineer;AI%2FML+Systems;RAG+%26+Applied+AI;AR%2F3D+Web"/>
 
 </div>
 
-<!-- Divider -->
-<img src="assets/neon-divider.svg" alt="divider" width="100%" height="40"/>
+<img src="assets/divider.svg" width="100%"/>
 
-## ✦ About Me
+### About Me
 
-Full-stack engineer specializing in the intersection of **modern web architecture** and **applied AI/ML**. I build end-to-end — from **React / Angular** frontends to **Node / NestJS** backends with **vectorized** databases — and I turn ML research into shipping software.
+Full-stack engineer building at the intersection of **modern web architecture** and **applied AI/ML**. I ship end-to-end — from React and Angular frontends through Node and NestJS backends to vectorized databases — and I turn ML research into production software. Currently co-founding an AI study platform, building AR-web experiences, and publishing EEG-based ML research.
 
-Currently building **React/Node** solutions, heading an **AI-powered study platform** (RAG + pgvector), and co-authoring **EEG-based ML research**. I care about clean architecture, measurable impact, and interfaces that feel alive.
+<img src="assets/divider.svg" width="100%"/>
 
----
+<div align="center"><h3>Currently</h3></div>
 
-## ✦ Currently
+<img src="assets/currently.svg" width="100%"/>
 
-<table>
-  <tr>
-    <td align="center"><b>🔭 Building</b><br/><a href="https://mentara.online"><b>Mentara</b></a><br/><i>AI-powered all-in-one study platform</i><br/>Angular · NestJS · PostgreSQL + pgvector · RAG assistant</td>
-    <td align="center"><b>💼 Software Engineer</b><br/>Part-time at <b>MetaTıp</b><br/><i>AR-web platform</i><br/><a href="https://metatip3d.com.tr">metatip3d.com.tr</a></td>
-  </tr>
-  <tr>
-    <td align="center"><b>🔬 Research Assistant</b><br/><b>MIRAI Lab</b><br/><i>Medical Innovation Research in AI</i></td>
-    <td align="center"><b>🎓 B.Sc. Software Engineering</b><br/><i>Class of Jul 2026</i></td>
-  </tr>
-</table>
+<img src="assets/divider.svg" width="100%"/>
 
-<img src="assets/neon-divider.svg" alt="Neon" width="100%" height="30" style="opacity:0.45"/>
+<div align="center"><h3>Featured Projects</h3></div>
 
----
+<img src="assets/projects.svg" width="100%"/>
 
-## ✦ Featured Projects
+<img src="assets/divider.svg" width="100%"/>
 
-| 🧠 **Mentara** · <a href="https://mentara.online">mentara.online</a> | 🔬 **EEG-Based ADHD Detection in Children** |
-|---|---|
-| RAG-based AI study platform that turns lectures into flashcards, quizzes & an answerable AI assistant. | ML research detecting ADHD via EEG — SVM, GMM, Random Forest, XGBoost + SHAP. **84.4% sensitivity**. |
-| `Angular` · `NestJS` · `PostgreSQL (pgvector)` · `RAG` | `Python` · `scikit-learn` · `ML` · `SHAP` |
-
-| 🦴 **MetaTıp AR-Web Platform** · <a href="https://metatip3d.com.tr">live</a> | 🎮 **3D University Campus Game** |
-|---|---|
-| 3D anatomy explorer with AR / WebXR interfaces for medical learning. | "Uskudar Extreme" campus exploration game. |
-| `Three.js` · `React` · `WebXR` · `AR` | `Unity` · `C#` · `3D` |
-
-| 🎁 **ApexGift** | |
-|---|---|
-| AI-driven gift recommendation engine powered by OpenAI APIs. |
-| `OpenAI API` · `Prompt Engineering` |
-
----
-
-## ✦ Tech Stack
+### Tech Stack
 
 **Languages**
-![C++](https://img.shields.io/badge/C%2B%2B-0A0A12?style=for-the-badge&logo=cplusplus&logoColor=00F0FF)
-![C#](https://img.shields.io/badge/C%23-0A0A12?style=for-the-badge&logo=csharp&logoColor=35FF9E)
-![Java](https://img.shields.io/badge/Java-0A0A12?style=for-the-badge&logo=openjdk&logoColor=7B3BFF)
-![JavaScript](https://img.shields.io/badge/JavaScript-0A0A12?style=for-the-badge&logo=javascript&logoColor=00F0FF)
-![TypeScript](https://img.shields.io/badge/TypeScript-0A0A12?style=for-the-badge&logo=typescript&logoColor=35FF9E)
-![PHP](https://img.shields.io/badge/PHP-0A0A12?style=for-the-badge&logo=php&logoColor=7B3BFF)
-![SQL](https://img.shields.io/badge/SQL-0A0A12?style=for-the-badge&logo=postgresql&logoColor=00F0FF)
+![C++](https://img.shields.io/badge/C%2B%2B-08080f?style=for-the-badge&logo=cplusplus&logoColor=00fff9)
+![C#](https://img.shields.io/badge/C%23-08080f?style=for-the-badge&logo=csharp&logoColor=b829f7)
+![Java](https://img.shields.io/badge/Java-08080f?style=for-the-badge&logo=openjdk&logoColor=ff00e5)
+![JavaScript](https://img.shields.io/badge/JavaScript-08080f?style=for-the-badge&logo=javascript&logoColor=00fff9)
+![TypeScript](https://img.shields.io/badge/TypeScript-08080f?style=for-the-badge&logo=typescript&logoColor=b829f7)
+![PHP](https://img.shields.io/badge/PHP-08080f?style=for-the-badge&logo=php&logoColor=ff00e5)
+![SQL](https://img.shields.io/badge/SQL-08080f?style=for-the-badge&logo=postgresql&logoColor=00fff9)
 
 **Frontend**
-![React](https://img.shields.io/badge/React-0A0A12?style=for-the-badge&logo=react&logoColor=00F0FF)
-![Angular](https://img.shields.io/badge/Angular-0A0A12?style=for-the-badge&logo=angular&logoColor=FF2D78)
-![Tailwind](https://img.shields.io/badge/Tailwind-0A0A12?style=for-the-badge&logo=tailwindcss&logoColor=35FF9E)
-![HTML5](https://img.shields.io/badge/HTML5-0A0A12?style=for-the-badge&logo=html5&logoColor=00F0FF)
-![CSS3](https://img.shields.io/badge/CSS3-0A0A12?style=for-the-badge&logo=css3&logoColor=7B3BFF)
+![React](https://img.shields.io/badge/React-08080f?style=for-the-badge&logo=react&logoColor=00fff9)
+![Angular](https://img.shields.io/badge/Angular-08080f?style=for-the-badge&logo=angular&logoColor=ff00e5)
+![Tailwind](https://img.shields.io/badge/Tailwind-08080f?style=for-the-badge&logo=tailwindcss&logoColor=b829f7)
+![HTML5](https://img.shields.io/badge/HTML5-08080f?style=for-the-badge&logo=html5&logoColor=00fff9)
+![CSS3](https://img.shields.io/badge/CSS3-08080f?style=for-the-badge&logo=css3&logoColor=b829f7)
 
 **Backend**
-![Node.js](https://img.shields.io/badge/Node.js-0A0A12?style=for-the-badge&logo=nodedotjs&logoColor=35FF9E)
-![Express](https://img.shields.io/badge/Express-0A0A12?style=for-the-badge&logo=express&logoColor=00F0FF)
-![NestJS](https://img.shields.io/badge/NestJS-0A0A12?style=for-the-badge&logo=nestjs&logoColor=FF2D78)
+![Node.js](https://img.shields.io/badge/Node.js-08080f?style=for-the-badge&logo=nodedotjs&logoColor=b829f7)
+![Express](https://img.shields.io/badge/Express-08080f?style=for-the-badge&logo=express&logoColor=00fff9)
+![NestJS](https://img.shields.io/badge/NestJS-08080f?style=for-the-badge&logo=nestjs&logoColor=ff00e5)
 
 **Database**
-![MongoDB](https://img.shields.io/badge/MongoDB-0A0A12?style=for-the-badge&logo=mongodb&logoColor=35FF9E)
-![MySQL](https://img.shields.io/badge/MySQL-0A0A12?style=for-the-badge&logo=mysql&logoColor=00F0FF)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-0A0A12?style=for-the-badge&logo=postgresql&logoColor=7B3BFF)
-![pgvector](https://img.shields.io/badge/pgvector-0A0A12?style=for-the-badge&logo=postgresql&logoColor=35FF9E)
+![MongoDB](https://img.shields.io/badge/MongoDB-08080f?style=for-the-badge&logo=mongodb&logoColor=b829f7)
+![MySQL](https://img.shields.io/badge/MySQL-08080f?style=for-the-badge&logo=mysql&logoColor=00fff9)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-08080f?style=for-the-badge&logo=postgresql&logoColor=b829f7)
+![pgvector](https://img.shields.io/badge/pgvector-08080f?style=for-the-badge&logo=postgresql&logoColor=ff00e5)
 
 **AI / ML**
-![OpenAI](https://img.shields.io/badge/OpenAI-0A0A12?style=for-the-badge&logo=openai&logoColor=00F0FF)
-![DeepSeek](https://img.shields.io/badge/DeepSeek-0A0A12?style=for-the-badge&logo=deepseek&logoColor=35FF9E)
-![RAG](https://img.shields.io/badge/RAG-0A0A12?style=for-the-badge&logo=openaigym&logoColor=FF2D78)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-0A0A12?style=for-the-badge&logo=scikit-learn&logoColor=7B3BFF)
+![OpenAI](https://img.shields.io/badge/OpenAI-08080f?style=for-the-badge&logo=openai&logoColor=00fff9)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-08080f?style=for-the-badge&logo=deepseek&logoColor=b829f7)
+![RAG](https://img.shields.io/badge/RAG-08080f?style=for-the-badge&logo=openaigym&logoColor=ff00e5)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-08080f?style=for-the-badge&logo=scikit-learn&logoColor=b829f7)
 
 **Tools**
-![Docker](https://img.shields.io/badge/Docker-0A0A12?style=for-the-badge&logo=docker&logoColor=00F0FF)
-![Git](https://img.shields.io/badge/Git-0A0A12?style=for-the-badge&logo=git&logoColor=FF2D78)
-![n8n](https://img.shields.io/badge/n8n-0A0A12?style=for-the-badge&logo=n8n&logoColor=35FF9E)
-![Figma](https://img.shields.io/badge/Figma-0A0A12?style=for-the-badge&logo=figma&logoColor=7B3BFF)
-![Blender](https://img.shields.io/badge/Blender-0A0A12?style=for-the-badge&logo=blender&logoColor=00F0FF)
-![Unity3D](https://img.shields.io/badge/Unity3D-0A0A12?style=for-the-badge&logo=unity&logoColor=EAE8FF)
+![Docker](https://img.shields.io/badge/Docker-08080f?style=for-the-badge&logo=docker&logoColor=00fff9)
+![Git](https://img.shields.io/badge/Git-08080f?style=for-the-badge&logo=git&logoColor=ff00e5)
+![n8n](https://img.shields.io/badge/n8n-08080f?style=for-the-badge&logo=n8n&logoColor=b829f7)
+![Figma](https://img.shields.io/badge/Figma-08080f?style=for-the-badge&logo=figma&logoColor=ff00e5)
+![Blender](https://img.shields.io/badge/Blender-08080f?style=for-the-badge&logo=blender&logoColor=00fff9)
+![Unity3D](https://img.shields.io/badge/Unity3D-08080f?style=for-the-badge&logo=unity&logoColor=b829f7)
 
----
-
-## ✦ GitHub Stats
+<img src="assets/divider.svg" width="100%"/>
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=NourSalous&show_icons=true&theme=transparent&hide_border=true&bg_color=0A0A12&title_color=00F0FF&text_color=EAE8FF&icon_color=35FF9E&border_color=2A2A45" alt="GitHub Stats"/>
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=NourSalous&theme=dark&hide_border=true&background=0A0A12&ring=00F0FF&fire=7B3BFF&currStreakNum=EAE8FF&sideNums=9B97B8&currStreakLabel=35FF9E&sideLabels=9B97B8" alt="GitHub Streak"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=NourSalous&show_icons=true&theme=transparent&hide_border=true&bg_color=08080f&title_color=00fff9&text_color=e8e8f0&icon_color=b829f7&border_color=1a1a2e&ring_color=ff00e5" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=NourSalous&theme=dark&hide_border=true&background=08080f&ring=00fff9&fire=ff00e5&currStreakNum=e8e8f0&sideNums=5a5a7a&currStreakLabel=b829f7&sideLabels=5a5a7a" alt="GitHub Streak"/>
 </div>
 
 <div align="center">
-  <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=NourSalous&layout=compact&theme=transparent&hide_border=true&bg_color=0A0A12&title_color=00F0FF&text_color=EAE8FF&border_color=2A2A45" alt="Top Languages"/>
+  <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=NourSalous&layout=compact&theme=transparent&hide_border=true&bg_color=08080f&title_color=00fff9&text_color=e8e8f0&border_color=1a1a2e" alt="Top Languages"/>
 </div>
 
----
-
-## ✦ Connect
+<img src="assets/divider.svg" width="100%"/>
 
 <div align="center">
-  <a href="mailto:noorsalous2000@gmail.com">
-    <img src="https://img.shields.io/badge/Email-noorsalous2000%40gmail.com-0A0A12?style=for-the-badge&logo=gmail&logoColor=00F0FF"/></a>
-  <a href="https://github.com/NourSalous">
-    <img src="https://img.shields.io/badge/GitHub-NourSalous-0A0A12?style=for-the-badge&logo=github&logoColor=EAEAFf"/></a>
-  <a href="https://noursalous.github.io/">
-    <img src="https://img.shields.io/badge/Portfolio-noursalous%2Egithub%2Eio-0A0A12?style=for-the-badge&logo=reactrouter&logoColor=7B3BFF"/></a>
+  <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Email-noorsalous2000%40gmail.com-08080f?style=for-the-badge&logo=gmail&logoColor=00fff9"/></a>&#160;&#160;
+  <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/GitHub-NourSalous-08080f?style=for-the-badge&logo=github&logoColor=e8e8f0"/></a>&#160;&#160;
+  <a href="https://noursalous.github.io/"><img src="https://img.shields.io/badge/Portfolio-noursalous%2Egithub%2Eio-08080f?style=for-the-badge&logo=reactrouter&logoColor=b829f7"/></a>
 </div>
 
-<img alt="footer wave" src="assets/footer-wave.svg" width="100%" height="35"/>
+<br/>
 
 <div align="center">
-  <sub><i>Building at the intersection of full-stack web & applied AI · Optimized for dark mode ✦</i></sub>
-</div>
-
+  <sub><i>Designed for dark mode &#183; Built with SVG animation &#183; Nour Salous</i></sub>
 </div>

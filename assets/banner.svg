@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08080f"/>
+      <stop offset="100%" stop-color="#0c0c1a"/>
+    </linearGradient>
+    <linearGradient id="nf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00fff9">
+        <animate attributeName="stop-color" values="#00fff9;#b829f7;#ff00e5;#00fff9" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#b829f7">
+        <animate attributeName="stop-color" values="#b829f7;#ff00e5;#00fff9;#b829f7" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="bf" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.015"/>
+    </linearGradient>
+    <linearGradient id="ts" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="12%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00fff9" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#b829f7" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ff00e5" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="bg2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="tg" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="pg" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <path id="bp" d="M64,25 Q40,25 40,49 L40,251 Q40,275 64,275 L936,275 Q960,275 960,251 L960,49 Q960,25 936,25 Z"/>
+    <clipPath id="gc">
+      <rect x="40" y="25" width="920" height="250" rx="24"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1000" height="300" fill="url(#bg)"/>
+
+  <circle cx="200" cy="130" r="200" fill="#00fff9" opacity="0.025" filter="url(#bg2)"/>
+  <circle cx="800" cy="200" r="180" fill="#b829f7" opacity="0.025" filter="url(#bg2)"/>
+  <circle cx="500" cy="50" r="120" fill="#ff00e5" opacity="0.018" filter="url(#bg2)"/>
+
+  <g opacity="0.55">
+    <circle cx="110" cy="70" r="1.5" fill="#00fff9" filter="url(#pg)">
+      <animate attributeName="cy" values="70;240;70" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;0.15;0.9" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="250" r="1.2" fill="#b829f7" filter="url(#pg)">
+      <animate attributeName="cy" values="250;55;250" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="260;300;260" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="740" cy="90" r="1.5" fill="#ff00e5" filter="url(#pg)">
+      <animate attributeName="cy" values="90;260;90" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="890" cy="230" r="1" fill="#00fff9" filter="url(#pg)">
+      <animate attributeName="cy" values="230;45;230" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="890;860;890" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="440" cy="45" r="1.3" fill="#b829f7" filter="url(#pg)">
+      <animate attributeName="cy" values="45;270;45" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="275" r="1" fill="#00fff9" filter="url(#pg)">
+      <animate attributeName="cy" values="275;35;275" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="600;565;600" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="190" cy="190" r="0.9" fill="#ff00e5" filter="url(#pg)">
+      <animate attributeName="cy" values="190;55;190" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="190;230;190" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="810" cy="55" r="1.2" fill="#b829f7" filter="url(#pg)">
+      <animate attributeName="cy" values="55;245;55" dur="17s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="40" y="25" width="920" height="250" rx="24" fill="#10102a" opacity="0.5" filter="url(#bg2)"/>
+  <rect x="40" y="25" width="920" height="250" rx="24" fill="url(#bf)"/>
+  <rect x="40" y="25" width="920" height="250" rx="24" fill="url(#ts)" clip-path="url(#gc)"/>
+  <use href="#bp" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
+
+  <circle r="22" filter="url(#tg)">
+    <animate attributeName="fill" values="#00fff9;#b829f7;#ff00e5;#00fff9" dur="6s" repeatCount="indefinite"/>
+    <animateMotion dur="4.5s" repeatCount="indefinite">
+      <mpath href="#bp"/>
+    </animateMotion>
+  </circle>
+  <circle r="3.5" fill="#ffffff" opacity="0.95">
+    <animateMotion dur="4.5s" repeatCount="indefinite">
+      <mpath href="#bp"/>
+    </animateMotion>
+  </circle>
+
+  <text x="500" y="158" text-anchor="middle"
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+        font-weight="800" font-size="66" letter-spacing="10" fill="url(#nf)">NOUR SALOUS</text>
+
+  <line x1="340" y1="185" x2="660" y2="185" stroke="url(#nf)" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+
+  <text x="500" y="218" text-anchor="middle"
+        font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif"
+        font-weight="500" font-size="14" letter-spacing="6" fill="#e8e8f0" opacity="0.45">FULL-STACK&#160;&#183;&#160;APPLIED AI&#160;&#183;&#160;AR&#160;/&#160;3D WEB</text>
+</svg>

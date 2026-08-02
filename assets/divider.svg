@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 40" width="100%">
+  <defs>
+    <path id="dp" d="M30,20 L970,20"/>
+    <filter id="dg" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <line x1="30" y1="20" x2="970" y2="20" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+
+  <circle r="16" filter="url(#dg)">
+    <animate attributeName="fill" values="#00fff9;#b829f7;#ff00e5;#00fff9" dur="6s" repeatCount="indefinite"/>
+    <animateMotion dur="3.5s" repeatCount="indefinite">
+      <mpath href="#dp"/>
+    </animateMotion>
+  </circle>
+  <circle r="2.5" fill="#ffffff" opacity="0.95">
+    <animateMotion dur="3.5s" repeatCount="indefinite">
+      <mpath href="#dp"/>
+    </animateMotion>
+  </circle>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 380" width="100%">
+  <defs>
+    <linearGradient id="gf" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.055"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.015"/>
+    </linearGradient>
+    <linearGradient id="ts" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="14%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00fff9" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#b829f7" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ff00e5" stop-opacity="0.12"/>
+    </linearGradient>
+    <filter id="bk" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="tg" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+
+    <path id="b1" d="M33,10 Q15,10 15,28 L15,167 Q15,185 33,185 L457,185 Q475,185 475,167 L475,28 Q475,10 457,10 Z"/>
+    <path id="b2" d="M533,10 Q515,10 515,28 L515,167 Q515,185 533,185 L957,185 Q975,185 975,167 L975,28 Q975,10 957,10 Z"/>
+    <path id="b3" d="M33,195 Q15,195 15,213 L15,352 Q15,370 33,370 L457,370 Q475,370 475,352 L475,213 Q475,195 457,195 Z"/>
+    <path id="b4" d="M533,195 Q515,195 515,213 L515,352 Q515,370 533,370 L957,370 Q975,370 975,352 L975,213 Q975,195 957,195 Z"/>
+
+    <clipPath id="c1"><rect x="15" y="10" width="460" height="175" rx="18"/></clipPath>
+    <clipPath id="c2"><rect x="515" y="10" width="460" height="175" rx="18"/></clipPath>
+    <clipPath id="c3"><rect x="15" y="195" width="460" height="175" rx="18"/></clipPath>
+    <clipPath id="c4"><rect x="515" y="195" width="460" height="175" rx="18"/></clipPath>
+  </defs>
+
+  <!-- ==================== CARD 1 — ROLE ==================== -->
+  <rect x="15" y="10" width="460" height="175" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
+  <rect x="15" y="10" width="460" height="175" rx="18" fill="url(#gf)"/>
+  <rect x="15" y="10" width="460" height="175" rx="18" fill="url(#ts)" clip-path="url(#c1)"/>
+  <use href="#b1" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
+  <circle r="18" filter="url(#tg)">
+    <animate attributeName="fill" values="#00fff9;#b829f7;#ff00e5;#00fff9" dur="5s" repeatCount="indefinite"/>
+    <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#b1"/></animateMotion>
+  </circle>
+  <circle r="3" fill="#ffffff" opacity="0.9">
+    <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#b1"/></animateMotion>
+  </circle>
+
+  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+    <text x="37" y="40" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">CURRENT ROLE</text>
+    <text x="37" y="90" fill="#ffffff" font-size="26" font-weight="700">Software Engineer</text>
+    <text x="37" y="118" fill="#ffffff" opacity="0.4" font-size="13" font-weight="400">Part-Time &#183; MetaT&#305;p &#183; AR-Web Platform</text>
+  </g>
+  <circle cx="450" cy="40" r="24" fill="#00fff9" fill-opacity="0.07" stroke="#00fff9" stroke-opacity="0.25" stroke-width="1"/>
+  <g transform="translate(450,40)" stroke="#00fff9" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <rect x="-8" y="-4" width="16" height="11" rx="2"/>
+    <path d="M-4,-4 L-4,-6.5 Q-4,-7.5 -3,-7.5 L3,-7.5 Q4,-7.5 4,-6.5 L4,-4"/>
+  </g>
+
+  <!-- ==================== CARD 2 — BUILDING ==================== -->
+  <rect x="515" y="10" width="460" height="175" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
+  <rect x="515" y="10" width="460" height="175" rx="18" fill="url(#gf)"/>
+  <rect x="515" y="10" width="460" height="175" rx="18" fill="url(#ts)" clip-path="url(#c2)"/>
+  <use href="#b2" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
+  <circle r="18" filter="url(#tg)">
+    <animate attributeName="fill" values="#b829f7;#ff00e5;#00fff9;#b829f7" dur="5.5s" repeatCount="indefinite"/>
+    <animateMotion dur="4.3s" repeatCount="indefinite" begin="0.4s"><mpath href="#b2"/></animateMotion>
+  </circle>
+  <circle r="3" fill="#ffffff" opacity="0.9">
+    <animateMotion dur="4.3s" repeatCount="indefinite" begin="0.4s"><mpath href="#b2"/></animateMotion>
+  </circle>
+
+  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+    <text x="537" y="40" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">CURRENTLY BUILDING</text>
+    <text x="537" y="90" fill="#ffffff" font-size="26" font-weight="700">Mentara</text>
+    <text x="537" y="118" fill="#ffffff" opacity="0.4" font-size="13" font-weight="400">AI Study Platform &#183; mentara.online</text>
+  </g>
+  <circle cx="950" cy="40" r="24" fill="#b829f7" fill-opacity="0.07" stroke="#b829f7" stroke-opacity="0.25" stroke-width="1"/>
+  <g transform="translate(950,40)" stroke="#b829f7" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <path d="M0,-9 Q-5,-4 -5,3 L-3,8 L3,8 L5,3 Q5,-4 0,-9 Z"/>
+    <circle cx="0" cy="-2" r="2"/>
+    <path d="M-3,8 L-5,10"/><path d="M3,8 L5,10"/>
+    <path d="M0,8 L0,11"/>
+  </g>
+
+  <!-- ==================== CARD 3 — RESEARCH ==================== -->
+  <rect x="15" y="195" width="460" height="175" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
+  <rect x="15" y="195" width="460" height="175" rx="18" fill="url(#gf)"/>
+  <rect x="15" y="195" width="460" height="175" rx="18" fill="url(#ts)" clip-path="url(#c3)"/>
+  <use href="#b3" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
+  <circle r="18" filter="url(#tg)">
+    <animate attributeName="fill" values="#ff00e5;#00fff9;#b829f7;#ff00e5" dur="5.2s" repeatCount="indefinite"/>
+    <animateMotion dur="4.1s" repeatCount="indefinite" begin="0.8s"><mpath href="#b3"/></animateMotion>
+  </circle>
+  <circle r="3" fill="#ffffff" opacity="0.9">
+    <animateMotion dur="4.1s" repeatCount="indefinite" begin="0.8s"><mpath href="#b3"/></animateMotion>
+  </circle>
+
+  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+    <text x="37" y="225" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">RESEARCH</text>
+    <text x="37" y="275" fill="#ffffff" font-size="26" font-weight="700">MIRAI Lab</text>
+    <text x="37" y="303" fill="#ffffff" opacity="0.4" font-size="13" font-weight="400">Medical Innovation Research in AI</text>
+  </g>
+  <circle cx="450" cy="225" r="24" fill="#ff00e5" fill-opacity="0.07" stroke="#ff00e5" stroke-opacity="0.25" stroke-width="1"/>
+  <g transform="translate(450,225)" stroke="#ff00e5" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <path d="M-2,-9 L-2,-3 L-7,7 L7,7 L2,-3 L2,-9"/>
+    <line x1="-4" y1="-9" x2="4" y2="-9"/>
+    <circle cx="0" cy="3" r="1.5" fill="#ff00e5" opacity="0.4"/>
+  </g>
+
+  <!-- ==================== CARD 4 — DEGREE ==================== -->
+  <rect x="515" y="195" width="460" height="175" rx="18" fill="#0e0e20" opacity="0.5" filter="url(#bk)"/>
+  <rect x="515" y="195" width="460" height="175" rx="18" fill="url(#gf)"/>
+  <rect x="515" y="195" width="460" height="175" rx="18" fill="url(#ts)" clip-path="url(#c4)"/>
+  <use href="#b4" fill="none" stroke="url(#bs)" stroke-width="1.2"/>
+  <circle r="18" filter="url(#tg)">
+    <animate attributeName="fill" values="#00fff9;#ff00e5;#b829f7;#00fff9" dur="4.8s" repeatCount="indefinite"/>
+    <animateMotion dur="3.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#b4"/></animateMotion>
+  </circle>
+  <circle r="3" fill="#ffffff" opacity="0.9">
+    <animateMotion dur="3.8s" repeatCount="indefinite" begin="1.2s"><mpath href="#b4"/></animateMotion>
+  </circle>
+
+  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+    <text x="537" y="225" fill="#ffffff" opacity="0.35" font-size="11" font-weight="600" letter-spacing="2">EDUCATION</text>
+    <text x="537" y="275" fill="#ffffff" font-size="26" font-weight="700">B.Sc. Software Engineering</text>
+    <text x="537" y="303" fill="#ffffff" opacity="0.4" font-size="13" font-weight="400">Honors &#183; Graduating Jul 2026</text>
+  </g>
+  <circle cx="950" cy="225" r="24" fill="#00fff9" fill-opacity="0.07" stroke="#00fff9" stroke-opacity="0.25" stroke-width="1"/>
+  <g transform="translate(950,225)" stroke="#00fff9" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-8,0 L0,-7 L8,0 Z"/>
+    <line x1="0" y1="0" x2="0" y2="6"/>
+    <path d="M-4,3 L0,6 L4,3"/>
+    <line x1="-6" y1="1" x2="0" y2="3" opacity="0.4"/>
+  </g>
+</svg>
