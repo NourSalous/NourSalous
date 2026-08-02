@@ -10,10 +10,11 @@
 
 <br/>
 
-### 🎵 YouTube Music
-<!-- This widget will be generated automatically by GitHub Actions -->
+### 🎵 Now Playing
 <div align="center">
-  <img src="https://raw.githubusercontent.com/NourSalous/NourSalous/output/default.svg" alt="YouTube Music Widget" />
+  <a href="https://www.last.fm/user/DraculaNAS">
+    <img src="https://lastfm-recently-played.vercel.app/api?user=DraculaNAS&theme=tokyonight" alt="Engineer Nour Salous's Music" />
+  </a>
 </div>
 
 ---
@@ -39,6 +40,19 @@ I'm a Software Engineer bridging product vision with technical execution. I spec
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NourSalous/NourSalous/output/github-contribution-grid-snake.svg">
     <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/NourSalous/NourSalous/output/github-contribution-grid-snake.svg">
   </picture>
+</div>
+
+---
+
+### 📊 Dynamic GitHub Stats
+
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=NourSalous&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF" />
+  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=NourSalous&theme=tokyonight&hide_border=true&background=0D1117" />
+</div>
+<br/>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NourSalous&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF" />
 </div>
 
 ---
