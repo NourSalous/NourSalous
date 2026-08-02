@@ -7,15 +7,13 @@
       </td>
       <!-- Center: Name & Quote -->
       <td width="50%" align="center">
-        <img src="https://readme-typing-svg.demolab.com?font=Dancing+Script&weight=700&size=46&pause=1000&color=00f3ff&center=true&vCenter=true&width=400&lines=Nour+Salous" alt="Nour Salous" />
+        <img src="https://readme-typing-svg.demolab.com?font=Dancing+Script&weight=700&size=46&pause=1000&color=CCFF00&center=true&vCenter=true&width=400&lines=Nour+Salous" alt="Nour Salous" />
         <br/>
         <sub><i>"Code quality is measured with WTFs per min during code review"</i></sub>
       </td>
-      <!-- Right: Vinyl -->
+      <!-- Right: Hologram -->
       <td width="30%" align="center">
-        <a href="https://noursalous.github.io/NourSalous/playground/" title="Click to play my interactive vinyl!">
-          <img src="assets/vinyl-animated.svg" width="220" alt="Interactive Vinyl Player" />
-        </a>
+        <img src="assets/hologram-cube.svg" width="220" alt="3D Hologram Cube" />
       </td>
     </tr>
   </table>
@@ -81,7 +79,7 @@ experiences for the modern web.
 <div align="center">
   <h2>Activity & Metrics</h2>
   <br/>
-  <img src="https://github-readme-stats.vercel.app/api?username=NourSalous&show_icons=true&theme=transparent&hide_border=true&bg_color=0d1117&title_color=ffffff&text_color=8b949e&icon_color=00f3ff&ring_color=ff007f" width="450" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=NourSalous&show_icons=true&theme=transparent&hide_border=true&bg_color=0d1117&title_color=ffffff&text_color=8b949e&icon_color=CCFF00&ring_color=7000FF" width="450" alt="GitHub Stats" />
 </div>
 
 <br/>
