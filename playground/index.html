@@ -355,26 +355,16 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:40px;line-
   }
   function ensureAudio() {
     if (AC) return;
-    if (window.location.protocol === 'file:') {
-      console.warn('Local playback detected. Skipping Web Audio API to prevent CORS muting.');
-      drawLoop();
-      return;
-    }
-    try {
-      AC = new (window.AudioContext || window.webkitAudioContext)();
-      gain = AC.createGain();
-      gain.gain.value = parseFloat(volume.value);
-      analyser = AC.createAnalyser();
-      analyser.fftSize = 128;
-      dataArr = new Uint8Array(analyser.frequencyBinCount);
-      var source = AC.createMediaElementSource(audio);
-      source.connect(gain);
-      gain.connect(analyser);
-      analyser.connect(AC.destination);
-    } catch (e) {
-      console.warn('Audio API failed, using native playback.');
-      analyser = null;
-    }
+    AC = new (window.AudioContext || window.webkitAudioContext)();
+    gain = AC.createGain();
+    gain.gain.value = parseFloat(volume.value);
+    analyser = AC.createAnalyser();
+    analyser.fftSize = 128;
+    dataArr = new Uint8Array(analyser.frequencyBinCount);
+    var source = AC.createMediaElementSource(audio);
+    source.connect(gain);
+    gain.connect(analyser);
+    analyser.connect(AC.destination);
     drawLoop();
   }
 
