@@ -7,31 +7,47 @@
     <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=16&pause=2000&color=00F0FF&center=true&vCenter=true&width=700&lines=Full-Stack+Architect+%7C+React+%C2%B7+Node.js+%C2%B7+NestJS;Applied+AI+%26+ML+Engineer+%7C+RAG+%C2%B7+pgvector+%C2%B7+LLMs;Medical+AI+Researcher+%7C+EEG+%C2%B7+XGBoost+%C2%B7+SHAP;3D+Web+%26+Spatial+Computing+%7C+Three.js+%C2%B7+WebXR+%C2%B7+Unity;High+Honors+Graduate+%7C+GPA+3.94%2F4.00+%7C+Rank+%232" alt="Typing roles" />
   </a>
   <br/><br/>
-  <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Email-noorsalous2000-070a13?style=flat-square&logo=gmail&logoColor=ff2bd6&labelColor=0c1222&color=1e293b" /></a>
+  <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Transmission-noorsalous2000-070a13?style=flat-square&logo=gmail&logoColor=ff2bd6&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
-  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/LinkedIn-Nour_Salous-070a13?style=flat-square&logo=linkedin&logoColor=00f0ff&labelColor=0c1222&color=1e293b" /></a>
+  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/Sub--Space-LinkedIn-070a13?style=flat-square&logo=linkedin&logoColor=00f0ff&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
-  <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/GitHub-NourSalous-070a13?style=flat-square&logo=github&logoColor=a855f7&labelColor=0c1222&color=1e293b" /></a>
+  <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/Coordinates-GitHub-070a13?style=flat-square&logo=github&logoColor=a855f7&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
-  <img src="https://img.shields.io/badge/📍-Istanbul,_Turkey-070a13?style=flat-square&logo=googlemaps&logoColor=00ffa3&labelColor=0c1222&color=1e293b" />
+  <img src="https://img.shields.io/badge/🛰️_Ground_Station-Istanbul,_Turkey-070a13?style=flat-square&logo=googlemaps&logoColor=00ffa3&labelColor=0c1222&color=1e293b" />
   &nbsp;
-  <a href="#-education--honors"><img src="https://img.shields.io/badge/High_Honors-GPA_3.94%2F4.00-070a13?style=flat-square&logo=academia&logoColor=ffd166&labelColor=0c1222&color=1e293b" /></a>
+  <a href="#-stellar-academics--high-honors"><img src="https://img.shields.io/badge/High_Honors-GPA_3.94%2F4.00-070a13?style=flat-square&logo=academia&logoColor=ffd166&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
-  <a href="https://noursalous.github.io/NourSalous/playground/"><img src="https://img.shields.io/badge/🕹️-Web_Arcade-070a13?style=flat-square&logo=gamecontroller&logoColor=00f0ff&labelColor=0c1222&color=1e293b" /></a>
+  <a href="https://noursalous.github.io/NourSalous/playground/"><img src="https://img.shields.io/badge/🕹️-Orbital_Arcade-070a13?style=flat-square&logo=gamecontroller&logoColor=00f0ff&labelColor=0c1222&color=1e293b" /></a>
 </div>
 
 <br/>
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= EXECUTIVE SUMMARY ================= -->
-<h2 align="center">⚡ PROFESSIONAL SUMMARY</h2>
+<!-- ================= THE REPO GALAXY ================= -->
+<h2 align="center">🌌 THE REPO GALAXY</h2>
+
+<p align="center">
+  <img src="assets/galaxy.svg" width="100%" alt="Nour Salous Repo Galaxy" />
+</p>
+
+<p align="center">
+  <em>☕ Powered by Turkish coffee, stardust, and clean asynchronous architecture.</em><br/>
+  <b>8</b> public repositories · <b>2,115+</b> contributions in the last year · longest streak of <b>286</b> orbital days · <b>GPA: 3.94 / 4.00</b> (Department Rank #2)
+</p>
+
+<br/>
+<img src="assets/divider.svg" width="100%" alt="divider"/>
+<br/>
+
+<!-- ================= MISSION LOG (SUMMARY) ================= -->
+<h2 align="center">📜 MISSION LOG: PROFESSIONAL SUMMARY</h2>
 
 <table border="0" width="100%" cellpadding="14">
   <tr>
     <td align="center">
       <p dir="auto">
-        High-achieving <strong>Software Engineer</strong> and <strong>High Honors graduate (GPA: 3.94 / 4.00)</strong> specializing in <strong>Full-Stack Architecture</strong>, <strong>Applied AI</strong>, and <strong>ML Systems</strong>. Currently building scalable React/Node.js solutions, with a track record of driving complex projects end-to-end — from architecting an AI study platform (<strong>RAG, NestJS, pgvector, n8n</strong>) to co-authoring <strong>EEG-based ML research on medRxiv</strong>. Adept at bridging product vision with technical execution across full-stack, distributed backends, and high-performance <strong>3D/AR spatial web environments</strong>.
+        High-achieving <strong>Software Engineer</strong> and <strong>High Honors graduate (GPA: 3.94 / 4.00)</strong> specializing in <strong>Full-Stack Architecture</strong>, <strong>Applied AI</strong>, and <strong>ML Systems</strong>. Currently engineering scalable React/Node.js solutions, with a track record of driving complex projects from zero-to-one — from architecting an AI multi-modal study platform (<strong>RAG, NestJS, pgvector, n8n</strong>) to co-authoring <strong>EEG-based ML research on medRxiv</strong>. Adept at bridging visionary product strategy with robust execution across distributed cloud backends, microservices, and <strong>3D spatial web environments (Three.js, WebXR, Unity)</strong>.
       </p>
     </td>
   </tr>
@@ -41,8 +57,8 @@
 <img src="assets/divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= CURRENTLY BUILDING ================= -->
-<h2 align="center">🚀 CURRENT OPERATIONS &amp; FOCUS</h2>
+<!-- ================= CURRENT ORBITAL TELEMETRY ================= -->
+<h2 align="center">🛰️ ACTIVE ORBITAL SIGNALS</h2>
 
 <div align="center">
   <img src="assets/currently.svg" width="100%" alt="Currently working on"/>
@@ -52,8 +68,8 @@
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= RESEARCH ================= -->
-<h2 align="center">🧠 FEATURED MEDICAL AI RESEARCH</h2>
+<!-- ================= CLINICAL NEURO-LAB (RESEARCH) ================= -->
+<h2 align="center">🧠 COSMIC NEURO-LAB: MEDICAL AI RESEARCH</h2>
 
 <table border="0" width="100%" cellpadding="14">
   <tr>
@@ -63,7 +79,7 @@
       </a>
       <br/><br/>
       <p dir="auto">
-        Co-authored machine learning study classifying ADHD in children from electroencephalography (EEG) data across <strong>77 clinical subjects</strong>. Led training and validation of <strong>Random Forest</strong> and <strong>XGBoost</strong> alongside SVM and GMM models — conducting rigorous hyperparameter tuning, feature selection, and <strong>SHAP interpretability analysis</strong> to uncover neuro-biomarkers, reaching up to <strong>71% sensitivity</strong> on a ~1,185-feature pipeline validated via Leave-One-Out Cross-Validation.
+        Co-authored clinical machine learning study classifying ADHD in pediatric cohorts from electroencephalography (EEG) biosignals across <strong>77 clinical subjects</strong>. Led training and validation of <strong>Random Forest</strong> and <strong>XGBoost</strong> alongside SVM and GMM models — conducting rigorous hyperparameter tuning, feature selection, and <strong>SHAP interpretability analysis</strong> to uncover neuro-biomarkers, reaching up to <strong>71% sensitivity</strong> on a ~1,185-feature pipeline validated via Leave-One-Out Cross-Validation.
       </p>
       <img src="https://img.shields.io/badge/XGBoost-1572B6?style=flat-square&logo=xgboost&logoColor=white" />
       <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" />
@@ -78,14 +94,14 @@
 <img src="assets/divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= EXPERIENCE ================= -->
-<h2 align="center">💼 PROFESSIONAL EXPERIENCE</h2>
+<!-- ================= FLIGHT LOG (EXPERIENCE) ================= -->
+<h2 align="center">🛸 FLIGHT LOG: PROFESSIONAL EXPERIENCE</h2>
 
 <table border="0" width="100%" cellpadding="12">
   <tr>
     <td width="50%" valign="top">
       <h3>🏥 MetaTıp | Software Engineer (Part-Time)</h3>
-      <p><em>Istanbul, Turkey</em></p>
+      <p><em>Istanbul, Turkey · Spatial Computing &amp; Healthcare</em></p>
       <ul>
         <li><strong>Sole Developer</strong> for the enterprise internal <strong>Authentication &amp; Authorization portal</strong>, from requirements gathering through production deployment.</li>
         <li>Architected and shipped the <strong>MetaTıp AR-web platform</strong> (<a href="https://metatip3d.com.tr">metatip3d.com.tr</a>): React, Node.js/Express, MongoDB with multi-stage JWT security and automated CI/CD deployment.</li>
@@ -151,8 +167,8 @@
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= MAJOR PROJECTS ================= -->
-<h2 align="center">🏆 FEATURED SYSTEMS &amp; PROJECTS</h2>
+<!-- ================= BRIGHTEST STARS (MAJOR PROJECTS) ================= -->
+<h2 align="center">🌟 BRIGHTEST STARS: FLAGSHIP SYSTEMS</h2>
 
 <div align="center">
   <img src="assets/projects.svg" width="100%" alt="Project Highlights"/>
@@ -163,9 +179,9 @@
 <table border="0" width="100%" cellpadding="12">
   <tr>
     <td width="50%" valign="top">
-      <h4>🎓 Mentara — AI-Powered Study Platform</h4>
+      <h4>🪐 Mentara — AI-Powered Study Platform</h4>
       <p><em>Co-Founder &amp; Full-Stack Core Developer · B.Sc. Graduation Thesis · <a href="https://mentara.online">Live at mentara.online</a></em></p>
-      <p>Consolidated lecture transcription (Whisper), AI-generated flashcards/quizzes, dynamic mind-mapping, spaced repetition, and a <strong>RAG assistant (pgvector)</strong> into an enterprise Angular/NestJS/PostgreSQL suite. Orchestrated DeepSeek, OpenAI, and Chandra via automated <strong>n8n workflows</strong> with encrypted secret vaults.</p>
+      <p>Consolidated lecture transcription (Whisper), AI flashcards/quizzes, dynamic mind-mapping, spaced repetition, and a <strong>RAG assistant (pgvector)</strong> into an enterprise Angular/NestJS/PostgreSQL suite. Orchestrated DeepSeek, OpenAI, and Chandra via automated <strong>n8n workflows</strong> with encrypted secret vaults.</p>
       <p>
         <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
         <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" />
@@ -253,15 +269,15 @@
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= TECH SKILLS MATRIX ================= -->
-<h2 align="center">🛠️ TECH SKILLS &amp; ARCHITECTURAL STACK</h2>
+<!-- ================= ELEMENTS (ORGANIZED TECH MATRIX) ================= -->
+<h2 align="center">⚛️ THE ELEMENTS: PERIODIC TECH STACK MATRIX</h2>
 
-<p align="center"><em>Clean, organized, and categorized technical matrix across core engineering domains</em></p>
+<p align="center"><em>Clean, organized, and categorized atomic elements powering my software universes</em></p>
 
 <table border="0" width="100%" cellpadding="8">
   <tr>
-    <td width="24%"><strong>💻 Languages</strong></td>
-    <td width="76%">
+    <td width="26%"><strong>💫 Core Matter (Languages)</strong></td>
+    <td width="74%">
       <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
       <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
       <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" />
@@ -273,7 +289,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>🎨 Frontend Architecture</strong></td>
+    <td><strong>🎨 Photonic Interfaces (Frontend)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=react&logoColor=black" />
       <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
@@ -284,18 +300,18 @@
     </td>
   </tr>
   <tr>
-    <td><strong>⚙️ Backend &amp; APIs</strong></td>
+    <td><strong>⚡ Propulsion Engines (Backend)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
       <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" />
       <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" />
       <img src="https://img.shields.io/badge/RESTful_APIs-00f0ff?style=flat-square&logoColor=black" />
-      <img src="https://img.shields.io/badge/JWT_Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" />
+      <img src="https://img.shields.io/badge/JWT_Security-000000?style=flat-square&logo=jsonwebtokens&logoColor=white" />
       <img src="https://img.shields.io/badge/Microservices-a855f7?style=flat-square&logoColor=white" />
     </td>
   </tr>
   <tr>
-    <td><strong>🗄️ Database &amp; Vector Stores</strong></td>
+    <td><strong>🗄️ Cosmic Vaults (Databases)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
       <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" />
@@ -305,7 +321,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>🤖 Applied AI &amp; ML</strong></td>
+    <td><strong>🤖 Synthetic Intelligence (AI/ML)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white" />
       <img src="https://img.shields.io/badge/DeepSeek-1E40AF?style=flat-square&logo=deepseek&logoColor=white" />
@@ -314,12 +330,12 @@
       <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" />
       <img src="https://img.shields.io/badge/XGBoost-1572B6?style=flat-square&logo=xgboost&logoColor=white" />
       <img src="https://img.shields.io/badge/Random_Forest-239120?style=flat-square&logoColor=white" />
-      <img src="https://img.shields.io/badge/SHAP_Interpretability-a855f7?style=flat-square&logoColor=white" />
-      <img src="https://img.shields.io/badge/n8n_Automations-EA4B71?style=flat-square&logo=n8n&logoColor=white" />
+      <img src="https://img.shields.io/badge/SHAP_Explainability-a855f7?style=flat-square&logoColor=white" />
+      <img src="https://img.shields.io/badge/n8n_Pipelines-EA4B71?style=flat-square&logo=n8n&logoColor=white" />
     </td>
   </tr>
   <tr>
-    <td><strong>🎮 3D Web, XR &amp; Game Tech</strong></td>
+    <td><strong>🎮 Holographic &amp; 3D (Spatial)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white" />
       <img src="https://img.shields.io/badge/WebXR_%2F_WebAR-ff2bd6?style=flat-square&logoColor=white" />
@@ -331,7 +347,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>🛠️ DevOps, Cloud &amp; Tools</strong></td>
+    <td><strong>🛠️ Orbital Dock &amp; Tools</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
       <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
@@ -343,7 +359,7 @@
     </td>
   </tr>
   <tr>
-    <td><strong>🤝 Leadership &amp; Soft Skills</strong></td>
+    <td><strong>🤝 Crew Dynamics (Leadership)</strong></td>
     <td>
       <img src="https://img.shields.io/badge/Agile_%2F_Scrum_Leadership-ff2bd6?style=flat-square&logoColor=white" />
       <img src="https://img.shields.io/badge/Technical_Documentation-00f0ff?style=flat-square&logoColor=black" />
@@ -360,7 +376,7 @@
 
 <!-- ================= CONNECT 4 PROFILE GAME ================= -->
 <div id="connect4-arcade"></div>
-<h2 align="center">🎲 Play Connect Four with everyone</h2>
+<h2 align="center">🎲 PLAY CONNECT FOUR WITH EVERYONE</h2>
 
 <p align="center">
   <em>Drop a piece into the cyber grid! Every move creates a quick GitHub issue, and CyberBot calculates its strategic response move automatically.</em>
@@ -401,20 +417,18 @@
   <a href="https://noursalous.github.io/NourSalous/playground/#connect4"><img src="https://img.shields.io/badge/🕹️_Play_Instant_Live_Arcade-00ffa3?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Instant Arcade" /></a>
 </p>
 
-</div>
-  <a href="https://noursalous.github.io/NourSalous/playground/#connect4"><img src="https://img.shields.io/badge/🕹️_Play_Instant_Live_Arcade-00ffa3?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Instant Arcade" /></a>
+<p align="center">
+  <sub>👾 <em>Automated by GitHub Actions &amp; Node.js engine with zero third-party paywalls.</em></sub>
 </p>
 
-<p align="center">
-  <sub>💡 <em>Automated entirely by GitHub Actions, Node.js game engine, and dynamic vector rendering.</em></sub>
-</p>
+</div>
 
 <br/>
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= EDUCATION & HONORS ================= -->
-<h2 align="center">🎓 EDUCATION &amp; HONORS</h2>
+<!-- ================= STELLAR ACADEMICS & HIGH HONORS ================= -->
+<h2 align="center">🎓 STELLAR ACADEMICS &amp; HIGH HONORS</h2>
 
 <table border="0" width="100%" cellpadding="12">
   <tr>
@@ -454,8 +468,8 @@
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= METRICS & ACTIVITY ================= -->
-<h2 align="center">📊 GITHUB ANALYTICS &amp; ACTIVITY</h2>
+<!-- ================= STELLAR TELEMETRY & ACTIVITY ================= -->
+<h2 align="center">📊 STELLAR TELEMETRY &amp; GITHUB METRICS</h2>
 
 <table border="0" width="100%" cellpadding="10">
   <tr>
@@ -485,22 +499,22 @@
 <img src="assets/divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= LANGUAGES ================= -->
-<h2 align="center">🌐 SPOKEN &amp; GLOBAL LANGUAGES</h2>
+<!-- ================= INTERSTELLAR COMMS (LANGUAGES) ================= -->
+<h2 align="center">🌐 INTERSTELLAR COMMS: SPOKEN LANGUAGES</h2>
 
 <table border="0" width="100%" cellpadding="10">
   <tr>
     <td align="center" width="33%">
       <h4>🇸🇦 Arabic</h4>
-      <p><strong>Native Proficiency</strong></p>
+      <p><strong>Native Resonance</strong></p>
     </td>
     <td align="center" width="33%">
       <h4>🇬🇧 English</h4>
-      <p><strong>Distinguished Proficiency</strong><br/><sub>Professional, Academic &amp; Research</sub></p>
+      <p><strong>Distinguished Frequency</strong><br/><sub>Professional, Academic &amp; Research</sub></p>
     </td>
     <td align="center" width="33%">
       <h4>🇹🇷 Turkish</h4>
-      <p><strong>Advanced Proficiency</strong><br/><sub>Professional &amp; Fluent Working</sub></p>
+      <p><strong>Advanced Working Signal</strong><br/><sub>Professional &amp; Fluent Working</sub></p>
     </td>
   </tr>
 </table>
@@ -509,18 +523,18 @@
 <img src="assets/neon_divider.svg" width="100%" alt="divider"/>
 <br/>
 
-<!-- ================= CONNECT ================= -->
+<!-- ================= TRANSMISSION (CONNECT) ================= -->
 <div align="center">
-  <h2>🤝 LET'S BUILD TOGETHER</h2>
-  <p><em>Always open to high-impact software engineering roles, distributed systems challenges, and Applied AI collaborations.</em></p>
+  <h2>📡 TRANSMISSION FREQUENCIES: LET'S CONNECT</h2>
+  <p><em>Broadcasting open frequencies for distributed systems, high-impact software engineering, and Applied AI collaborations.</em></p>
   <br/>
-  <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Email-Get_in_touch-070a13?style=for-the-badge&logo=gmail&logoColor=ff2bd6&color=0c1222" alt="Email"/></a>
+  <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Transmit-Email_Direct-070a13?style=for-the-badge&logo=gmail&logoColor=ff2bd6&color=0c1222" alt="Email"/></a>
   &nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/LinkedIn-Connect-070a13?style=for-the-badge&logo=linkedin&logoColor=00f0ff&color=0c1222" alt="LinkedIn"/></a>
+  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/Network-LinkedIn-070a13?style=for-the-badge&logo=linkedin&logoColor=00f0ff&color=0c1222" alt="LinkedIn"/></a>
   &nbsp;&nbsp;
-  <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/GitHub-Follow-070a13?style=for-the-badge&logo=github&logoColor=a855f7&color=0c1222" alt="GitHub"/></a>
+  <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/Star_Log-GitHub-070a13?style=for-the-badge&logo=github&logoColor=a855f7&color=0c1222" alt="GitHub"/></a>
   &nbsp;&nbsp;
-  <a href="https://www.medrxiv.org/content/10.64898/2026.10.08.26365043v1"><img src="https://img.shields.io/badge/MedRxiv-Read_Preprint-070a13?style=for-the-badge&logo=read-the-docs&logoColor=00ffa3&color=0c1222" alt="Research Preprint"/></a>
+  <a href="https://www.medrxiv.org/content/10.64898/2026.10.08.26365043v1"><img src="https://img.shields.io/badge/Research-MedRxiv_Paper-070a13?style=for-the-badge&logo=read-the-docs&logoColor=00ffa3&color=0c1222" alt="Research Preprint"/></a>
   <br/><br/>
   <img src="assets/signature.svg" width="90" alt="Nour Salous Signature"/>
 </div>
