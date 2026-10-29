@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 530" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" role="img" aria-label="Community Connect Four: the current game">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050811" />
-      <stop offset="50%" stop-color="#090f20" />
-      <stop offset="100%" stop-color="#050811" />
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0c1224" />
+      <stop offset="100%" stop-color="#070a13" />
     </linearGradient>
 
-    <linearGradient id="boardFrame" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e172e" />
-      <stop offset="100%" stop-color="#0a1021" />
+    <linearGradient id="cabinet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0b1020" />
     </linearGradient>
 
-    <linearGradient id="boardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="laserBorder" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f0ff" />
       <stop offset="50%" stop-color="#a855f7" />
       <stop offset="100%" stop-color="#ff2bd6" />
     </linearGradient>
 
     <radialGradient id="discCyan" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#67e8f9" />
-      <stop offset="40%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#0369a1" />
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="45%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#0284c7" />
     </radialGradient>
 
     <radialGradient id="discPurp" cx="35%" cy="35%" r="65%">
       <stop offset="0%" stop-color="#f472b6" />
-      <stop offset="40%" stop-color="#ff2bd6" />
+      <stop offset="45%" stop-color="#ff2bd6" />
       <stop offset="100%" stop-color="#7e22ce" />
     </radialGradient>
 
@@ -39,174 +39,170 @@
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
-    <pattern id="gridPattern" width="30" height="30" patternUnits="userSpaceOnUse">
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
       <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#38bdf8" stroke-opacity="0.04" />
     </pattern>
   </defs>
 
-  <!-- Outer background -->
-  <rect width="100%" height="100%" fill="url(#bg)" rx="18" />
-  <rect width="100%" height="100%" fill="url(#gridPattern)" rx="18" />
+  <!-- Outer Frame -->
+  <rect x="2" y="2" width="876" height="476" rx="18" fill="url(#bg)" stroke="#1e293b" stroke-width="2" />
+  <rect x="2" y="2" width="876" height="476" rx="18" fill="url(#grid)" />
 
-  <!-- Header Section -->
-  <text x="425" y="36" font-family="'Orbitron', sans-serif" font-weight="900" font-size="20" fill="#f8fafc" text-anchor="middle" letter-spacing="3">
-    CYBER CONNECT 4 · NOUR vs COMMUNITY
-  </text>
-  
-  <text x="425" y="60" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="12" fill="#00f0ff" text-anchor="middle" letter-spacing="1.5">
-    ◆ YOUR TURN · CLICK A COLUMN TO DROP (CYAN) ◆
-  </text>
-
-  <!-- Column Selector Arrows -->
-  
-      <g transform="translate(145, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">1</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-      <g transform="translate(225, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">2</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-      <g transform="translate(305, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">3</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-      <g transform="translate(385, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">4</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-      <g transform="translate(465, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">5</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-      <g transform="translate(545, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">6</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-      <g transform="translate(625, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="#00f0ff" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="#00f0ff" text-anchor="middle">7</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-      </g>
-    
-
-  <!-- Connect 4 Board Plate -->
-  <rect x="95" y="115" width="660" height="365" rx="18" fill="url(#boardFrame)" stroke="#1e293b" stroke-width="2" />
-  <rect x="95" y="115" width="660" height="365" rx="18" fill="none" stroke="url(#boardBorder)" stroke-width="2" stroke-dasharray="140 1600" opacity="0.8" filter="url(#glow)">
-    <animate attributeName="stroke-dashoffset" values="1740; 0" dur="9s" repeatCount="indefinite" />
+  <!-- Animated Laser Accent -->
+  <rect x="2" y="2" width="876" height="476" rx="18" fill="none" stroke="url(#laserBorder)" stroke-width="2" stroke-dasharray="140 1800" opacity="0.8" filter="url(#glow)">
+    <animate attributeName="stroke-dashoffset" values="1940; 0" dur="8s" repeatCount="indefinite" />
   </rect>
+
+  <!-- Header Title -->
+  <text x="440" y="32" font-family="'Orbitron', -apple-system, sans-serif" font-weight="900" font-size="17" fill="#f8fafc" text-anchor="middle" letter-spacing="3">
+    🎲 COMMUNITY CONNECT FOUR
+  </text>
+  
+  <text x="440" y="52" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="12" fill="#00f0ff" text-anchor="middle" letter-spacing="1">
+    COMMUNITY CONNECT FOUR · YOUR MOVE (CYAN 🔴)
+  </text>
+
+  <!-- Column Selector Badges at top of grid -->
+  
+      <g transform="translate(145, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">1</text>
+      </g>
+    
+      <g transform="translate(243, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">2</text>
+      </g>
+    
+      <g transform="translate(341, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">3</text>
+      </g>
+    
+      <g transform="translate(439, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">4</text>
+      </g>
+    
+      <g transform="translate(537, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">5</text>
+      </g>
+    
+      <g transform="translate(635, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">6</text>
+      </g>
+    
+      <g transform="translate(733, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="#00f0ff" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="#00f0ff" text-anchor="middle">7</text>
+      </g>
+    
+
+  <!-- Board Cabinet -->
+  <rect x="90" y="94" width="700" height="340" rx="16" fill="url(#cabinet)" stroke="#1e293b" stroke-width="2" />
 
   <!-- Slots -->
   
-          <circle cx="145" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="145" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="225" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="243" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="305" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="341" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="385" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="439" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="465" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="537" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="545" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="635" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="625" cy="145" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="733" cy="120" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="145" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="145" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="225" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="243" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="305" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="341" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="385" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="439" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="465" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="537" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="545" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="635" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="625" cy="225" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="733" cy="176" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="145" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="145" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="225" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="243" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="305" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="341" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="385" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="439" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="465" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="537" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="545" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="635" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="625" cy="305" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="733" cy="232" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="145" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="145" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="225" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="243" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="305" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="341" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="385" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="439" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="465" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="537" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="545" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="635" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="625" cy="385" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="733" cy="288" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="145" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="145" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="225" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="243" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="305" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="341" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="385" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="439" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="465" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="537" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="545" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="635" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="625" cy="465" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="733" cy="344" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="145" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="145" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="225" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="243" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="305" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="341" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="385" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="439" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="465" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="537" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="545" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="635" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
-          <circle cx="625" cy="545" r="27" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="733" cy="400" r="30" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         
 
-  <!-- Laser winning line if won -->
+  <!-- Winning Line -->
   
 
-  <!-- Footer Stats & Legend -->
-  <g transform="translate(110, 508)">
-    <circle cx="10" cy="-6" r="6" fill="#00f0ff" filter="url(#glow)" />
-    <text x="24" y="-2" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">You (Human): <tspan fill="#f8fafc" font-weight="700">0 Wins</tspan></text>
+  <!-- Footer HUD -->
+  <g transform="translate(105, 458)">
+    <circle cx="8" cy="-5" r="5" fill="#00f0ff" filter="url(#glow)" />
+    <text x="20" y="-1" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">You (Human): <tspan fill="#f8fafc" font-weight="700">0 Wins</tspan></text>
 
-    <circle cx="210" cy="-6" r="6" fill="#ff2bd6" filter="url(#glow)" />
-    <text x="224" y="-2" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">AI Bot: <tspan fill="#f8fafc" font-weight="700">0 Wins</tspan></text>
+    <circle cx="210" cy="-5" r="5" fill="#ff2bd6" filter="url(#glow)" />
+    <text x="222" y="-1" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">AI Bot: <tspan fill="#f8fafc" font-weight="700">0 Wins</tspan></text>
 
-    <text x="400" y="-2" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">Draws: <tspan fill="#f8fafc" font-weight="700">0</tspan></text>
-    <text x="540" y="-2" font-family="'Orbitron', sans-serif" font-size="10" font-weight="700" fill="#38bdf8">CLICK A COLUMN LINK BELOW TO PLAY!</text>
+    <text x="390" y="-1" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">Draws: <tspan fill="#f8fafc" font-weight="700">0</tspan></text>
+
+    <text x="540" y="-1" font-family="'Orbitron', sans-serif" font-size="10" font-weight="700" fill="#38bdf8">DROP A PIECE USING THE LINKS BELOW ⬇</text>
   </g>
 </svg>

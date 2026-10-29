@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   play:
-    if: startsWith(github.event.issue.title, 'connect4|')
+    if: startsWith(github.event.issue.title, 'connect4|') || startsWith(github.event.issue.title, 'Connect Four') || startsWith(github.event.issue.title, 'connect four')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository

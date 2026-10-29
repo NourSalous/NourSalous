@@ -360,39 +360,48 @@
 
 <!-- ================= CONNECT 4 PROFILE GAME ================= -->
 <div id="connect4-arcade"></div>
-<h2 align="center">🎮 PLAY CYBER CONNECT 4 WITH ME</h2>
+<h2 align="center">🎲 Play Connect Four with everyone</h2>
 
 <p align="center">
-  <strong>You are playing Cyan discs (🔴) against CyberBot (AI Violet 🟣).</strong><br/>
-  Click any column button below to drop your piece directly via GitHub Issues! GitHub Actions will calculate the AI's move and update the board live!
+  <em>Drop a piece into the cyber grid! Every move creates a quick GitHub issue, and CyberBot calculates its strategic response move automatically.</em>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/connect4_board.svg" />
+    <img src="assets/connect4_board.svg" width="100%" alt="Community Connect Four: the current game" />
+  </picture>
 </p>
 
 <div align="center">
-  <img src="assets/connect4_board.svg" width="100%" alt="Connect 4 Board"/>
-</div>
+
+<h3>DROP A PIECE ⬇</h3>
+
+<h2>
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%201&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">1</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%202&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">2</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%203&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">3</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%204&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">4</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%205&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">5</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%206&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">6</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20drop%207&body=Just%20press%20Submit%20new%20issue.%20The%20board%20updates%20in%20about%20a%20minute.">7</a>
+</h2>
 
 <br/>
 
-<!-- Column Drop Buttons -->
 <p align="center">
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C1&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+1!"><img src="https://img.shields.io/badge/⬇_Col_1-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 1" /></a>
-  &nbsp;
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C2&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+2!"><img src="https://img.shields.io/badge/⬇_Col_2-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 2" /></a>
-  &nbsp;
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C3&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+3!"><img src="https://img.shields.io/badge/⬇_Col_3-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 3" /></a>
-  &nbsp;
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C4&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+4!"><img src="https://img.shields.io/badge/⬇_Col_4-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 4" /></a>
-  &nbsp;
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C5&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+5!"><img src="https://img.shields.io/badge/⬇_Col_5-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 5" /></a>
-  &nbsp;
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C6&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+6!"><img src="https://img.shields.io/badge/⬇_Col_6-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 6" /></a>
-  &nbsp;
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Cdrop%7C7&body=Click+'Submit+new+issue'+to+drop+your+disc+in+Column+7!"><img src="https://img.shields.io/badge/⬇_Col_7-00f0ff?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Col 7" /></a>
+  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=Connect%20Four%3A%20reset&body=Just%20press%20Submit%20new%20issue%20to%20reset%20the%20game!"><img src="https://img.shields.io/badge/🔄_Reset_Game-ff2bd6?style=for-the-badge&labelColor=070a13&logoColor=white" alt="Reset Game" /></a>
+  &nbsp;&nbsp;
+  <a href="https://noursalous.github.io/NourSalous/playground/#connect4"><img src="https://img.shields.io/badge/🕹️_Play_Instant_Live_Arcade-00ffa3?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Instant Arcade" /></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/NourSalous/NourSalous/issues/new?title=connect4%7Creset&body=Click+'Submit+new+issue'+to+reset+the+board!"><img src="https://img.shields.io/badge/🔄_Reset_Match-ff2bd6?style=for-the-badge&labelColor=070a13&logoColor=white" alt="Reset Match" /></a>
-  &nbsp;&nbsp;
+</div>
   <a href="https://noursalous.github.io/NourSalous/playground/#connect4"><img src="https://img.shields.io/badge/🕹️_Play_Instant_Live_Arcade-00ffa3?style=for-the-badge&labelColor=070a13&logoColor=070a13" alt="Instant Arcade" /></a>
 </p>
 

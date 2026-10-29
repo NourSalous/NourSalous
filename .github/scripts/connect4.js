@@ -1,5 +1,5 @@
 /**
- * Connect 4 Engine & SVG Renderer for GitHub Profile
+ * Community Connect Four Engine & SVG Renderer for GitHub Profile
  * Nour Salous - Portfolio Automation
  */
 
@@ -30,7 +30,7 @@ function loadState() {
   }
   return {
     board: getEmptyBoard(),
-    turn: 1, // 1 = human (cyan), 2 = AI (magenta/violet)
+    turn: 1, // 1 = human (cyan), 2 = AI (violet)
     status: 'in_progress',
     winner: null,
     winningLine: null,
@@ -139,12 +139,11 @@ function computeAIMove(board) {
     if (win && win.winner === 1) return c;
   }
 
-  // 3. Avoid dropping into a col that directly gives the human an immediate winning slot right above
+  // 3. Avoid giving the opponent an immediate winning slot right above
   const safeCols = available.filter(c => {
     const copy = cloneBoard(board);
     const r = dropPiece(copy, c, 2);
     if (r > 0) {
-      // simulate human dropping in the cell above
       copy[r - 1][c] = 1;
       const hWin = checkWin(copy);
       if (hWin && hWin.winner === 1) return false;
@@ -154,7 +153,7 @@ function computeAIMove(board) {
 
   const candidates = safeCols.length > 0 ? safeCols : available;
 
-  // 4. Center-priority ordering: col 3 is best, then 2, 4, then 1, 5, then 0, 6
+  // Center column priority
   const preference = [3, 2, 4, 1, 5, 0, 6];
   for (const p of preference) {
     if (candidates.includes(p)) return p;
@@ -168,30 +167,37 @@ function renderBoardSVG(state) {
   const status = state.status;
   const winner = state.winner;
   const winLine = state.winningLine;
+  const lastMove = state.lastMove;
 
-  const width = 850;
-  const height = 530;
+  const width = 880;
+  const height = 480;
 
-  // Grid offsets
+  // Grid offsets: 7 cols across, 6 rows down
   const startX = 145;
-  const startY = 145;
-  const slotSpacing = 80;
-  const radius = 27;
+  const startY = 120;
+  const slotSpacing = 98;
+  const radius = 30;
 
-  let statusText = "YOUR TURN · CLICK A COLUMN TO DROP (CYAN)";
+  let statusText = "COMMUNITY CONNECT FOUR · YOUR MOVE (CYAN 🔴)";
+  let statusSub = "Click any column (1–7) below to drop your disc!";
   let statusColor = "#00f0ff";
 
   if (status === 'finished') {
     if (winner === 1) {
-      statusText = "VICTORY! HUMAN WON (CYAN)! RESET TO PLAY AGAIN";
+      statusText = "🎉 VICTORY! HUMAN WON!";
+      statusSub = `${state.lastPlayer ? '@' + state.lastPlayer : 'You'} scored 4-in-a-row! Reset to start a new match.`;
       statusColor = "#00ffa3";
     } else if (winner === 2) {
-      statusText = "GAME OVER · CYBER AI BOT WON! RESET TO RETRY";
+      statusText = "👾 CYBERBOT WON THIS MATCH!";
+      statusSub = "The AI connected four. Click Reset Game below to play again!";
       statusColor = "#ff2bd6";
     } else if (winner === 'draw') {
-      statusText = "STALEMATE · DRAW GAME! RESET TO PLAY AGAIN";
+      statusText = "🤝 STALEMATE! IT'S A DRAW!";
+      statusSub = "The board is completely filled. Reset to start a rematch!";
       statusColor = "#ffd166";
     }
+  } else if (lastMove) {
+    statusSub = `Last move: ${lastMove.user ? '@' + lastMove.user : 'Player'} dropped in Col ${lastMove.col}. AI responded in Col ${lastMove.player === 2 ? lastMove.col : 'auto'}.`;
   }
 
   // Winning line coordinates if exists
@@ -202,8 +208,8 @@ function renderBoardSVG(state) {
     const x2 = startX + winLine[3][1] * slotSpacing;
     const y2 = startY + winLine[3][0] * slotSpacing;
     laserLineSVG = `
-      <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#ffd166" stroke-width="6" stroke-linecap="round" filter="url(#glowStrong)">
-        <animate attributeName="stroke-width" values="4; 8; 4" dur="1s" repeatCount="indefinite" />
+      <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#ffd166" stroke-width="8" stroke-linecap="round" filter="url(#glowStrong)">
+        <animate attributeName="stroke-width" values="6; 11; 6" dur="1s" repeatCount="indefinite" />
       </line>
     `;
   }
@@ -213,41 +219,50 @@ function renderBoardSVG(state) {
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
       const cx = startX + c * slotSpacing;
-      const cy = startY + r * slotSpacing;
+      const cy = startY + r * 56;
       const val = board[r][c];
 
       const isWinningSlot = winLine && winLine.some(([wr, wc]) => wr === r && wc === c);
+      const isLastDrop = lastMove && (lastMove.row - 1 === r && lastMove.col - 1 === c);
 
       if (val === 0) {
         // Empty slot
         slotsSVG += `
-          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="#080c18" stroke="#17223b" stroke-width="2" />
+          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="#080c16" stroke="#1c273e" stroke-width="2" />
         `;
       } else if (val === 1) {
         // Human (Cyan)
-        const glowAttr = isWinningSlot ? 'filter="url(#glowStrong)"' : 'filter="url(#glow)"';
         slotsSVG += `
-          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="url(#discCyan)" stroke="#38bdf8" stroke-width="1.5" ${glowAttr} />
-          <circle cx="${cx}" cy="${cy}" r="${radius * 0.65}" fill="none" stroke="#e0f2fe" stroke-width="1" opacity="0.6" />
+          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="url(#discCyan)" stroke="#38bdf8" stroke-width="1.8" filter="url(#glow)" />
+          <circle cx="${cx}" cy="${cy}" r="${radius * 0.65}" fill="none" stroke="#e0f2fe" stroke-width="1.2" opacity="0.6" />
         `;
+        if (isLastDrop) {
+          slotsSVG += `
+            <circle cx="${cx}" cy="${cy}" r="${radius + 3}" fill="none" stroke="#00f0ff" stroke-width="2" stroke-dasharray="4 4" opacity="0.8" />
+          `;
+        }
         if (isWinningSlot) {
           slotsSVG += `
-            <circle cx="${cx}" cy="${cy}" r="${radius + 4}" fill="none" stroke="#ffd166" stroke-width="2.5">
-              <animate attributeName="r" values="${radius + 2}; ${radius + 6}; ${radius + 2}" dur="1.2s" repeatCount="indefinite" />
+            <circle cx="${cx}" cy="${cy}" r="${radius + 4}" fill="none" stroke="#ffd166" stroke-width="3">
+              <animate attributeName="r" values="${radius + 2}; ${radius + 7}; ${radius + 2}" dur="1.2s" repeatCount="indefinite" />
             </circle>
           `;
         }
       } else if (val === 2) {
         // AI (Neon Pink / Violet)
-        const glowAttr = isWinningSlot ? 'filter="url(#glowStrong)"' : 'filter="url(#glow)"';
         slotsSVG += `
-          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="url(#discPurp)" stroke="#f472b6" stroke-width="1.5" ${glowAttr} />
-          <circle cx="${cx}" cy="${cy}" r="${radius * 0.65}" fill="none" stroke="#fce7f3" stroke-width="1" opacity="0.6" />
+          <circle cx="${cx}" cy="${cy}" r="${radius}" fill="url(#discPurp)" stroke="#f472b6" stroke-width="1.8" filter="url(#glow)" />
+          <circle cx="${cx}" cy="${cy}" r="${radius * 0.65}" fill="none" stroke="#fce7f3" stroke-width="1.2" opacity="0.6" />
         `;
+        if (isLastDrop) {
+          slotsSVG += `
+            <circle cx="${cx}" cy="${cy}" r="${radius + 3}" fill="none" stroke="#ff2bd6" stroke-width="2" stroke-dasharray="4 4" opacity="0.8" />
+          `;
+        }
         if (isWinningSlot) {
           slotsSVG += `
-            <circle cx="${cx}" cy="${cy}" r="${radius + 4}" fill="none" stroke="#ffd166" stroke-width="2.5">
-              <animate attributeName="r" values="${radius + 2}; ${radius + 6}; ${radius + 2}" dur="1.2s" repeatCount="indefinite" />
+            <circle cx="${cx}" cy="${cy}" r="${radius + 4}" fill="none" stroke="#ffd166" stroke-width="3">
+              <animate attributeName="r" values="${radius + 2}; ${radius + 7}; ${radius + 2}" dur="1.2s" repeatCount="indefinite" />
             </circle>
           `;
         }
@@ -262,42 +277,41 @@ function renderBoardSVG(state) {
     const isColFull = board[0][c] !== 0;
     const colColor = isColFull ? '#475569' : '#00f0ff';
     colHeadersSVG += `
-      <g transform="translate(${cx}, 92)">
-        <circle cx="0" cy="0" r="14" fill="#0c1427" stroke="${colColor}" stroke-width="1.5" />
-        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="700" font-size="11" fill="${colColor}" text-anchor="middle">${c + 1}</text>
-        <path d="M -3 18 L 0 22 L 3 18" fill="none" stroke="${colColor}" stroke-width="1.5" opacity="0.8" />
+      <g transform="translate(${cx}, 72)">
+        <rect x="-14" y="-12" width="28" height="24" rx="6" fill="#0d1424" stroke="${colColor}" stroke-width="1.5" />
+        <text x="0" y="4" font-family="'Orbitron', sans-serif" font-weight="800" font-size="12" fill="${colColor}" text-anchor="middle">${c + 1}</text>
       </g>
     `;
   }
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="100%">
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="Community Connect Four: the current game">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050811" />
-      <stop offset="50%" stop-color="#090f20" />
-      <stop offset="100%" stop-color="#050811" />
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0c1224" />
+      <stop offset="100%" stop-color="#070a13" />
     </linearGradient>
 
-    <linearGradient id="boardFrame" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e172e" />
-      <stop offset="100%" stop-color="#0a1021" />
+    <linearGradient id="cabinet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0b1020" />
     </linearGradient>
 
-    <linearGradient id="boardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="laserBorder" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f0ff" />
       <stop offset="50%" stop-color="#a855f7" />
       <stop offset="100%" stop-color="#ff2bd6" />
     </linearGradient>
 
     <radialGradient id="discCyan" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#67e8f9" />
-      <stop offset="40%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#0369a1" />
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="45%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#0284c7" />
     </radialGradient>
 
     <radialGradient id="discPurp" cx="35%" cy="35%" r="65%">
       <stop offset="0%" stop-color="#f472b6" />
-      <stop offset="40%" stop-color="#ff2bd6" />
+      <stop offset="45%" stop-color="#ff2bd6" />
       <stop offset="100%" stop-color="#7e22ce" />
     </radialGradient>
 
@@ -311,49 +325,52 @@ function renderBoardSVG(state) {
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
-    <pattern id="gridPattern" width="30" height="30" patternUnits="userSpaceOnUse">
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
       <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#38bdf8" stroke-opacity="0.04" />
     </pattern>
   </defs>
 
-  <!-- Outer background -->
-  <rect width="100%" height="100%" fill="url(#bg)" rx="18" />
-  <rect width="100%" height="100%" fill="url(#gridPattern)" rx="18" />
+  <!-- Outer Frame -->
+  <rect x="2" y="2" width="${width - 4}" height="${height - 4}" rx="18" fill="url(#bg)" stroke="#1e293b" stroke-width="2" />
+  <rect x="2" y="2" width="${width - 4}" height="${height - 4}" rx="18" fill="url(#grid)" />
 
-  <!-- Header Section -->
-  <text x="425" y="36" font-family="'Orbitron', sans-serif" font-weight="900" font-size="20" fill="#f8fafc" text-anchor="middle" letter-spacing="3">
-    CYBER CONNECT 4 · NOUR vs COMMUNITY
+  <!-- Animated Laser Accent -->
+  <rect x="2" y="2" width="${width - 4}" height="${height - 4}" rx="18" fill="none" stroke="url(#laserBorder)" stroke-width="2" stroke-dasharray="140 1800" opacity="0.8" filter="url(#glow)">
+    <animate attributeName="stroke-dashoffset" values="1940; 0" dur="8s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Header Title -->
+  <text x="440" y="32" font-family="'Orbitron', -apple-system, sans-serif" font-weight="900" font-size="17" fill="#f8fafc" text-anchor="middle" letter-spacing="3">
+    🎲 COMMUNITY CONNECT FOUR
   </text>
   
-  <text x="425" y="60" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="12" fill="${statusColor}" text-anchor="middle" letter-spacing="1.5">
-    ◆ ${statusText} ◆
+  <text x="440" y="52" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="12" fill="${statusColor}" text-anchor="middle" letter-spacing="1">
+    ${statusText}
   </text>
 
-  <!-- Column Selector Arrows -->
+  <!-- Column Selector Badges at top of grid -->
   ${colHeadersSVG}
 
-  <!-- Connect 4 Board Plate -->
-  <rect x="95" y="115" width="660" height="365" rx="18" fill="url(#boardFrame)" stroke="#1e293b" stroke-width="2" />
-  <rect x="95" y="115" width="660" height="365" rx="18" fill="none" stroke="url(#boardBorder)" stroke-width="2" stroke-dasharray="140 1600" opacity="0.8" filter="url(#glow)">
-    <animate attributeName="stroke-dashoffset" values="1740; 0" dur="9s" repeatCount="indefinite" />
-  </rect>
+  <!-- Board Cabinet -->
+  <rect x="90" y="94" width="700" height="340" rx="16" fill="url(#cabinet)" stroke="#1e293b" stroke-width="2" />
 
   <!-- Slots -->
   ${slotsSVG}
 
-  <!-- Laser winning line if won -->
+  <!-- Winning Line -->
   ${laserLineSVG}
 
-  <!-- Footer Stats & Legend -->
-  <g transform="translate(110, 508)">
-    <circle cx="10" cy="-6" r="6" fill="#00f0ff" filter="url(#glow)" />
-    <text x="24" y="-2" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">You (Human): <tspan fill="#f8fafc" font-weight="700">${state.stats.humanWins} Wins</tspan></text>
+  <!-- Footer HUD -->
+  <g transform="translate(105, 458)">
+    <circle cx="8" cy="-5" r="5" fill="#00f0ff" filter="url(#glow)" />
+    <text x="20" y="-1" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">You (Human): <tspan fill="#f8fafc" font-weight="700">${state.stats.humanWins} Wins</tspan></text>
 
-    <circle cx="210" cy="-6" r="6" fill="#ff2bd6" filter="url(#glow)" />
-    <text x="224" y="-2" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">AI Bot: <tspan fill="#f8fafc" font-weight="700">${state.stats.aiWins} Wins</tspan></text>
+    <circle cx="210" cy="-5" r="5" fill="#ff2bd6" filter="url(#glow)" />
+    <text x="222" y="-1" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">AI Bot: <tspan fill="#f8fafc" font-weight="700">${state.stats.aiWins} Wins</tspan></text>
 
-    <text x="400" y="-2" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">Draws: <tspan fill="#f8fafc" font-weight="700">${state.stats.draws}</tspan></text>
-    <text x="540" y="-2" font-family="'Orbitron', sans-serif" font-size="10" font-weight="700" fill="#38bdf8">CLICK A COLUMN LINK BELOW TO PLAY!</text>
+    <text x="390" y="-1" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#94a3b8">Draws: <tspan fill="#f8fafc" font-weight="700">${state.stats.draws}</tspan></text>
+
+    <text x="540" y="-1" font-family="'Orbitron', sans-serif" font-size="10" font-weight="700" fill="#38bdf8">DROP A PIECE USING THE LINKS BELOW ⬇</text>
   </g>
 </svg>`;
 
@@ -385,11 +402,11 @@ function handleAction(action, col = null, username = 'Visitor') {
     if (state.status === 'finished') {
       return {
         success: false,
-        message: `⚠️ Game is already completed (Winner: ${state.winner === 1 ? 'Human' : state.winner === 2 ? 'AI Bot' : 'Draw'})! Please click **Reset Game** to start a new match.`
+        message: `⚠️ Game is already completed (Winner: ${state.winner === 1 ? 'Human' : state.winner === 2 ? 'AI Bot' : 'Draw'})! Please click **Reset Game** in the README to start a new match.`
       };
     }
 
-    const colIndex = parseInt(col, 10) - 1; // 1-indexed to 0-indexed
+    const colIndex = parseInt(col, 10) - 1;
     if (isNaN(colIndex) || colIndex < 0 || colIndex >= COLS) {
       return {
         success: false,
@@ -469,7 +486,28 @@ function handleAction(action, col = null, username = 'Visitor') {
   return { success: true, message: 'Board updated.' };
 }
 
-// CLI parsing
+// CLI parsing: supports "Connect Four: drop X", "Connect Four: reset", "connect4|drop|X", "connect4|reset"
+function parseTitle(title) {
+  if (!title) return { action: null, col: null };
+  const clean = title.trim();
+
+  // Pattern 1: Connect Four: drop 3 or Connect Four: drop col 3
+  const matchGitSkins = clean.match(/^connect\s*four:?\s*(drop|reset)\s*([0-9]?)/i);
+  if (matchGitSkins) {
+    const act = matchGitSkins[1].toLowerCase();
+    const c = matchGitSkins[2] ? matchGitSkins[2] : null;
+    return { action: act, col: c };
+  }
+
+  // Pattern 2: connect4|drop|3 or connect4|reset
+  const parts = clean.split('|');
+  if (parts[0].toLowerCase() === 'connect4') {
+    return { action: parts[1] ? parts[1].toLowerCase() : null, col: parts[2] ? parts[2] : null };
+  }
+
+  return { action: null, col: null };
+}
+
 function main() {
   const args = process.argv.slice(2);
   let title = '';
@@ -494,16 +532,14 @@ function main() {
   }
 
   if (title) {
-    // Expected format: connect4|drop|3 or connect4|reset
-    const parts = title.trim().split('|');
-    if (parts[0] === 'connect4') {
-      action = parts[1];
-      if (action === 'drop') col = parts[2];
+    const parsed = parseTitle(title);
+    if (parsed.action) {
+      action = parsed.action;
+      if (parsed.col) col = parsed.col;
     }
   }
 
   if (!action) {
-    // If no action, just render the current board
     const state = loadState();
     renderBoardSVG(state);
     console.log('Connect 4 board SVG rendered.');
@@ -513,7 +549,6 @@ function main() {
   const result = handleAction(action, col, username);
   console.log(result.message);
 
-  // If in GitHub Actions, set step output
   if (process.env.GITHUB_OUTPUT) {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `message=${encodeURIComponent(result.message)}\n`);
   }
@@ -523,4 +558,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { handleAction, loadState, saveState, renderBoardSVG };
+module.exports = { handleAction, loadState, saveState, renderBoardSVG, parseTitle };
