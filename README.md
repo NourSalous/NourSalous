@@ -9,7 +9,7 @@
   <br/><br/>
   <a href="mailto:noorsalous2000@gmail.com"><img src="https://img.shields.io/badge/Transmission-noorsalous2000-070a13?style=flat-square&logo=gmail&logoColor=ff2bd6&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
-  <a href="https://www.linkedin.com/in/nour-salous/"><img src="https://img.shields.io/badge/Sub--Space-LinkedIn-070a13?style=flat-square&logo=linkedin&logoColor=00f0ff&labelColor=0c1222&color=1e293b" /></a>
+  <a href="https://www.linkedin.com/in/nour-salous-380b65426/"><img src="https://img.shields.io/badge/Sub--Space-LinkedIn-070a13?style=flat-square&logo=linkedin&logoColor=00f0ff&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
   <a href="https://github.com/NourSalous"><img src="https://img.shields.io/badge/Coordinates-GitHub-070a13?style=flat-square&logo=github&logoColor=a855f7&labelColor=0c1222&color=1e293b" /></a>
   &nbsp;
