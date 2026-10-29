@@ -265,6 +265,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:40px;line-
 
   var arcadeGrid = document.getElementById('arcade-grid');
   var games = [
+    { id: 'connect4', e: '🔴', t: 'Cyber Connect 4', d: 'Drop tokens into the 7x6 cyber grid against the smart AI.' },
     { id: 'snake', e: '🐍', t: 'Snake', d: 'Classic grid snake. Eat, grow, don\u2019t bite yourself.' },
     { id: 'memory', e: '🧠', t: 'Memory Match', d: 'Flip the cards and match the dev-tool emojis.' },
     { id: 'rps', e: '✊', t: 'RPS vs Mentara AI', d: 'Rock, paper, scissors against my study AI.' },
@@ -546,6 +547,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:40px;line-
   }
 
   window.bind = function (root) {
+    if (current === 'connect4') bindConnect4(root);
     if (current === 'snake') bindSnake(root);
     if (current === 'memory') bindMemory(root);
     if (current === 'rps') bindRps(root);
@@ -563,6 +565,7 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:40px;line-
     current = id;
     if (realOpen) realOpen(id);
     var built = {
+      connect4: connect4HTML(),
       snake: snakeHTML(),
       memory: memoryHTML(),
       rps: rpsHTML(),
@@ -581,6 +584,238 @@ footer{color:var(--muted);font-size:13px;text-align:center;margin-top:40px;line-
     }
     unmount();
   };
+
+
+  /* ================= CONNECT 4 ================= */
+  function connect4HTML() {
+    return topbar('Cyber Connect 4', '🔴') +
+      '<p class="hint">Click a column arrow (1–7) to drop your disc (<b>Cyan</b>). Connect 4 to win!</p>' +
+      '<div class="score-row"><span>You (Cyan): <b id="c4-player">0</b></span><span>CyberBot (Violet): <b id="c4-ai">0</b></span><span>Draws: <b id="c4-draws">0</b></span></div>' +
+      '<div class="result" id="c4-result">👉 Your turn (Cyan) · Choose a column!</div>' +
+      '<div id="c4-drop-row" style="display:flex;justify-content:center;gap:8px;margin-bottom:8px"></div>' +
+      '<div id="c4-board" class="board" style="display:grid;grid-template-columns:repeat(7,44px);gap:6px;padding:12px;background:#0d1222;border:1px solid #1e293b;border-radius:14px;box-shadow:0 0 24px rgba(0,240,255,0.15)"></div>' +
+      '<div style="text-align:center;margin-top:14px"><button class="pill" id="c4-reset">🔄 New Game</button></div>';
+  }
+
+  function bindConnect4(root) {
+    var ROWS = 6, COLS = 7;
+    var boardEl = root.querySelector('#c4-board');
+    var dropRowEl = root.querySelector('#c4-drop-row');
+    var resEl = root.querySelector('#c4-result');
+    var pScoreEl = root.querySelector('#c4-player');
+    var aiScoreEl = root.querySelector('#c4-ai');
+    var dScoreEl = root.querySelector('#c4-draws');
+    var pScore = 0, aiScore = 0, dScore = 0;
+    var board = [], over = false, turn = 1;
+
+    for (var c = 0; c < COLS; c++) {
+      (function (colIdx) {
+        var btn = document.createElement('button');
+        btn.className = 'pill';
+        btn.style.padding = '6px 12px';
+        btn.style.fontSize = '12px';
+        btn.style.fontFamily = "'Orbitron', sans-serif";
+        btn.style.color = '#00f0ff';
+        btn.style.borderColor = 'rgba(0,240,255,0.3)';
+        btn.innerHTML = 'Col ' + (colIdx + 1) + '<br>⬇';
+        btn.addEventListener('click', function () { handleDrop(colIdx); });
+        dropRowEl.appendChild(btn);
+      })(c);
+    }
+
+    for (var r = 0; r < ROWS; r++) {
+      for (var c = 0; c < COLS; c++) {
+        var cell = document.createElement('div');
+        cell.className = 'cell';
+        cell.id = 'c4-' + r + '-' + c;
+        cell.style.width = '44px';
+        cell.style.height = '44px';
+        cell.style.borderRadius = '50%';
+        cell.style.background = '#070a14';
+        cell.style.border = '1px solid #1b253b';
+        cell.style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.8)';
+        cell.style.transition = 'all 0.2s';
+        boardEl.appendChild(cell);
+      }
+    }
+
+    function checkWin(b) {
+      for (var r = 0; r < ROWS; r++) {
+        for (var c = 0; c <= COLS - 4; c++) {
+          var p = b[r][c];
+          if (p && p === b[r][c+1] && p === b[r][c+2] && p === b[r][c+3]) return { w: p, line: [[r,c],[r,c+1],[r,c+2],[r,c+3]] };
+        }
+      }
+      for (var c = 0; c < COLS; c++) {
+        for (var r = 0; r <= ROWS - 4; r++) {
+          var p = b[r][c];
+          if (p && p === b[r+1][c] && p === b[r+2][c] && p === b[r+3][c]) return { w: p, line: [[r,c],[r+1,c],[r+2,c],[r+3,c]] };
+        }
+      }
+      for (var r = 0; r <= ROWS - 4; r++) {
+        for (var c = 0; c <= COLS - 4; c++) {
+          var p = b[r][c];
+          if (p && p === b[r+1][c+1] && p === b[r+2][c+2] && p === b[r+3][c+3]) return { w: p, line: [[r,c],[r+1,c+1],[r+2,c+2],[r+3,c+3]] };
+        }
+      }
+      for (var r = 0; r <= ROWS - 4; r++) {
+        for (var c = 3; c < COLS; c++) {
+          var p = b[r][c];
+          if (p && p === b[r+1][c-1] && p === b[r+2][c-2] && p === b[r+3][c-3]) return { w: p, line: [[r,c],[r+1,c-1],[r+2,c-2],[r+3,c-3]] };
+        }
+      }
+      var full = b.every(function(row) { return row.every(function(v) { return v !== 0; }); });
+      if (full) return { w: 'draw', line: [] };
+      return null;
+    }
+
+    function renderCell(r, c, p, isWin) {
+      var el = root.querySelector('#c4-' + r + '-' + c);
+      if (!el) return;
+      if (p === 1) {
+        el.style.background = 'radial-gradient(circle at 35% 35%, #67e8f9, #00f0ff 45%, #0369a1 100%)';
+        el.style.border = '1px solid #38bdf8';
+        el.style.boxShadow = isWin ? '0 0 16px #00f0ff, 0 0 24px #38bdf8' : '0 0 10px rgba(0,240,255,0.7)';
+      } else if (p === 2) {
+        el.style.background = 'radial-gradient(circle at 35% 35%, #f472b6, #ff2bd6 45%, #7e22ce 100%)';
+        el.style.border = '1px solid #f472b6';
+        el.style.boxShadow = isWin ? '0 0 16px #ff2bd6, 0 0 24px #f472b6' : '0 0 10px rgba(255,43,214,0.7)';
+      } else {
+        el.style.background = '#070a14';
+        el.style.border = '1px solid #1b253b';
+        el.style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.8)';
+      }
+    }
+
+    function dropInCol(col, player) {
+      for (var r = ROWS - 1; r >= 0; r--) {
+        if (board[r][col] === 0) {
+          board[r][col] = player;
+          renderCell(r, col, player, false);
+          return r;
+        }
+      }
+      return -1;
+    }
+
+    function aiMove() {
+      if (over) return;
+      var avail = [];
+      for (var c = 0; c < COLS; c++) {
+        if (board[0][c] === 0) avail.push(c);
+      }
+      if (avail.length === 0) return;
+
+      var chosenCol = -1;
+      for (var i = 0; i < avail.length; i++) {
+        var c = avail[i];
+        var copy = board.map(function(r) { return r.slice(); });
+        for (var r = ROWS - 1; r >= 0; r--) {
+          if (copy[r][c] === 0) { copy[r][c] = 2; break; }
+        }
+        var w = checkWin(copy);
+        if (w && w.w === 2) { chosenCol = c; break; }
+      }
+      if (chosenCol === -1) {
+        for (var i = 0; i < avail.length; i++) {
+          var c = avail[i];
+          var copy = board.map(function(r) { return r.slice(); });
+          for (var r = ROWS - 1; r >= 0; r--) {
+            if (copy[r][c] === 0) { copy[r][c] = 1; break; }
+          }
+          var w = checkWin(copy);
+          if (w && w.w === 1) { chosenCol = c; break; }
+        }
+      }
+      if (chosenCol === -1) {
+        var pref = [3, 2, 4, 1, 5, 0, 6];
+        for (var i = 0; i < pref.length; i++) {
+          if (avail.indexOf(pref[i]) !== -1) { chosenCol = pref[i]; break; }
+        }
+      }
+      if (chosenCol === -1) chosenCol = avail[0];
+
+      dropInCol(chosenCol, 2);
+      var res = checkWin(board);
+      if (res) {
+        over = true;
+        if (res.w === 2) {
+          aiScore++;
+          aiScoreEl.textContent = aiScore;
+          resEl.textContent = '👾 CyberBot connected four! AI wins!';
+          resEl.className = 'result bad';
+          res.line.forEach(function(coord) { renderCell(coord[0], coord[1], 2, true); });
+          showOverlay('AI Won! 🤖', 'CyberBot beat you in column ' + (chosenCol + 1) + '.', reset);
+        } else if (res.w === 'draw') {
+          dScore++;
+          dScoreEl.textContent = dScore;
+          resEl.textContent = '🤝 Stalemate! Draw game!';
+          resEl.className = 'result warn';
+          showOverlay('Draw Game! 🤝', 'Board is completely full.', reset);
+        }
+        return;
+      }
+
+      turn = 1;
+      resEl.textContent = '👉 Your turn (Cyan)! Choose a column.';
+      resEl.className = 'result';
+    }
+
+    function handleDrop(col) {
+      if (over || turn !== 1) return;
+      if (board[0][col] !== 0) {
+        resEl.textContent = '⚠️ Column is full! Pick another.';
+        resEl.className = 'result warn';
+        return;
+      }
+      var r = dropInCol(col, 1);
+      if (r === -1) return;
+
+      var res = checkWin(board);
+      if (res) {
+        over = true;
+        if (res.w === 1) {
+          pScore++;
+          pScoreEl.textContent = pScore;
+          resEl.textContent = '🎉 YOU CONNECTED FOUR! Human Victory!';
+          resEl.className = 'result good';
+          res.line.forEach(function(coord) { renderCell(coord[0], coord[1], 1, true); });
+          showOverlay('VICTORY! 🏆', 'You connected four discs!', reset);
+        } else if (res.w === 'draw') {
+          dScore++;
+          dScoreEl.textContent = dScore;
+          resEl.textContent = '🤝 Stalemate! Draw game!';
+          resEl.className = 'result warn';
+          showOverlay('Draw Game! 🤝', 'Board is completely full.', reset);
+        }
+        return;
+      }
+
+      turn = 2;
+      resEl.textContent = '🤖 CyberBot is calculating move...';
+      resEl.className = 'result';
+      setTimeout(aiMove, 380);
+    }
+
+    function reset() {
+      board = [];
+      for (var r = 0; r < ROWS; r++) {
+        var row = [];
+        for (var c = 0; c < COLS; c++) {
+          row.push(0);
+          renderCell(r, c, 0, false);
+        }
+        board.push(row);
+      }
+      over = false;
+      turn = 1;
+      resEl.textContent = '👉 Your turn (Cyan)! Choose a column.';
+      resEl.className = 'result';
+    }
+
+    root.querySelector('#c4-reset').addEventListener('click', reset);
+    reset();
+  }
 
   /* ================= SNAKE ================= */
   function snakeHTML() {

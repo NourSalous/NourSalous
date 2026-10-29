@@ -1,10 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="100%" height="100%">
   <defs>
     <linearGradient id="sigGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f0c987" />
-      <stop offset="100%" stop-color="#d2695f" />
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ff2bd6" />
     </linearGradient>
+    <filter id="sigGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
-  <path d="M 40 80 Q 50 20 60 20 Q 75 40 80 80 Q 90 20 100 20" fill="none" stroke="url(#sigGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 120 25 C 100 15, 80 40, 100 50 C 120 60, 90 90, 80 75" fill="none" stroke="url(#sigGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 40 80 Q 50 20 60 20 Q 75 40 80 80 Q 90 20 100 20" fill="none" stroke="url(#sigGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#sigGlow)" />
+  <path d="M 120 25 C 100 15, 80 40, 100 50 C 120 60, 90 90, 80 75" fill="none" stroke="url(#sigGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#sigGlow)" />
 </svg>

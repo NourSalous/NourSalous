@@ -1,0 +1,70 @@
+{
+  "board": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "turn": 1,
+  "status": "in_progress",
+  "winner": null,
+  "winningLine": null,
+  "lastMove": null,
+  "lastPlayer": null,
+  "stats": {
+    "gamesPlayed": 1,
+    "humanWins": 0,
+    "aiWins": 0,
+    "draws": 0
+  }
+}

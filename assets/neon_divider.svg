@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 30" width="100%">
   <defs>
     <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e0a458" stop-opacity="0" />
-      <stop offset="25%" stop-color="#e0a458" />
-      <stop offset="75%" stop-color="#d2695f" />
-      <stop offset="100%" stop-color="#d2695f" stop-opacity="0" />
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0" />
+      <stop offset="20%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="80%" stop-color="#ff2bd6" />
+      <stop offset="100%" stop-color="#ff2bd6" stop-opacity="0" />
     </linearGradient>
 
     <filter id="glassGlow" x="-20%" y="-50%" width="140%" height="200%">
@@ -13,12 +14,12 @@
     </filter>
   </defs>
 
-  <rect x="0" y="14" width="900" height="2" fill="url(#glassGrad)" filter="url(#glassGlow)" opacity="0.8">
-    <animate attributeName="opacity" values="0.4; 1; 0.4" dur="3s" repeatCount="indefinite" />
+  <rect x="0" y="14" width="900" height="2" fill="url(#glassGrad)" filter="url(#glassGlow)" opacity="0.85">
+    <animate attributeName="opacity" values="0.45; 1; 0.45" dur="3s" repeatCount="indefinite" />
   </rect>
 
-  <circle cx="0" cy="15" r="4" fill="#f2e8da" filter="url(#glassGlow)">
-    <animate attributeName="cx" values="-10; 910; -10" dur="8s" repeatCount="indefinite" />
-    <animate attributeName="fill" values="#e0a458; #d2695f; #e0a458" dur="8s" repeatCount="indefinite" />
+  <circle cx="0" cy="15" r="4.5" fill="#f8fafc" filter="url(#glassGlow)">
+    <animate attributeName="cx" values="-10; 910; -10" dur="7s" repeatCount="indefinite" />
+    <animate attributeName="fill" values="#00f0ff; #a855f7; #ff2bd6; #00f0ff" dur="7s" repeatCount="indefinite" />
   </circle>
 </svg>

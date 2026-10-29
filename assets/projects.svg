@@ -1,13 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 250" width="100%">
   <defs>
     <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#241a12" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#140d08" stop-opacity="0.92" />
+      <stop offset="0%" stop-color="#0c1222" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#060913" stop-opacity="0.95" />
     </linearGradient>
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f0c987" />
-      <stop offset="55%" stop-color="#e0a458" />
-      <stop offset="100%" stop-color="#d2695f" />
+    <linearGradient id="borderGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="borderGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ff2bd6" />
     </linearGradient>
 
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -17,52 +20,53 @@
   </defs>
 
   <pattern id="hexGrid" width="30" height="51.96" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-    <path d="M15,0 L30,8.66 L30,25.98 L15,34.64 L0,25.98 L0,8.66 Z" fill="none" stroke="#f2e8da" stroke-opacity="0.03" />
-    <path d="M15,51.96 L30,43.3 L30,25.98" fill="none" stroke="#f2e8da" stroke-opacity="0.03" />
-    <path d="M0,43.3 L15,51.96" fill="none" stroke="#f2e8da" stroke-opacity="0.03" />
+    <path d="M15,0 L30,8.66 L30,25.98 L15,34.64 L0,25.98 L0,8.66 Z" fill="none" stroke="#38bdf8" stroke-opacity="0.05" />
+    <path d="M15,51.96 L30,43.3 L30,25.98" fill="none" stroke="#38bdf8" stroke-opacity="0.05" />
+    <path d="M0,43.3 L15,51.96" fill="none" stroke="#38bdf8" stroke-opacity="0.05" />
   </pattern>
   <rect width="100%" height="100%" fill="url(#hexGrid)" />
 
-  <rect x="25" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#3a2c20" stroke-width="2" />
-  <rect x="25" y="25" width="385" height="200" rx="12" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.6" filter="url(#glow)">
-     <animate attributeName="stroke-dashoffset" values="900; 0" dur="12s" repeatCount="indefinite" />
+  <!-- Left Card: Distributed & AI Systems -->
+  <rect x="25" y="25" width="385" height="200" rx="14" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5" />
+  <rect x="25" y="25" width="385" height="200" rx="14" fill="none" stroke="url(#borderGrad1)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.75" filter="url(#glow)">
+     <animate attributeName="stroke-dashoffset" values="900; 0" dur="10s" repeatCount="indefinite" />
   </rect>
 
   <g transform="translate(55, 60)">
-    <path d="M 0 10 L 15 0 L 30 10 L 30 25 L 15 35 L 0 25 Z" fill="none" stroke="#e0a458" stroke-width="2" filter="url(#glow)" />
-    <circle cx="15" cy="17.5" r="4" fill="#e0a458" filter="url(#glow)">
-       <animate attributeName="opacity" values="0.2; 1; 0.2" dur="2s" repeatCount="indefinite" />
+    <path d="M 0 10 L 15 0 L 30 10 L 30 25 L 15 35 L 0 25 Z" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#glow)" />
+    <circle cx="15" cy="17.5" r="4" fill="#00f0ff" filter="url(#glow)">
+       <animate attributeName="opacity" values="0.3; 1; 0.3" dur="2s" repeatCount="indefinite" />
     </circle>
 
-    <text x="50" y="24" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#f2e8da">System Architectures</text>
+    <text x="50" y="24" font-family="'Orbitron', sans-serif" font-weight="700" font-size="16" fill="#f8fafc">AI Systems &amp; RAG</text>
 
-    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#b8a58f">
-      <tspan x="0" dy="0">➔ Designing Scalable Microservices</tspan>
-      <tspan x="0" dy="22">➔ Implementing Vector Databases</tspan>
-      <tspan x="0" dy="22">➔ Deploying Production ML Models</tspan>
-      <tspan x="0" dy="22">➔ Managing Distributed Pipelines</tspan>
+    <text x="0" y="66" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">
+      <tspan x="0" dy="0">⚡ Mentara AI Study Engine (pgvector)</tspan>
+      <tspan x="0" dy="22">⚡ DeepSeek &amp; OpenAI n8n Orchestration</tspan>
+      <tspan x="0" dy="22">⚡ ApexGift Semantic Prompt Engine</tspan>
+      <tspan x="0" dy="22">⚡ Scalable NestJS Microservice Backends</tspan>
     </text>
   </g>
 
-  <rect x="440" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#3a2c20" stroke-width="2" />
-  <rect x="440" y="25" width="385" height="200" rx="12" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.6" filter="url(#glow)">
-     <animate attributeName="stroke-dashoffset" values="0; 900" dur="12s" repeatCount="indefinite" />
+  <!-- Right Card: 3D Web & Applied ML -->
+  <rect x="440" y="25" width="385" height="200" rx="14" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5" />
+  <rect x="440" y="25" width="385" height="200" rx="14" fill="none" stroke="url(#borderGrad2)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.75" filter="url(#glow)">
+     <animate attributeName="stroke-dashoffset" values="0; 900" dur="10s" repeatCount="indefinite" />
   </rect>
 
   <g transform="translate(470, 60)">
-    <rect x="0" y="0" width="28" height="28" rx="6" fill="none" stroke="#d2695f" stroke-width="2" filter="url(#glow)">
-      <animateTransform attributeName="transform" type="rotate" values="0 14 14; 90 14 14; 180 14 14; 270 14 14; 360 14 14" calcMode="discrete" dur="4s" repeatCount="indefinite" />
-    </rect>
-    <circle cx="14" cy="14" r="3" fill="#d2695f" filter="url(#glow)" />
+    <circle cx="15" cy="17.5" r="14" fill="none" stroke="#ff2bd6" stroke-width="2" filter="url(#glow)" />
+    <circle cx="15" cy="17.5" r="4" fill="#a855f7" filter="url(#glow)">
+       <animate attributeName="opacity" values="1; 0.3; 1" dur="2s" repeatCount="indefinite" />
+    </circle>
 
-    <text x="50" y="21" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#f2e8da">Applied Intelligence</text>
+    <text x="50" y="24" font-family="'Orbitron', sans-serif" font-weight="700" font-size="16" fill="#f8fafc">3D Web &amp; ML Models</text>
 
-    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#b8a58f">
-      <tspan x="0" dy="0">➔ Advanced RAG System Integration</tspan>
-      <tspan x="0" dy="22">➔ Complex Prompt Engineering</tspan>
-      <tspan x="0" dy="22">➔ Real-time Spatial 3D (WebXR)</tspan>
-      <tspan x="0" dy="22">➔ High-performance Client Apps</tspan>
+    <text x="0" y="66" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">
+      <tspan x="0" dy="0">🧠 EEG ADHD Detection (medRxiv Preprint)</tspan>
+      <tspan x="0" dy="22">🌐 MetaTıp AR 3D Raycasting Platform</tspan>
+      <tspan x="0" dy="22">🎮 Uskudar Extreme 3D Campus Game</tspan>
+      <tspan x="0" dy="22">📦 FleetFreight Normalized SQL Architecture</tspan>
     </text>
   </g>
-
 </svg>
