@@ -1,47 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 250" width="100%">
   <defs>
-    <!-- Card Gradients -->
     <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121220" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#08080f" stop-opacity="0.9" />
+      <stop offset="0%" stop-color="#241a12" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#140d08" stop-opacity="0.92" />
     </linearGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00FFF9" />
-      <stop offset="50%" stop-color="#B829F7" />
-      <stop offset="100%" stop-color="#FF00E5" />
+      <stop offset="0%" stop-color="#f0c987" />
+      <stop offset="55%" stop-color="#e0a458" />
+      <stop offset="100%" stop-color="#d2695f" />
     </linearGradient>
 
-    <!-- Glow Filter -->
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <!-- Base Grid (Optional Subtle Backdrop) -->
   <pattern id="hexGrid" width="30" height="51.96" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-    <path d="M15,0 L30,8.66 L30,25.98 L15,34.64 L0,25.98 L0,8.66 Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" />
-    <path d="M15,51.96 L30,43.3 L30,25.98" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" />
-    <path d="M0,43.3 L15,51.96" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" />
+    <path d="M15,0 L30,8.66 L30,25.98 L15,34.64 L0,25.98 L0,8.66 Z" fill="none" stroke="#f2e8da" stroke-opacity="0.03" />
+    <path d="M15,51.96 L30,43.3 L30,25.98" fill="none" stroke="#f2e8da" stroke-opacity="0.03" />
+    <path d="M0,43.3 L15,51.96" fill="none" stroke="#f2e8da" stroke-opacity="0.03" />
   </pattern>
   <rect width="100%" height="100%" fill="url(#hexGrid)" />
 
-  <!-- Left Card: Production Architecture -->
-  <rect x="25" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#2A2A3E" stroke-width="2" />
-  <!-- Hover / Glowing animated overlay on the border -->
+  <rect x="25" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#3a2c20" stroke-width="2" />
   <rect x="25" y="25" width="385" height="200" rx="12" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.6" filter="url(#glow)">
      <animate attributeName="stroke-dashoffset" values="900; 0" dur="12s" repeatCount="indefinite" />
   </rect>
 
   <g transform="translate(55, 60)">
-    <path d="M 0 10 L 15 0 L 30 10 L 30 25 L 15 35 L 0 25 Z" fill="none" stroke="#00FFF9" stroke-width="2" filter="url(#glow)" />
-    <circle cx="15" cy="17.5" r="4" fill="#00FFF9" filter="url(#glow)">
+    <path d="M 0 10 L 15 0 L 30 10 L 30 25 L 15 35 L 0 25 Z" fill="none" stroke="#e0a458" stroke-width="2" filter="url(#glow)" />
+    <circle cx="15" cy="17.5" r="4" fill="#e0a458" filter="url(#glow)">
        <animate attributeName="opacity" values="0.2; 1; 0.2" dur="2s" repeatCount="indefinite" />
     </circle>
-    
-    <text x="50" y="24" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#E8E8F0">System Architectures</text>
-    
-    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#A0A0C0">
+
+    <text x="50" y="24" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#f2e8da">System Architectures</text>
+
+    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#b8a58f">
       <tspan x="0" dy="0">➔ Designing Scalable Microservices</tspan>
       <tspan x="0" dy="22">➔ Implementing Vector Databases</tspan>
       <tspan x="0" dy="22">➔ Deploying Production ML Models</tspan>
@@ -49,21 +44,20 @@
     </text>
   </g>
 
-  <!-- Right Card: Applied Intelligence -->
-  <rect x="440" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#2A2A3E" stroke-width="2" />
+  <rect x="440" y="25" width="385" height="200" rx="12" fill="url(#cardBg)" stroke="#3a2c20" stroke-width="2" />
   <rect x="440" y="25" width="385" height="200" rx="12" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" stroke-dasharray="100 800" opacity="0.6" filter="url(#glow)">
      <animate attributeName="stroke-dashoffset" values="0; 900" dur="12s" repeatCount="indefinite" />
   </rect>
 
   <g transform="translate(470, 60)">
-    <rect x="0" y="0" width="28" height="28" rx="6" fill="none" stroke="#FF00E5" stroke-width="2" filter="url(#glow)">
+    <rect x="0" y="0" width="28" height="28" rx="6" fill="none" stroke="#d2695f" stroke-width="2" filter="url(#glow)">
       <animateTransform attributeName="transform" type="rotate" values="0 14 14; 90 14 14; 180 14 14; 270 14 14; 360 14 14" calcMode="discrete" dur="4s" repeatCount="indefinite" />
     </rect>
-    <circle cx="14" cy="14" r="3" fill="#FF00E5" filter="url(#glow)" />
-    
-    <text x="50" y="21" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#E8E8F0">Applied Intelligence</text>
-    
-    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#A0A0C0">
+    <circle cx="14" cy="14" r="3" fill="#d2695f" filter="url(#glow)" />
+
+    <text x="50" y="21" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="700" font-size="18" fill="#f2e8da">Applied Intelligence</text>
+
+    <text x="0" y="65" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#b8a58f">
       <tspan x="0" dy="0">➔ Advanced RAG System Integration</tspan>
       <tspan x="0" dy="22">➔ Complex Prompt Engineering</tspan>
       <tspan x="0" dy="22">➔ Real-time Spatial 3D (WebXR)</tspan>
