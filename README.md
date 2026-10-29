@@ -32,7 +32,7 @@
 </p>
 
 <p align="center">
-  <em>☕ Powered by Turkish coffee, stardust, and clean asynchronous architecture.</em><br/>
+  <em>☕ Powered by coffee, fairouz, and clean asynchronous architecture.</em><br/>
   <b>8</b> public repositories · <b>2,115+</b> contributions in the last year · longest streak of <b>286</b> orbital days · <b>GPA: 3.94 / 4.00</b> (Department Rank #2)
 </p>
 
